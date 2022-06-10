@@ -67,7 +67,7 @@
 
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/vue/outline/index.js";
 
 const [isDark, toggleDark] = useDarkMode();
 const router = useRouter();

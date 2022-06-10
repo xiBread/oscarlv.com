@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { HashtagIcon } from "@heroicons/vue/solid";
+import { HashtagIcon } from "@heroicons/vue/solid/index.js";
 
 definePageMeta({ title: "Home", index: 0 });
 </script>
