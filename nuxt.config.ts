@@ -1,29 +1,32 @@
 import { defineNuxtConfig } from "nuxt";
 
+const s3Base = "https://oscarlv.s3.amazonaws.com/";
+
 export default defineNuxtConfig({
-	modules: ["@nuxtjs/color-mode", "@nuxtjs/google-fonts", "@nuxtjs/tailwindcss"],
-	srcDir: "src/",
-	app: {
-		head: {
-			title: "Oscar Lee-Vermeren",
-			meta: [
-				{
-					name: "description",
-					content: "I swear I'm not an art person",
-				},
-				{
-					name: "og:title",
-					content: "Oscar Lee-Vermeren",
-				},
-			],
-			link: [{ rel: "icon", href: "/favicon.ico" }],
+	modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+	css: ["@/assets/css/main.css"],
+	typescript: {
+		shim: false,
+		strict: true,
+	},
+	vite: {
+		define: {
+			S3_BASE: JSON.stringify(s3Base),
 		},
 	},
-	googleFonts: {
-		download: false,
-		display: "swap",
-		families: {
-			Inter: true,
+	content: {
+		markdown: {
+			tags: {
+				h2: "h2",
+				h3: "h3",
+				h4: "h4",
+			},
+		},
+	},
+	image: {
+		domains: [s3Base],
+		alias: {
+			s3: s3Base,
 		},
 	},
 });

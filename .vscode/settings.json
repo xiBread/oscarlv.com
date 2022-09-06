@@ -1,0 +1,7 @@
+{
+	"markdownlint.config": {
+		"blanks-around-headers": false,
+		"first-line-h1": false,
+		"heading-increment": false
+	}
+}

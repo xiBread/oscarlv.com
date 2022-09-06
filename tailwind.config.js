@@ -2,13 +2,15 @@
  * @type {import("tailwindcss/types").Config}
  */
 module.exports = {
-	content: ["src/**/*.{vue,ts}"],
-	darkMode: ["class", ".dark-mode"],
+	plugins: [
+		require("@tailwindcss/line-clamp"),
+		require("@tailwindcss/typography"),
+		require("@headlessui/tailwindcss"),
+	],
+	darkMode: "class",
 	theme: {
-		extend: {
-			fontFamily: {
-				inter: ['"Inter"', "sans-serif"],
-			},
+		fontFamily: {
+			mono: ["'Roboto Mono'", "monospace"],
 		},
 	},
 };
