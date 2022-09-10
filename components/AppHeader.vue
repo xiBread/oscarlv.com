@@ -6,16 +6,18 @@
 			</NuxtLink>
 
 			<div class="flex items-center text-neutral-400 dark:text-neutral-600">
-				<ul class="flex items-center space-x-6 text-sm font-medium">
-					<li v-for="page in pages" :key="page">
-						<NuxtLink
-							:to="`/${page.toLowerCase()}`"
-							class="hover:text-neutral-700 dark:hover:text-neutral-300"
-						>
-							{{ page }}
-						</NuxtLink>
-					</li>
-				</ul>
+				<ContentNavigation v-slot="{ navigation }">
+					<ul class="flex items-center space-x-6 text-sm font-medium">
+						<li v-for="link in navigation" :key="link._path">
+							<NuxtLink
+								:to="link._path"
+								class="hover:text-neutral-700 dark:hover:text-neutral-300"
+							>
+								{{ link.title }}
+							</NuxtLink>
+						</li>
+					</ul>
+				</ContentNavigation>
 
 				<div
 					class="ml-5 flex items-center space-x-5 border-l border-l-neutral-300 text-xl dark:border-l-neutral-600 [&>*]:ml-5"
@@ -44,6 +46,4 @@ import { Icon } from "@iconify/vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-
-const pages = ["Photography", "Writing", "About"];
 </script>
