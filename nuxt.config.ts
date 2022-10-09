@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from "nuxt";
-
 const s3Base = "https://oscarlv.s3.amazonaws.com/";
 
 export default defineNuxtConfig({
