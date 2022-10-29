@@ -3,12 +3,6 @@
 		<ContentList v-slot="{ list }" path="/writing">
 			<article v-for="post in list" :key="post._id" class="relative">
 				<div class="prose relative max-w-none dark:prose-invert md:flex-grow">
-					<time
-						:datetime="new Date(post.date).toISOString()"
-						class="text-sm text-neutral-500"
-					>
-						{{ post.date }}
-					</time>
 					<h3 class="mt-1">{{ post.title }}</h3>
 
 					<p class="line-clamp-2">{{ post.description }}</p>
