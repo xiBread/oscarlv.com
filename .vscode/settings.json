@@ -1,4 +1,5 @@
 {
+	"markdown.validate.enabled": false,
 	"markdownlint.config": {
 		"blanks-around-headers": false,
 		"first-line-h1": false,
