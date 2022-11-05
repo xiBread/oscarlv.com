@@ -3,5 +3,3 @@
 		<ContentDoc tag="article" class="prose text-justify dark:prose-invert" />
 	</div>
 </template>
-
-<script setup lang="ts"></script>
