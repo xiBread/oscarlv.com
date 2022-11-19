@@ -17,10 +17,10 @@ export default defineEventHandler(async (event) => {
 	});
 
 	const output = await client.send(command);
-	const keys =
+
+	return (
 		output.Contents?.map((object) => object.Key ?? "").filter((key) =>
 			/\.(jpe?|pn)g$/.test(key)
-		) ?? [];
-
-	return keys.map((key) => `https://d1ust53l0yh0jm.cloudfront.net/${key}`);
+		) ?? []
+	);
 });
