@@ -1,26 +1,16 @@
-import { ListObjectsV2Command, S3Client } from "@aws-sdk/client-s3";
-
-const client = new S3Client({
-	credentials: {
-		accessKeyId: process.env.AWS_ACCESS!,
-		secretAccessKey: process.env.AWS_SECRET!,
-	},
-	region: "us-east-1",
-});
-
 export default defineEventHandler(async (event) => {
 	const { collection } = getQuery(event);
 
-	const command = new ListObjectsV2Command({
-		Bucket: "oscarlv",
-		Prefix: collection ? `${collection}/` : "",
-	});
-
-	const output = await client.send(command);
-
-	return (
-		output.Contents?.map((object) => object.Key ?? "").filter((key) =>
-			/\.(jpe?|pn)g$/.test(key)
-		) ?? []
+	const response = await fetch(
+		`https://api.imagekit.io/v1/files${collection ? `?path=${collection}` : ""}`,
+		{
+			headers: {
+				Authorization: `Basic ${process.env.IMAGEKIT_PRIVATE_KEY}`,
+			},
+		}
 	);
+
+	const data = (await response.json()) as Record<string, string>[];
+
+	return data.map((image) => image.filePath);
 });
