@@ -24,7 +24,7 @@
 			</PopoverButton>
 
 			<PopoverOverlay
-				class="fixed inset-0 z-50 bg-zinc-800/40 opacity-100 backdrop-blur-sm dark:bg-black/70"
+				class="fixed inset-0 z-50 bg-neutral-800/40 opacity-100 backdrop-blur-sm dark:bg-black/70"
 			/>
 
 			<PopoverPanel
