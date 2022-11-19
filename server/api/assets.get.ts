@@ -8,19 +8,19 @@ const client = new S3Client({
 	region: "us-east-1",
 });
 
-const extRegex = /\.(jpe?g|png|gif)$/;
-
 export default defineEventHandler(async (event) => {
-	const { collection } = useQuery(event);
-	const collRegex = new RegExp(`collections/${collection}/\\w+`);
+	const { collection } = getQuery(event);
 
-	const command = new ListObjectsV2Command({ Bucket: "oscarlv" });
+	const command = new ListObjectsV2Command({
+		Bucket: "oscarlv",
+		Prefix: collection ? `${collection}/` : "",
+	});
+
 	const output = await client.send(command);
-
 	const keys =
 		output.Contents?.map((object) => object.Key ?? "").filter((key) =>
-			(collection ? collRegex : extRegex).test(key)
+			/\.(jpe?|pn)g$/.test(key)
 		) ?? [];
 
-	return keys.map((key) => `https://oscarlv.s3.amazonaws.com/${key}`);
+	return keys.map((key) => `https://d1ust53l0yh0jm.cloudfront.net/${key}`);
 });

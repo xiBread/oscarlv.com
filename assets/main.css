@@ -1,0 +1,32 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.use-prose {
+		@apply prose prose-neutral dark:prose-invert;
+	}
+}
+
+:root {
+	font-family: "Inter var", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+
+/* * {
+	outline: red solid 1px;
+}
+
+*:nth-child(2n) {
+	outline: blue solid 1px;
+} */

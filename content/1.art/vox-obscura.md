@@ -1,4 +1,9 @@
-# AP Art
+---
+cover: vox-obscura/nocturnal.jpg
+description: Visualizing subtleties of the human experience that have no language.
+---
+
+# Vox Obscura (AP Art)
 
 > How can I visualize subtleties of the human experience that have no language?
 
@@ -14,7 +19,7 @@ moment of clarity.
 
 ## Nocturnal
 
-![Nocturnal](/img/nocturnal.jpg)
+![Nocturnal](https://oscarlv.s3.amazonaws.com/vox-obscura/nocturnal.jpg)
 
 *Nocturnal* depicts the comforting solitude felt by being the only person awake during the middle
 of the night.
@@ -28,7 +33,7 @@ and calmness.
 
 ## Duality
 
-![Duality](/img/duality.jpg)
+![Duality](https://oscarlv.s3.amazonaws.com/vox-obscura/duality.jpg)
 
 *Duality* represents the secluded solace of hotel rooms&mdash;existing as a state suspended halfway
 between occupied and vacant. It illustrates the temporary relief from the routine of

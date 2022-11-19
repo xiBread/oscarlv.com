@@ -1,16 +1,48 @@
 <template>
-	<div class="h-screen">
-		<div class="flex h-full items-center justify-center">
-			<pre>{{ steve }}</pre>
+	<div class="mt-16 sm:mt-28 sm:px-8">
+		<Container>
+			<ContentDoc class="use-prose max-w-2xl" />
+
+			<div class="mt-6 flex gap-7">
+				<NuxtLink v-for="(url, platform) in socials" :key="platform" :to="url">
+					<Icon
+						:icon="`cib:${platform.toLowerCase()}`"
+						class="h-5 w-5 text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-200"
+					/>
+				</NuxtLink>
+			</div>
+		</Container>
+	</div>
+
+	<div class="mt-16 sm:mt-20">
+		<div class="-my-4 flex justify-center gap-6 overflow-hidden py-4 sm:gap-10">
+			<div
+				v-for="image in featured"
+				:key="image"
+				class="relative aspect-[9/10] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-800 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
+			>
+				<NuxtImg
+					:src="`https://d1ust53l0yh0jm.cloudfront.net/${image}`"
+					class="absolute inset-0 h-full w-full object-cover"
+					height="3000"
+					width="2400"
+					loading="lazy"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-const steve = ref("");
+import { Icon } from "@iconify/vue";
 
-onMounted(async () => {
-	const res = await fetch(`${location.origin}/steve.txt`);
-	steve.value = await res.text();
-});
+const { socials } = useAppConfig();
+
+const featured = [
+	"rose-fire.jpg",
+	"portraits/leaves.jpg",
+	"portraits/market.jpg",
+	"signals.jpg",
+	"traveler.jpg",
+];
 </script>

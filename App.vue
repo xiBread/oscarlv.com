@@ -1,36 +1,23 @@
 <template>
-	<Head>
-		<Title>Oscar Lee-Vermeren</Title>
+	<Body class="flex h-full flex-col dark:bg-neutral-900 dark:text-white">
+		<Lichtenberg />
 
-		<Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-
-		<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
-		<Meta name="theme-color" content="white" />
-		<Meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171717" />
-	</Head>
-
-	<div class="grid min-h-full grid-rows-[auto_1fr]">
-		<AppHeader />
-
-		<div class="grid h-screen grid-rows-[1fr_auto] overscroll-y-none">
-			<Lichtenberg />
+		<div class="relative">
+			<AppHeader />
 
 			<main>
 				<NuxtPage />
 			</main>
+
+			<AppFooter />
 		</div>
-	</div>
+	</Body>
 </template>
 
 <script setup lang="ts">
+const name = "Oscar Lee-Vermeren";
+
 useHead({
-	script: [
-		{
-			src: "/theme.js",
-			type: "module",
-		},
-	],
+	titleTemplate: (page) => (page ? `${page} - ${name}` : name),
 });
 </script>

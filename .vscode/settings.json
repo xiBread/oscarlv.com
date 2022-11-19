@@ -4,5 +4,6 @@
 		"blanks-around-headers": false,
 		"first-line-h1": false,
 		"heading-increment": false
-	}
+	},
+	"tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
 }
