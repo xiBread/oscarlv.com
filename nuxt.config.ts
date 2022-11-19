@@ -101,11 +101,6 @@ export default defineNuxtConfig({
 		config: {
 			content: [],
 			darkMode: "class",
-			theme: {
-				fontFamily: {
-					mono: ["'Roboto Mono'", "monospace"],
-				},
-			},
 		},
 	},
 });
