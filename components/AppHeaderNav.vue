@@ -28,6 +28,7 @@
 			/>
 
 			<PopoverPanel
+				v-slot="{ close }"
 				class="fixed inset-x-0 top-0 z-50 origin-top scale-100 rounded-b-2xl bg-white p-8 opacity-100 ring-1 ring-neutral-900/5 dark:bg-neutral-900 dark:ring-neutral-800"
 			>
 				<div class="flex flex-row-reverse items-center justify-between">
@@ -48,7 +49,7 @@
 						class="-my-2 divide-y divide-neutral-200/50 text-base text-neutral-800 dark:divide-zinc-100/5 dark:text-neutral-200"
 					>
 						<li v-for="link in navigation" :key="link._path">
-							<NuxtLink :to="link._path" class="block py-3">
+							<NuxtLink :to="link._path" class="block py-3" @click="close()">
 								{{ link.title }}
 							</NuxtLink>
 						</li>
