@@ -1,5 +1,5 @@
 {
-	"name": "oscar-lv",
+	"name": "oscarlv.com",
 	"private": true,
 	"scripts": {
 		"build": "nuxt build",
