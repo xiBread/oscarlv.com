@@ -1,5 +1,5 @@
 <template>
-	<header class="relative z-50 flex flex-col">
+	<header class="relative z-40 flex flex-col">
 		<div class="top-0 z-10 h-16 pt-6">
 			<div class="top-6 w-full sm:px-8">
 				<Container>

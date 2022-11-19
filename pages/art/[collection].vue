@@ -3,7 +3,7 @@
 		<Container>
 			<ContentDoc tag="header" class="use-prose max-w-2xl" />
 
-			<div class="mt-16 sm:mt-24">
+			<div class="mt-16 sm:mt-20">
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					<button
 						v-for="url in data"
@@ -22,6 +22,23 @@
 					</button>
 				</div>
 			</div>
+
+			<Dialog as="div" :open="isOpen" class="relative z-50" @close="isOpen = false">
+				<div
+					class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"
+				></div>
+
+				<div class="fixed inset-0 overflow-y-auto">
+					<div class="flex min-h-full items-center justify-center">
+						<DialogPanel class="flex h-full overflow-hidden">
+							<NuxtImg
+								:src="target"
+								class="m-auto max-h-screen max-w-full p-6 sm:p-16"
+							/>
+						</DialogPanel>
+					</div>
+				</div>
+			</Dialog>
 		</Container>
 	</div>
 </template>
@@ -37,15 +54,11 @@ const data = await $fetch("/api/assets", {
 	},
 });
 
-const isOpen = ref(true);
-const viewing = ref("");
-
-function closeModal() {
-	isOpen.value = false;
-}
+const isOpen = ref(false);
+const target = ref("");
 
 function openModal(url: string) {
 	isOpen.value = true;
-	viewing.value = url;
+	target.value = url;
 }
 </script>
