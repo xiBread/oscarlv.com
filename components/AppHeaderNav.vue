@@ -20,8 +20,8 @@
 				<span class="text-neutral-600 dark:text-neutral-300">Menu</span>
 
 				<Icon
-					name="heroicons:chevron-down-20-solid"
-					class="ml-2 h-auto w-4 text-neutral-400 dark:text-neutral-500"
+					icon="heroicons:chevron-down-20-solid"
+					class="ml-2 h-auto w-5 text-neutral-400 dark:text-neutral-500"
 				/>
 			</PopoverButton>
 
