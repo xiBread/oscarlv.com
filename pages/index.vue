@@ -4,7 +4,12 @@
 			<ContentDoc class="use-prose max-w-2xl" />
 
 			<div class="mt-6 flex gap-7">
-				<NuxtLink v-for="(url, platform) in socials" :key="platform" :to="url">
+				<NuxtLink
+					v-for="(url, platform) in socials"
+					:key="platform"
+					:to="url"
+					:aria-label="platform"
+				>
 					<Icon
 						:icon="`cib:${platform.toLowerCase()}`"
 						class="h-5 w-5 text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-200"
@@ -17,15 +22,16 @@
 	<div class="mt-16 sm:mt-20">
 		<div class="-my-4 flex justify-center gap-6 overflow-hidden py-4 sm:gap-10">
 			<div
-				v-for="image in featured"
-				:key="image"
+				v-for="path in featured"
+				:key="path"
 				class="relative aspect-[9/10] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-800 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
 				<NuxtImg
-					:src="`https://d1ust53l0yh0jm.cloudfront.net/${image}`"
+					:src="path"
 					class="absolute inset-0 h-full w-full object-cover"
 					height="3000"
 					width="2400"
+					alt=""
 					loading="lazy"
 				/>
 			</div>

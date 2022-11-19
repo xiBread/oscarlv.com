@@ -7,11 +7,11 @@
 				<div class="lg:pl-20">
 					<div class="max-w-xs px-2.5 lg:max-w-none">
 						<NuxtImg
-							class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover shadow-lg dark:bg-zinc-800"
-							src="/portrait-2.jpg"
-							format="webp"
+							class="aspect-square rotate-3 rounded-2xl bg-neutral-100 object-cover shadow-lg dark:bg-neutral-800"
+							src="shattered.jpg"
 							height="800"
 							width="800"
+							alt=""
 						/>
 					</div>
 				</div>
@@ -21,21 +21,30 @@
 				<div class="lg:pl-20">
 					<ul>
 						<li
-							v-for="(url, platform) in socials"
+							v-for="(url, platform, i) in socials"
 							:key="platform"
 							class="flex [&:not(:first-child)]:mt-6"
 						>
-							<NuxtLink :key="platform" :to="url" class="contact-link">
+							<NuxtLink
+								:key="platform"
+								:to="url"
+								class="contact-link"
+								:aria-labelledby="`platform-${i}`"
+							>
 								<Icon :icon="`cib:${platform.toLowerCase()}`" />
 
-								Follow on {{ platform }}
+								<span :id="`platform-${i}`">Follow on {{ platform }}</span>
 							</NuxtLink>
 						</li>
 
 						<li
 							class="mt-8 flex border-t border-neutral-200/60 pt-8 dark:border-zinc-800"
 						>
-							<NuxtLink :to="`mailto:${email}`" class="contact-link">
+							<NuxtLink
+								:to="`mailto:${email}`"
+								class="contact-link"
+								aria-label="Email"
+							>
 								<Icon icon="heroicons:envelope-solid" />
 
 								{{ email }}

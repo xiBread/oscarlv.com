@@ -7,10 +7,11 @@
 				class="group relative flex flex-col items-start"
 			>
 				<NuxtImg
-					:src="`https://d1ust53l0yh0jm.cloudfront.net/${item.cover}`"
+					:src="item.cover"
 					class="z-20 aspect-square rounded-2xl object-cover"
 					height="800"
 					width="800"
+					alt=""
 					loading="lazy"
 				/>
 

@@ -83,6 +83,11 @@ export default defineNuxtConfig({
 			},
 		},
 	},
+	image: {
+		imagekit: {
+			baseURL: "https://ik.imagekit.io/olv/",
+		},
+	},
 	tailwindcss: {
 		cssPath: "~/assets/main.css",
 		viewer: false,
