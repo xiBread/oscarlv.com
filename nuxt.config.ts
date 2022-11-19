@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 				},
 				{
 					property: "og:url",
-					content: "https://oscar-lv.me",
+					content: "https://www.oscarlv.com",
 				},
 			],
 			link: [
