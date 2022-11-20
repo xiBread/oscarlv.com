@@ -4,8 +4,8 @@
 			<div
 				class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
 			>
-				<div class="lg:pl-20">
-					<div class="max-w-xs px-2.5 lg:max-w-none">
+				<div class="flex justify-center lg:pl-20">
+					<div class="max-w-xs px-2.5 sm:max-w-sm lg:max-w-none">
 						<NuxtImg
 							class="aspect-square rotate-3 rounded-2xl bg-neutral-100 object-cover shadow-lg dark:bg-neutral-800"
 							src="shattered.jpg"
