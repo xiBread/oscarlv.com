@@ -19,7 +19,7 @@ moment of clarity.
 
 ## Nocturnal
 
-![Nocturnal](https://oscarlv.s3.amazonaws.com/vox-obscura/nocturnal.jpg)
+![Nocturnal](https://ik.imagekit.io/olv/vox-obscura/nocturnal.jpg)
 
 *Nocturnal* depicts the comforting solitude felt by being the only person awake during the middle
 of the night.
@@ -33,7 +33,7 @@ and calmness.
 
 ## Duality
 
-![Duality](https://oscarlv.s3.amazonaws.com/vox-obscura/duality.jpg)
+![Duality](https://ik.imagekit.io/olv/vox-obscura/duality.jpg)
 
 *Duality* represents the secluded solace of hotel rooms&mdash;existing as a state suspended halfway
 between occupied and vacant. It illustrates the temporary relief from the routine of
