@@ -6,9 +6,9 @@
 					<div
 						class="flex flex-col items-center justify-between gap-6 text-sm text-neutral-400 dark:text-neutral-500 sm:flex-row"
 					>
-						<Navigation v-slot="{ navigation }" class="flex gap-6 font-medium">
+						<Navigation v-slot="{ nav }" class="flex gap-6 font-medium">
 							<NuxtLink
-								v-for="link in navigation"
+								v-for="link in nav"
 								:key="link._path"
 								:to="link._path"
 								class="hover:text-neutral-700 dark:hover:text-neutral-200"

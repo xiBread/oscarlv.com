@@ -1,8 +1,8 @@
 <template>
 	<div class="flex flex-1 justify-end md:justify-center">
-		<Navigation v-slot="{ navigation }" class="hidden md:block">
+		<Navigation v-slot="{ nav }" class="hidden md:block">
 			<ul class="flex px-3 text-sm font-medium text-neutral-400 dark:text-neutral-500">
-				<li v-for="link in navigation" :key="link._path">
+				<li v-for="link in nav" :key="link._path">
 					<NuxtLink
 						:to="link._path"
 						class="relative mx-4 my-2 block hover:text-neutral-700 dark:hover:text-neutral-200"
@@ -44,11 +44,11 @@
 					</span>
 				</div>
 
-				<Navigation v-slot="{ navigation }" class="mt-6">
+				<Navigation v-slot="{ nav }" class="mt-6">
 					<ul
 						class="-my-2 divide-y divide-neutral-200/50 text-base text-neutral-800 dark:divide-zinc-100/5 dark:text-neutral-200"
 					>
-						<li v-for="link in navigation" :key="link._path">
+						<li v-for="link in nav" :key="link._path">
 							<NuxtLink :to="link._path" class="block py-3" @click="close()">
 								{{ link.title }}
 							</NuxtLink>
