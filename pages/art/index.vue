@@ -1,8 +1,8 @@
 <template>
-	<NuxtLayout v-slot="{ content }" name="content">
+	<NuxtLayout name="content">
 		<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
 			<li
-				v-for="item in content"
+				v-for="item in data"
 				:key="item._path"
 				class="group relative flex flex-col items-start"
 			>
@@ -36,3 +36,7 @@
 		</ul>
 	</NuxtLayout>
 </template>
+
+<script setup lang="ts">
+const { data } = await fetchContent();
+</script>

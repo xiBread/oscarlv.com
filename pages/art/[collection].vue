@@ -1,46 +1,35 @@
 <template>
-	<div class="mt-16 sm:mt-28 sm:px-8">
-		<Container>
-			<ContentDoc tag="header" class="use-prose max-w-2xl" />
+	<NuxtLayout name="content">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			<button
+				v-for="url in data"
+				:key="url"
+				type="button"
+				class="bg-neutral-100 dark:bg-neutral-800 dark:ring-1 dark:ring-neutral-700/30"
+				@click="openModal(url)"
+			>
+				<NuxtImg
+					:src="url"
+					class="aspect-square object-cover"
+					height="800"
+					width="800"
+					loading="lazy"
+				/>
+			</button>
+		</div>
 
-			<div class="mt-16 sm:mt-20">
-				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-					<button
-						v-for="url in data"
-						:key="url"
-						type="button"
-						class="bg-neutral-100 dark:bg-neutral-800 dark:ring-1 dark:ring-neutral-700/30"
-						@click="openModal(url)"
-					>
-						<NuxtImg
-							:src="url"
-							class="aspect-square object-cover"
-							height="800"
-							width="800"
-							loading="lazy"
-						/>
-					</button>
+		<Dialog as="div" :open="isOpen" class="relative z-50" @close="isOpen = false">
+			<div class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"></div>
+
+			<div class="fixed inset-0 overflow-y-auto">
+				<div class="flex min-h-full items-center justify-center">
+					<DialogPanel class="flex h-full overflow-hidden">
+						<NuxtImg :src="target" class="m-auto max-h-screen max-w-full p-6 sm:p-16" />
+					</DialogPanel>
 				</div>
 			</div>
-
-			<Dialog as="div" :open="isOpen" class="relative z-50" @close="isOpen = false">
-				<div
-					class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"
-				></div>
-
-				<div class="fixed inset-0 overflow-y-auto">
-					<div class="flex min-h-full items-center justify-center">
-						<DialogPanel class="flex h-full overflow-hidden">
-							<NuxtImg
-								:src="target"
-								class="m-auto max-h-screen max-w-full p-6 sm:p-16"
-							/>
-						</DialogPanel>
-					</div>
-				</div>
-			</Dialog>
-		</Container>
-	</div>
+		</Dialog>
+	</NuxtLayout>
 </template>
 
 <script setup lang="ts">
