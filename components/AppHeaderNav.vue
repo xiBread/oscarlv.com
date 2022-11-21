@@ -23,34 +23,41 @@
 				/>
 			</PopoverButton>
 
-			<PopoverOverlay
-				class="fixed inset-0 z-50 bg-neutral-800/40 opacity-100 backdrop-blur-sm dark:bg-black/70"
-			/>
+			<Transition v-bind="transitionProps">
+				<PopoverOverlay
+					class="fixed inset-0 z-50 bg-neutral-800/40 opacity-100 backdrop-blur-sm dark:bg-black/70"
+				/>
+			</Transition>
 
-			<PopoverPanel
-				v-slot="{ close }"
-				class="fixed inset-x-0 top-0 z-50 origin-top scale-100 rounded-b-xl bg-white p-12 opacity-100 ring-1 ring-neutral-900/5 dark:bg-neutral-900 dark:ring-neutral-800"
-			>
-				<div class="flex flex-row-reverse items-center justify-between">
-					<PopoverButton class="-m-1 p-1">
-						<Icon icon="heroicons:x-mark-20-solid" class="h-6 w-6 text-neutral-500" />
-					</PopoverButton>
+			<Transition v-bind="transitionProps">
+				<PopoverPanel
+					v-slot="{ close }"
+					class="fixed inset-x-0 top-0 z-50 origin-top scale-100 rounded-b-xl bg-white p-10 opacity-100 ring-1 ring-neutral-900/5 dark:bg-neutral-900 dark:ring-neutral-800"
+				>
+					<div class="flex flex-row-reverse items-center justify-between">
+						<PopoverButton class="-m-1 p-1">
+							<Icon
+								icon="heroicons:x-mark-20-solid"
+								class="h-6 w-6 text-neutral-500"
+							/>
+						</PopoverButton>
 
-					<span class="text-sm font-medium text-neutral-500">Menu</span>
-				</div>
+						<span class="text-sm font-medium text-neutral-500">Menu</span>
+					</div>
 
-				<Navigation v-slot="{ nav }" class="mt-6">
-					<ul
-						class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
-					>
-						<li v-for="link in nav" :key="link._path">
-							<NuxtLink :to="link._path" class="block py-3" @click="close()">
-								{{ link.title }}
-							</NuxtLink>
-						</li>
-					</ul>
-				</Navigation>
-			</PopoverPanel>
+					<Navigation v-slot="{ nav }" class="mt-6">
+						<ul
+							class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
+						>
+							<li v-for="link in nav" :key="link._path">
+								<NuxtLink :to="link._path" class="block py-3" @click="close()">
+									{{ link.title }}
+								</NuxtLink>
+							</li>
+						</ul>
+					</Navigation>
+				</PopoverPanel>
+			</Transition>
 		</Popover>
 	</div>
 </template>
@@ -58,4 +65,13 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { PopoverPanel, PopoverOverlay, Popover, PopoverButton } from "@headlessui/vue";
+
+const transitionProps = {
+	enterActiveClass: "transition duration-200 ease-out",
+	enterFromClass: "scale-95 opacity-0",
+	enterToClass: "scale-100 opacity-100",
+	leaveActiveClass: "transition duration-200 ease-in",
+	leaveFromClass: "scale-100 opacity-100",
+	leaveToClass: "scale-95 opacity-0",
+};
 </script>
