@@ -52,6 +52,13 @@
 						</li>
 					</ul>
 				</div>
+
+				<div class="col-span-2 mt-3 hidden px-16 lg:block">
+					<NuxtImg
+						src="induction-group"
+						class="aspect-[20/8] -rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-800"
+					/>
+				</div>
 			</div>
 		</Container>
 	</div>
