@@ -3,7 +3,7 @@
 		<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
 			<li
 				v-for="item in content"
-				:key="item._path"
+				:key="item._id"
 				class="group relative flex flex-col items-start"
 			>
 				<NuxtImg

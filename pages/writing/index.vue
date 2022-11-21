@@ -3,7 +3,7 @@
 		<ul class="grid grid-cols-2 gap-x-12 gap-y-16 lg:grid-cols-3">
 			<li
 				v-for="item in content"
-				:key="item._path"
+				:key="item._id"
 				class="group relative flex flex-col items-start"
 			>
 				<ContentItem :item="item">
