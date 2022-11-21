@@ -8,6 +8,12 @@
 		"generate": "nuxt generate",
 		"preview": "nuxt preview"
 	},
+	"prettier": {
+		"endOfLine": "lf",
+		"printWidth": 100,
+		"tabWidth": 4,
+		"useTabs": true
+	},
 	"dependencies": {
 		"@headlessui/tailwindcss": "^0.1.1",
 		"@headlessui/vue": "^1.7.4",
