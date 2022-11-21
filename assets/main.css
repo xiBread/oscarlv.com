@@ -4,7 +4,7 @@
 
 @layer utilities {
 	.use-prose {
-		@apply prose prose-neutral dark:prose-invert;
+		@apply prose prose-neutral dark:prose-invert prose-h1:font-bold prose-h1:leading-tight;
 	}
 }
 
