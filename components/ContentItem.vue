@@ -1,5 +1,5 @@
 <template>
-	<div class="mt-6 text-base font-semibold text-neutral-700 dark:text-neutral-200">
+	<div class="text-base font-semibold text-neutral-700 dark:text-neutral-200">
 		<div
 			class="absolute -inset-y-6 -inset-x-4 z-0 bg-neutral-200/50 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-neutral-800 sm:-inset-x-6 sm:rounded-2xl"
 		></div>
