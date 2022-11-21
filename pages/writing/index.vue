@@ -8,7 +8,7 @@
 			>
 				<ContentItem :item="item">
 					<dl>
-						<dd class="description">{{ item.type }}</dd>
+						<dd class="description">{{ item.category }}</dd>
 					</dl>
 				</ContentItem>
 			</li>

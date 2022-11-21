@@ -1,5 +1,5 @@
 ---
-type: Poetry
+category: Poetry
 ---
 
 # i hope i haunt u

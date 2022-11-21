@@ -1,5 +1,5 @@
 ---
-type: Flash Fiction
+category: Flash Fiction
 ---
 
 # The Idea
