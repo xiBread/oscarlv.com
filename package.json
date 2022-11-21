@@ -10,6 +10,7 @@
 	},
 	"prettier": {
 		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "ignore",
 		"printWidth": 100,
 		"tabWidth": 4,
 		"useTabs": true

@@ -18,9 +18,3 @@ import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 defineProps<{ item: ParsedContent }>();
 </script>
-
-<style>
-.description {
-	@apply relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400;
-}
-</style>
