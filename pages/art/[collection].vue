@@ -5,7 +5,7 @@
 				v-for="url in data"
 				:key="url"
 				type="button"
-				class="bg-neutral-100 dark:bg-neutral-800 dark:ring-1 dark:ring-neutral-700/30"
+				class="bg-neutral-100 dark:bg-neutral-800"
 				@click="openModal(url)"
 			>
 				<NuxtImg
