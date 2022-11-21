@@ -1,6 +1,6 @@
 <template>
 	<div class="pointer-events-none fixed inset-0 -z-10">
-		<canvas ref="lichtenberg" class="dark:brightness-[.25]"></canvas>
+		<canvas ref="lichtenberg" class="dark:brightness-[.4]"></canvas>
 	</div>
 </template>
 
@@ -23,7 +23,7 @@ onMounted(() => {
 	ctx.scale(dpr, dpr);
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.lineWidth = 1;
-	ctx.strokeStyle = "#c3c3c31a";
+	ctx.strokeStyle = "#c3c3c317";
 
 	let fixed = 0;
 	let queue = [
