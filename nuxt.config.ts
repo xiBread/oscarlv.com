@@ -81,15 +81,6 @@ export default defineNuxtConfig({
 			config.plugins?.push(lineClamp, typography, headlessui);
 		},
 	},
-	content: {
-		markdown: {
-			tags: {
-				h2: "h2",
-				h3: "h3",
-				h4: "h4",
-			},
-		},
-	},
 	image: {
 		imagekit: {
 			baseURL: "https://ik.imagekit.io/olv/",
