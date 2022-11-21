@@ -1,9 +1,10 @@
 {
 	"markdown.validate.enabled": false,
 	"markdownlint.config": {
-		"blanks-around-headers": false,
+		"blanks-around-headings": false,
 		"first-line-h1": false,
-		"heading-increment": false
+		"heading-increment": false,
+		"no-emphasis-as-heading": false
 	},
 	"tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
 }
