@@ -21,7 +21,7 @@
 							>
 								<Icon
 									:icon="isDark ? 'octicon:sun-16' : 'octicon:moon-16'"
-									class="block h-5 w-5 scale-x-[-1] text-neutral-400 hover:text-purple-500 dark:text-neutral-500 dark:hover:text-yellow-300"
+									class="block h-5 w-5 scale-x-[-1] text-neutral-500 hover:text-purple-500 dark:hover:text-yellow-300"
 								/>
 							</button>
 						</div>

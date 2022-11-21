@@ -1,6 +1,6 @@
 <template>
 	<Html lang="en">
-		<Body class="flex h-full flex-col dark:bg-neutral-900 dark:text-white">
+		<Body class="flex h-full flex-col dark:bg-[#0a0a0a] dark:text-white">
 			<Lichtenberg />
 
 			<div class="relative">

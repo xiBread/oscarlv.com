@@ -7,7 +7,7 @@
 				<div class="flex justify-center lg:pl-20">
 					<div class="max-w-xs px-2.5 sm:max-w-sm lg:max-w-none">
 						<NuxtImg
-							class="aspect-square rotate-3 rounded-2xl bg-neutral-100 object-cover shadow-lg dark:bg-neutral-800"
+							class="aspect-square rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-900"
 							src="shattered.jpg"
 							height="800"
 							width="800"
@@ -38,7 +38,7 @@
 						</li>
 
 						<li
-							class="mt-8 flex border-t border-neutral-200/60 pt-8 dark:border-zinc-800"
+							class="mt-8 flex border-t border-neutral-200/70 pt-8 dark:border-neutral-800"
 						>
 							<NuxtLink
 								:to="`mailto:${email}`"
@@ -69,9 +69,8 @@ const email = "oscar.leevermeren@gmail.com";
 	@apply flex
 		items-center
 		text-sm
-		text-neutral-400
-		hover:text-neutral-700
-		dark:text-neutral-500
+		text-neutral-500
+		hover:text-black
 		dark:hover:text-neutral-200;
 }
 

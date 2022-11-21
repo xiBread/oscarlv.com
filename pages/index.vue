@@ -12,7 +12,7 @@
 				>
 					<Icon
 						:icon="`cib:${platform.toLowerCase()}`"
-						class="h-5 w-5 text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-200"
+						class="h-5 w-5 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
 					/>
 				</NuxtLink>
 			</div>
@@ -24,7 +24,7 @@
 			<div
 				v-for="path in featured"
 				:key="path"
-				class="relative aspect-[9/10] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-800 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
+				class="relative aspect-[9/10] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
 				<NuxtImg
 					:src="path"
