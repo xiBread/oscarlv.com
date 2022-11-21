@@ -8,7 +8,16 @@
 			>
 				<ContentItem :item="item">
 					<dl>
-						<dd class="description">{{ item.category }}</dd>
+						<dt class="sr-only">Category</dt>
+						<dd class="description flex items-center">
+							{{ item.category }}
+
+							<Icon
+								v-if="item.explicit"
+								icon="material-symbols:explicit"
+								class="ml-2 h-4 w-4"
+							/>
+						</dd>
 					</dl>
 				</ContentItem>
 			</li>
@@ -17,5 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
+
 const { data } = await fetchContent();
 </script>

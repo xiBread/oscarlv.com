@@ -1,5 +1,6 @@
 ---
 category: Flash Fiction
+explicit: true
 ---
 
 # The Idea
