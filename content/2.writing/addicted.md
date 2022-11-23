@@ -6,7 +6,7 @@ category: Poetry
 
 i always wondered,\
 and still to this day wonder,\
-why you?\
+why you?
 
 what made you so damn special?\
 what made my heart skip a beat each time i saw you?\
@@ -14,7 +14,7 @@ what made my eyes glue to you in a room full of people?\
 what drew my heart closer to yours than to anyone else's?\
 why did everyone else become\
 "everyone else"\
-the second i met you?\
+the second i met you?
 
 i don't know what it was about you,\
 but that one thing about you\
