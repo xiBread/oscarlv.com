@@ -1,17 +1,19 @@
 <template>
 	<div class="flex flex-1 justify-end md:justify-center">
-		<Navigation v-slot="{ nav }" class="hidden md:block">
-			<ul class="flex px-3 text-sm font-medium text-neutral-500">
-				<li v-for="link in nav" :key="link._path">
-					<NuxtLink
-						:to="link._path"
-						class="relative mx-4 my-2 block hover:text-black dark:hover:text-neutral-200"
-					>
-						{{ link.title }}
-					</NuxtLink>
-				</li>
-			</ul>
-		</Navigation>
+		<nav class="hidden md:block">
+			<ContentNavigation v-slot="{ navigation }">
+				<ul class="flex px-3 text-sm font-medium text-neutral-500">
+					<li v-for="link in navigation" :key="link._path">
+						<NuxtLink
+							:to="link._path"
+							class="relative mx-4 my-2 block hover:text-black dark:hover:text-neutral-200"
+						>
+							{{ link.title }}
+						</NuxtLink>
+					</li>
+				</ul>
+			</ContentNavigation>
+		</nav>
 
 		<Popover class="md:hidden">
 			<PopoverButton class="mx-4 my-2 flex items-center text-sm font-medium">
@@ -45,17 +47,19 @@
 						<span class="text-sm font-medium text-neutral-500">Menu</span>
 					</div>
 
-					<Navigation v-slot="{ nav }" class="mt-6">
-						<ul
-							class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
-						>
-							<li v-for="link in nav" :key="link._path">
-								<NuxtLink :to="link._path" class="block py-3" @click="close()">
-									{{ link.title }}
-								</NuxtLink>
-							</li>
-						</ul>
-					</Navigation>
+					<nav class="mt-6">
+						<ContentNavigation v-slot="{ navigation }">
+							<ul
+								class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
+							>
+								<li v-for="link in navigation" :key="link._path">
+									<NuxtLink :to="link._path" class="block py-3" @click="close()">
+										{{ link.title }}
+									</NuxtLink>
+								</li>
+							</ul>
+						</ContentNavigation>
+					</nav>
 				</PopoverPanel>
 			</Transition>
 		</Popover>

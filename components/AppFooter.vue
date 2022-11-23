@@ -6,16 +6,18 @@
 					<div
 						class="flex flex-col items-center justify-between gap-6 text-sm text-neutral-500 sm:flex-row"
 					>
-						<Navigation v-slot="{ nav }" class="flex gap-6 font-medium">
-							<NuxtLink
-								v-for="link in nav"
-								:key="link._path"
-								:to="link._path"
-								class="hover:text-black dark:hover:text-neutral-200"
-							>
-								{{ link.title }}
-							</NuxtLink>
-						</Navigation>
+						<nav class="flex gap-6 font-medium">
+							<ContentNavigation v-slot="{ navigation }">
+								<NuxtLink
+									v-for="link in navigation"
+									:key="link._path"
+									:to="link._path"
+									class="hover:text-black dark:hover:text-neutral-200"
+								>
+									{{ link.title }}
+								</NuxtLink>
+							</ContentNavigation>
+						</nav>
 
 						<p
 							class="select-none opacity-50 transition-opacity hover:opacity-100 sm:order-first"
