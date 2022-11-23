@@ -6,7 +6,6 @@ export default defineNuxtConfig({
 	css: ["@/assets/main.css"],
 	app: {
 		head: {
-			title: "",
 			meta: [
 				{
 					name: "theme-color",
