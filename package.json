@@ -4,7 +4,6 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev",
-		"prod": "node .output/server/index.mjs",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview"
 	},
