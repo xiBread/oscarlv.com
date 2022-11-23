@@ -1,5 +1,3 @@
-import headlessui from "@headlessui/tailwindcss";
-import lineClamp from "@tailwindcss/line-clamp";
 import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 
@@ -78,7 +76,7 @@ export default defineNuxtConfig({
 	},
 	hooks: {
 		"tailwindcss:config": (config: Config) => {
-			config.plugins?.push(lineClamp, typography, headlessui);
+			config.plugins?.push(typography);
 		},
 	},
 	image: {
