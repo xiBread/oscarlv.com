@@ -24,13 +24,13 @@
 			<div
 				v-for="path in featured"
 				:key="path"
-				class="relative aspect-[9/10] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
+				class="relative aspect-[6/7] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
 				<NuxtImg
 					:src="path"
 					class="absolute inset-0 h-full w-full object-cover"
-					height="3000"
-					width="2400"
+					width="1800"
+					height="2100"
 					alt=""
 					loading="lazy"
 				/>

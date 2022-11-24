@@ -9,8 +9,8 @@
 				<NuxtImg
 					:src="item.cover"
 					class="z-20 mb-6 aspect-square rounded-2xl object-cover"
-					height="800"
 					width="800"
+					height="800"
 					alt=""
 					loading="lazy"
 				/>

@@ -15,8 +15,8 @@
 				<NuxtImg
 					:src="url"
 					class="aspect-square object-cover"
-					height="800"
 					width="800"
+					height="800"
 					loading="lazy"
 				/>
 			</button>
