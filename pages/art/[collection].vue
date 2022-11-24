@@ -1,6 +1,6 @@
 <template>
 	<NuxtLayout v-if="layout === 'article'" name="article">
-		<ContentDoc tag="article" class="use-prose" />
+		<ContentDoc tag="article" class="use-prose !max-w-none" />
 	</NuxtLayout>
 
 	<NuxtLayout v-else name="content">
