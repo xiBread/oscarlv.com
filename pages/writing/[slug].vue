@@ -1,9 +1,5 @@
 <template>
-	<div class="mt-16 sm:px-8 lg:mt-28">
-		<Container>
-			<div class="mx-auto max-w-2xl">
-				<ContentDoc tag="article" class="use-prose" />
-			</div>
-		</Container>
-	</div>
+	<NuxtLayout name="article">
+		<ContentDoc tag="article" class="use-prose" />
+	</NuxtLayout>
 </template>
