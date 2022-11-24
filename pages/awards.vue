@@ -9,7 +9,7 @@
 				>
 					<div class="group relative flex flex-col items-start md:col-span-3">
 						<span
-							class="text-base font-semibold tracking-tight text-black dark:text-neutral-200"
+							class="text-base font-semibold tracking-tight text-black dark:text-white"
 						>
 							{{ item.title }}
 						</span>

@@ -6,7 +6,7 @@
 					<li v-for="link in navigation" :key="link._path">
 						<NuxtLink
 							:to="link._path"
-							class="relative mx-4 my-2 block hover:text-black dark:hover:text-neutral-200"
+							class="relative mx-4 my-2 block hover:text-black dark:hover:text-white"
 						>
 							{{ link.title }}
 						</NuxtLink>

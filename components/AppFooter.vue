@@ -12,7 +12,7 @@
 									v-for="link in navigation"
 									:key="link._path"
 									:to="link._path"
-									class="hover:text-black dark:hover:text-neutral-200"
+									class="hover:text-black dark:hover:text-white"
 								>
 									{{ link.title }}
 								</NuxtLink>

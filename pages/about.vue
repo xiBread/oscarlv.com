@@ -82,7 +82,7 @@ const email = "oscar.leevermeren@gmail.com";
 		text-sm
 		text-neutral-500
 		hover:text-black
-		dark:hover:text-neutral-200;
+		dark:hover:text-white;
 }
 
 .contact-link > svg {
