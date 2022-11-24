@@ -1,5 +1,4 @@
 import typography from "@tailwindcss/typography";
-import type { Config } from "tailwindcss";
 
 export default defineNuxtConfig({
 	modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
@@ -73,11 +72,6 @@ export default defineNuxtConfig({
 	typescript: {
 		shim: false,
 	},
-	hooks: {
-		"tailwindcss:config": (config: Config) => {
-			config.plugins?.push(typography);
-		},
-	},
 	image: {
 		imagekit: {
 			baseURL: "https://ik.imagekit.io/olv/",
@@ -89,6 +83,7 @@ export default defineNuxtConfig({
 		config: {
 			content: [],
 			darkMode: "class",
+			plugins: [typography({ className: "prose" })],
 		},
 	},
 });
