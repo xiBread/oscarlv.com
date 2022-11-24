@@ -57,6 +57,10 @@
 					<NuxtImg
 						src="induction-group"
 						class="aspect-[20/8] -rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-800"
+						height="2100"
+						width="4800"
+						alt=""
+						loading="lazy"
 					/>
 				</div>
 			</div>
