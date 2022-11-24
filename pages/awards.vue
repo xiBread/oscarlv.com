@@ -1,6 +1,6 @@
 <template>
 	<NuxtLayout name="content">
-		<div class="md:border-l md:border-neutral-200/70 md:pl-6 md:dark:border-neutral-800">
+		<div class="md:border-l-2 md:border-neutral-200/70 md:pl-6 md:dark:border-neutral-800">
 			<div class="flex max-w-3xl flex-col space-y-16">
 				<article
 					v-for="item in content"
