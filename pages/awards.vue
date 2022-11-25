@@ -57,7 +57,7 @@ const { page } = useContent();
 
 appendHead(page.value);
 
-const content = data.sort((a, b) => a.order - b.order);
+const content = data.sort((a, b) => b.order - a.order);
 
 const iso = (date: string) => new Date(date).toISOString();
 
