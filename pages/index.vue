@@ -43,6 +43,9 @@
 import { Icon } from "@iconify/vue";
 
 const { socials } = useAppConfig();
+const { page } = useContent();
+
+appendHead(page.value);
 
 const featured = [
 	"rose-fire.jpg",

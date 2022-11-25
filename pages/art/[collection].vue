@@ -39,7 +39,10 @@
 <script setup lang="ts">
 import { Dialog, DialogPanel } from "@headlessui/vue";
 
+const { page } = useContent();
 const route = useRoute();
+
+appendHead(page.value);
 const collection = route.params.collection;
 
 const layout = collection === "vox-obscura" ? "article" : "content";

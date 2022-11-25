@@ -19,7 +19,7 @@
 						>
 							<dt class="sr-only">Date</dt>
 							<dd>
-								<time :datetime="new Date(item.date).toISOString()">
+								<time :datetime="iso(item.date)">
 									<span
 										class="absolute inset-y-0 left-0 flex items-center"
 										aria-hidden="true"
@@ -42,9 +42,7 @@
 					>
 						<dt class="sr-only">Date</dt>
 						<dd>
-							<time :datetime="new Date(item.date).toISOString()">
-								{{ format(item.date) }}
-							</time>
+							<time :datetime="iso(item.date)">{{ format(item.date) }}</time>
 						</dd>
 					</dl>
 				</article>
@@ -55,7 +53,13 @@
 
 <script setup lang="ts">
 const data = await fetchContent();
+const { page } = useContent();
+
+appendHead(page.value);
+
 const content = data.sort((a, b) => a.order - b.order);
+
+const iso = (date: string) => new Date(date).toISOString();
 
 const format = (date: string) => {
 	return new Intl.DateTimeFormat("en-US", {

@@ -71,8 +71,12 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 
-const { socials } = useAppConfig();
 const email = "oscar.leevermeren@gmail.com";
+
+const { socials } = useAppConfig();
+const { page } = useContent();
+
+appendHead(page.value);
 </script>
 
 <style>

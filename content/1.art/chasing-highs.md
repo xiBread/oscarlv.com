@@ -1,6 +1,6 @@
 ---
-cover: chasing-highs/chasing-highs-002.jpg
 description: Running from the unknown sorrows within ourselves.
+img: chasing-highs/chasing-highs-002.jpg
 ---
 
 # Chasing Highs

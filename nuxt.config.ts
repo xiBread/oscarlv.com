@@ -72,6 +72,9 @@ export default defineNuxtConfig({
 	typescript: {
 		shim: false,
 	},
+	content: {
+		documentDriven: true,
+	},
 	image: {
 		imagekit: {
 			baseURL: "https://ik.imagekit.io/olv/",

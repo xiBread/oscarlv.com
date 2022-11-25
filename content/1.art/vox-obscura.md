@@ -1,6 +1,6 @@
 ---
-cover: vox-obscura/nocturnal.jpg
 description: Visualizing subtleties of the human experience that have no language.
+img: vox-obscura/nocturnal.jpg
 ---
 
 # Vox Obscura (AP Art)

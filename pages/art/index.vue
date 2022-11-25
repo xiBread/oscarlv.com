@@ -7,7 +7,7 @@
 				class="group relative flex flex-col items-start"
 			>
 				<NuxtImg
-					:src="item.cover"
+					:src="item.img"
 					class="z-20 mb-6 aspect-square rounded-2xl object-cover"
 					width="800"
 					height="800"
@@ -24,5 +24,8 @@
 </template>
 
 <script setup lang="ts">
+const { page } = useContent();
 const content = await fetchContent();
+
+appendHead(page.value);
 </script>

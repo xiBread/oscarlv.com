@@ -1,6 +1,6 @@
 ---
-cover: stray-nights/stray-nights-001.jpg
 description: A moment of private liberation, hidden from the world's judgement.
+img: stray-nights/stray-nights-001.jpg
 ---
 
 # Stray Nights

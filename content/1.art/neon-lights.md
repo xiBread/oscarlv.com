@@ -1,6 +1,6 @@
 ---
-cover: neon-lights/neon-lights-001.jpg
 description: A technicolor daydream born of breath, heat, and a spark.
+img: neon-lights/neon-lights-001.jpg
 ---
 
 # Neon Lights

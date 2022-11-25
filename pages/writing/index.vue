@@ -28,5 +28,8 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 
+const { page } = useContent();
 const content = await fetchContent();
+
+appendHead(page.value);
 </script>
