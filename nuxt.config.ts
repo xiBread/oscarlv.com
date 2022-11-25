@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 			meta: [
 				{
 					name: "theme-color",
-					content: "white",
+					content: "#ffffff",
 				},
 				{
 					name: "theme-color",
