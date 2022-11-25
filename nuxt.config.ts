@@ -16,20 +16,12 @@ export default defineNuxtConfig({
 					media: "(prefers-color-scheme: dark)",
 				},
 				{
-					property: "og:title",
-					content: "Oscar Lee-Vermeren",
-				},
-				{
 					property: "og:type",
 					content: "website",
 				},
 				{
 					property: "og:image",
 					content: "/portrait.jpg",
-				},
-				{
-					property: "og:url",
-					content: "https://www.oscarlv.com",
 				},
 			],
 			link: [
