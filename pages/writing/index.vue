@@ -1,6 +1,6 @@
 <template>
 	<NuxtLayout name="content">
-		<ul class="grid grid-cols-2 gap-x-12 gap-y-16 lg:grid-cols-3">
+		<ul class="grid grid-cols-2 gap-x-12 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
 			<li
 				v-for="item in content"
 				:key="item._id"
