@@ -19,7 +19,7 @@
 						>
 							<dt class="sr-only">Date</dt>
 							<dd>
-								<time :datetime="iso(item.date)">
+								<time :datetime="item.date">
 									<span
 										class="absolute inset-y-0 left-0 flex items-center"
 										aria-hidden="true"
@@ -42,7 +42,7 @@
 					>
 						<dt class="sr-only">Date</dt>
 						<dd>
-							<time :datetime="iso(item.date)">{{ format(item.date) }}</time>
+							<time :datetime="item.date">{{ format(item.date) }}</time>
 						</dd>
 					</dl>
 				</article>
@@ -59,13 +59,5 @@ appendHead(page.value);
 
 const content = data.sort((a, b) => b.order - a.order);
 
-const iso = (date: string) => new Date(date).toISOString();
-
-const format = (date: string) => {
-	return new Intl.DateTimeFormat("en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	}).format(new Date(date));
-};
+const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;
 </script>

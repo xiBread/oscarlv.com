@@ -1,5 +1,5 @@
 ---
-date: January 28, 2022
+date: "2022-01-28"
 order: 2
 ---
 
