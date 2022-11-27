@@ -4,13 +4,13 @@
 			<Lichtenberg />
 
 			<div class="relative">
-				<AppHeader />
+				<Header />
 
 				<main>
 					<NuxtPage />
 				</main>
 
-				<AppFooter />
+				<Footer />
 			</div>
 		</Body>
 	</Html>

@@ -11,7 +11,7 @@
 							</NuxtLink>
 						</div>
 
-						<AppHeaderNav />
+						<HeaderNav />
 
 						<div class="flex justify-end md:flex-1">
 							<button
