@@ -6,7 +6,8 @@
 					<div class="relative flex items-center gap-4">
 						<div class="flex flex-1">
 							<NuxtLink to="/" class="mx-3" aria-label="Home">
-								<AppLogo />
+								<!-- eslint-disable-next-line vue/no-v-html -->
+								<span v-html="logo"></span>
 							</NuxtLink>
 						</div>
 
@@ -33,6 +34,8 @@
 </template>
 
 <script setup lang="ts">
+// @ts-expect-error
+import logo from "~/assets/logo.svg?raw";
 import { Icon } from "@iconify/vue";
 
 const isDark = useDark();
