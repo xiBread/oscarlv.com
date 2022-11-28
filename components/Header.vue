@@ -41,3 +41,9 @@ import { Icon } from "@iconify/vue";
 const isDark = useDark();
 const toggle = useToggle(isDark);
 </script>
+
+<style>
+svg {
+	@apply h-7 w-7 fill-black dark:fill-white;
+}
+</style>
