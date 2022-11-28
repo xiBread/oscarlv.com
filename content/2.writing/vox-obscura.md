@@ -11,6 +11,7 @@ The goal of *Vox Obscura* (literally *dark voice*; figuratively *a/the voice in 
 
 1. [Nocturnal](#nocturnal)
 2. [Duality](#duality)
+3. [Stories](#stories)
 
 ---
 
@@ -29,3 +30,7 @@ I used photography as my medium because a camera is able to take a snapshot of t
 *Duality* represents the secluded solace of hotel rooms&mdash;existing as a state suspended halfway between occupied and vacant. It illustrates the temporary relief from the routine of life&mdash;chores, family, work, and other mundane distractions.
 
 To effectively portray this paradoxical condition, I left the room as it was when I walked in. The only adjustment made is an open suitcase with a couple of articles of clothing sitting on the bed to capture the moment that exists during arrival and departure.
+
+## Stories
+
+![Stories](https://ik.imagekit.io/olv/vox-obscura/stories.jpg)
