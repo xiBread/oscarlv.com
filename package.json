@@ -33,6 +33,6 @@
 		"h3": "^1.0.1",
 		"nuxt": "^3.0.0",
 		"prettier": "^2.8.0",
-		"prettier-plugin-tailwindcss": "^0.1.13"
+		"prettier-plugin-tailwindcss": "^0.2.0"
 	}
 }
