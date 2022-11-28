@@ -1,9 +1,5 @@
 <template>
-	<NuxtLayout v-if="layout === 'article'" name="article">
-		<ContentDoc tag="article" class="use-prose !max-w-none" />
-	</NuxtLayout>
-
-	<NuxtLayout v-else name="content">
+	<NuxtLayout name="content">
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			<button
 				v-for="url in data"
@@ -43,11 +39,12 @@ const { page } = useContent();
 const route = useRoute();
 
 appendHead(page.value);
-const collection = route.params.collection;
 
-const layout = collection === "vox-obscura" ? "article" : "content";
-
-const data = await $fetch("/api/assets", { params: { collection } });
+const data = await $fetch("/api/assets", {
+	params: {
+		collection: route.params.collection,
+	},
+});
 
 const isOpen = ref(false);
 const target = ref("");
