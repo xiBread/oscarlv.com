@@ -7,10 +7,12 @@ export default defineNuxtConfig({
 		head: {
 			meta: [
 				{
+					key: "tc-light",
 					name: "theme-color",
 					content: "#ffffff",
 				},
 				{
+					key: "tc-dark",
 					name: "theme-color",
 					content: "#171717",
 					media: "(prefers-color-scheme: dark)",
