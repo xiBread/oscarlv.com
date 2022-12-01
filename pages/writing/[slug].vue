@@ -2,14 +2,26 @@
 	<div class="mt-16 sm:px-8 lg:mt-28">
 		<Container>
 			<div class="mx-auto max-w-3xl">
-				<ContentDoc tag="article" class="use-prose !max-w-none" />
+				<article class="use-prose !max-w-none" v-html="item.content"></article>
 			</div>
 		</Container>
 	</div>
 </template>
 
 <script setup lang="ts">
-const { page } = useContent();
+import type { WritingItem } from "~~/util/types";
 
-appendHead(page.value);
+const route = useRoute();
+const { getItems } = useDirectusItems();
+
+const [item] = await getItems<[WritingItem]>({
+	collection: "writing",
+	params: {
+		filter: {
+			slug: route.params.slug,
+		},
+	},
+});
+
+useItemHead(item);
 </script>

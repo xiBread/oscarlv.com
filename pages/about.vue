@@ -16,7 +16,10 @@
 					</div>
 				</div>
 
-				<ContentDoc class="use-prose lg:order-first lg:row-span-2" />
+				<article
+					class="use-prose lg:order-first lg:row-span-2"
+					v-html="item.content"
+				></article>
 
 				<div class="lg:pl-20">
 					<ul>
@@ -70,13 +73,15 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import type { Item } from "~/util/types";
 
 const email = "oscar.leevermeren@gmail.com";
 
 const { socials } = useAppConfig();
-const { page } = useContent();
+const { getSingletonItem } = useDirectusItems();
 
-appendHead(page.value);
+const item = await getSingletonItem<Item>({ collection: "about" });
+useItemHead(item);
 </script>
 
 <style>

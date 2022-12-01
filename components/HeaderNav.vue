@@ -1,18 +1,16 @@
 <template>
 	<div class="flex flex-1 justify-end md:justify-center">
 		<nav class="hidden md:block">
-			<ContentNavigation v-slot="{ navigation }">
-				<ul class="flex px-3 text-sm font-medium text-neutral-500">
-					<li v-for="link in navigation" :key="link._path">
-						<NuxtLink
-							:to="link._path"
-							class="relative mx-4 my-2 block hover:text-black dark:hover:text-white"
-						>
-							{{ link.title }}
-						</NuxtLink>
-					</li>
-				</ul>
-			</ContentNavigation>
+			<ul class="flex px-3 text-sm font-medium text-neutral-500">
+				<li v-for="item in navigation" :key="item">
+					<NuxtLink
+						:to="`/${item.toLowerCase()}`"
+						class="relative mx-4 my-2 block hover:text-black dark:hover:text-white"
+					>
+						{{ item }}
+					</NuxtLink>
+				</li>
+			</ul>
 		</nav>
 
 		<Popover class="md:hidden">
@@ -48,17 +46,19 @@
 					</div>
 
 					<nav class="mt-6">
-						<ContentNavigation v-slot="{ navigation }">
-							<ul
-								class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
-							>
-								<li v-for="link in navigation" :key="link._path">
-									<NuxtLink :to="link._path" class="block py-3" @click="close()">
-										{{ link.title }}
-									</NuxtLink>
-								</li>
-							</ul>
-						</ContentNavigation>
+						<ul
+							class="-my-2 divide-y divide-neutral-200/50 text-base dark:divide-neutral-100/5 dark:text-neutral-300"
+						>
+							<li v-for="item in navigation" :key="item">
+								<NuxtLink
+									:to="`/${item.toLowerCase()}`"
+									class="block py-3"
+									@click="close()"
+								>
+									{{ item }}
+								</NuxtLink>
+							</li>
+						</ul>
 					</nav>
 				</PopoverPanel>
 			</Transition>
@@ -69,6 +69,8 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { PopoverPanel, PopoverOverlay, Popover, PopoverButton } from "@headlessui/vue";
+
+const { navigation } = useAppConfig();
 
 const transitionProps = {
 	enterActiveClass: "transition duration-200 ease-out",

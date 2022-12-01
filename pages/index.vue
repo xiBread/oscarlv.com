@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<ContentDoc class="use-prose max-w-2xl" />
+			<header class="use-prose max-w-2xl" v-html="item.content"></header>
 
 			<div class="mt-6 flex gap-7">
 				<NuxtLink
@@ -41,11 +41,13 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import type { Item } from "~/util/types";
 
 const { socials } = useAppConfig();
-const { page } = useContent();
+const { getSingletonItem } = useDirectusItems();
 
-appendHead(page.value);
+const item = await getSingletonItem<Item>({ collection: "Home" });
+useItemHead(item);
 
 const featured = [
 	"rose-fire.jpg",

@@ -3,8 +3,8 @@
 		<div class="md:border-l-2 md:border-neutral-200/70 md:pl-6 md:dark:border-neutral-800">
 			<div class="flex max-w-3xl flex-col space-y-16">
 				<article
-					v-for="item in content"
-					:key="item._id"
+					v-for="item in items"
+					:key="item.slug"
 					class="md:grid md:grid-cols-4 md:items-baseline"
 				>
 					<div class="group relative flex flex-col items-start md:col-span-3">
@@ -34,7 +34,7 @@
 							</dd>
 						</dl>
 
-						<p class="description">{{ item.description }}</p>
+						<div class="description" v-html="item.content"></div>
 					</div>
 
 					<dl
@@ -52,12 +52,20 @@
 </template>
 
 <script setup lang="ts">
-const data = await fetchContent();
-const { page } = useContent();
+import type { AwardItem } from "~/util/types";
 
-appendHead(page.value);
+const { getItems } = useDirectusItems();
 
-const content = data.sort((a, b) => b.order - a.order);
+const items = await getItems<AwardItem[]>({
+	collection: "awards",
+	params: {
+		filter: {
+			slug: {
+				_neq: "index",
+			},
+		},
+	},
+});
 
 const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;
 </script>

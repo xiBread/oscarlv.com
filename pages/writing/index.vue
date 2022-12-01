@@ -2,8 +2,8 @@
 	<NuxtLayout name="content">
 		<ul class="grid grid-cols-2 gap-x-12 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
 			<li
-				v-for="item in content"
-				:key="item._id"
+				v-for="item in items"
+				:key="item.slug"
 				class="group relative flex flex-col items-start"
 			>
 				<ContentItem :item="item">
@@ -25,11 +25,22 @@
 	</NuxtLayout>
 </template>
 
+<script lang="ts"></script>
+
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import type { WritingItem } from "~/util/types";
 
-const { page } = useContent();
-const content = await fetchContent();
+const { getItems } = useDirectusItems();
 
-appendHead(page.value);
+const items = await getItems<WritingItem[]>({
+	collection: "writing",
+	params: {
+		filter: {
+			slug: {
+				_neq: "index",
+			},
+		},
+	},
+});
 </script>

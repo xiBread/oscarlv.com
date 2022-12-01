@@ -1,8 +1,8 @@
 import typography from "@tailwindcss/typography";
 
 export default defineNuxtConfig({
-	modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
-	css: ["@/assets/main.css"],
+	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt", "nuxt-directus"],
+	css: ["~/assets/main.css"],
 	app: {
 		head: {
 			meta: [
@@ -18,10 +18,6 @@ export default defineNuxtConfig({
 				{
 					property: "og:type",
 					content: "website",
-				},
-				{
-					property: "og:image",
-					content: "/portrait.jpg",
 				},
 			],
 			link: [
@@ -54,18 +50,12 @@ export default defineNuxtConfig({
 			],
 		},
 	},
-	appConfig: {
-		socials: {
-			Twitter: "https://www.twitter.com/oleevermeren",
-			Instagram: "https://www.instagram.com/isocausality",
-			GitHub: "https://www.github.com/xiBread",
-		},
-	},
 	typescript: {
 		shim: false,
 	},
-	content: {
-		documentDriven: true,
+	directus: {
+		url: process.env.DIRECTUS_URL,
+		token: process.env.DIRECTUS_TOKEN,
 	},
 	image: {
 		imagekit: {

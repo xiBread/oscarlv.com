@@ -15,11 +15,3 @@
 		</Body>
 	</Html>
 </template>
-
-<script setup lang="ts">
-const name = "Oscar Lee-Vermeren";
-
-useHead({
-	titleTemplate: (page) => (page ? `${page} - ${name}` : name),
-});
-</script>

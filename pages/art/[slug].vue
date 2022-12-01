@@ -35,14 +35,11 @@
 <script setup lang="ts">
 import { Dialog, DialogPanel } from "@headlessui/vue";
 
-const { page } = useContent();
 const route = useRoute();
-
-appendHead(page.value);
 
 const data = await $fetch("/api/assets", {
 	params: {
-		collection: route.params.collection,
+		collection: route.params.slug,
 	},
 });
 

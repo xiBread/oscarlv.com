@@ -7,16 +7,14 @@
 						class="flex flex-col items-center justify-between gap-6 text-sm text-neutral-500 sm:flex-row"
 					>
 						<nav class="flex gap-6 font-medium">
-							<ContentNavigation v-slot="{ navigation }">
-								<NuxtLink
-									v-for="link in navigation"
-									:key="link._path"
-									:to="link._path"
-									class="hover:text-black dark:hover:text-white"
-								>
-									{{ link.title }}
-								</NuxtLink>
-							</ContentNavigation>
+							<NuxtLink
+								v-for="item in navigation"
+								:key="item"
+								:to="`/${item.toLowerCase()}`"
+								class="hover:text-black dark:hover:text-white"
+							>
+								{{ item }}
+							</NuxtLink>
 						</nav>
 
 						<p
@@ -30,3 +28,7 @@
 		</div>
 	</footer>
 </template>
+
+<script setup lang="ts">
+const { navigation } = useAppConfig();
+</script>
