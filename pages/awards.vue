@@ -34,7 +34,10 @@
 							</dd>
 						</dl>
 
-						<div class="description" v-html="item.content"></div>
+						<div
+							class="description [&_a]:dark:font-medium [&_a]:dark:text-white [&_a]:dark:underline"
+							v-html="item.content"
+						></div>
 					</div>
 
 					<dl
