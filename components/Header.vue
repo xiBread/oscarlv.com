@@ -6,7 +6,6 @@
 					<div class="relative flex items-center gap-4">
 						<div class="flex flex-1">
 							<NuxtLink to="/" class="mx-3" aria-label="Home">
-								<!-- eslint-disable-next-line vue/no-v-html -->
 								<span v-html="logo"></span>
 							</NuxtLink>
 						</div>
