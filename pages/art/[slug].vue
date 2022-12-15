@@ -23,7 +23,7 @@
 
 			<div class="fixed inset-0 overflow-y-auto">
 				<div class="flex min-h-full items-center justify-center">
-					<DialogPanel class="flex h-full overflow-hidden">
+					<DialogPanel class="flex h-full items-center overflow-hidden">
 						<NuxtImg
 							:src="target"
 							class="m-auto max-h-screen max-w-full p-6 sm:p-16"
@@ -65,4 +65,17 @@ function closeModal() {
 	isOpen.value = false;
 	isLoading.value = true;
 }
+
+function navigateModal(direction: number) {
+	if (!isOpen.value) return;
+
+	const current = data.indexOf(target.value);
+	const next =
+		direction === -1 ? (current > 0 ? current : data.length) - 1 : (current + 1) % data.length;
+
+	target.value = data[next];
+}
+
+onKeyStroke("ArrowLeft", () => navigateModal(-1));
+onKeyStroke("ArrowRight", () => navigateModal(1));
 </script>
