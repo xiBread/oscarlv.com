@@ -46,7 +46,7 @@ import type { Item } from "~/util/types";
 const { socials } = useAppConfig();
 const { getSingletonItem } = useDirectusItems();
 
-const item = await getSingletonItem<Item>({ collection: "Home" });
+const item = await getSingletonItem<Item>({ collection: "home" });
 useItemHead(item);
 
 const featured = [
