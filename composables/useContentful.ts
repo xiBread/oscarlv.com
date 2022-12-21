@@ -5,8 +5,8 @@ import ctf, { type EntriesQueries } from "contentful";
 export default function useContentful() {
 	const config = useRuntimeConfig();
 	const client = ctf.createClient({
-		space: config.public.contentful.space,
-		accessToken: config.public.contentful.accessToken,
+		space: "14cg5n5pc9y2",
+		accessToken: "MSv_XHu_4jjONl-Z_PGvoWdJgoeWtJjgC7tyZPKkd84",
 	});
 
 	async function getSingleAsset(title: string): Promise<string> {
