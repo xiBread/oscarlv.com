@@ -2,7 +2,10 @@
 	<div class="mt-16 sm:px-8 lg:mt-28">
 		<Container>
 			<div class="mx-auto max-w-3xl">
-				<article class="use-prose !max-w-none" v-html="body"></article>
+				<article
+					class="use-prose !max-w-none [&_p]:whitespace-pre-wrap"
+					v-html="body"
+				></article>
 			</div>
 		</Container>
 	</div>
