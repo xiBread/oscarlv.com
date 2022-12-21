@@ -10,7 +10,7 @@
 						:key="entry.slug"
 						class="group relative flex flex-col items-start"
 					>
-						<ContentItem :item="entry">
+						<ContentItem :entry="entry">
 							<dl>
 								<dt class="sr-only">Category</dt>
 								<dd class="description flex items-center">

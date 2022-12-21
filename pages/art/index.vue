@@ -19,7 +19,7 @@
 							loading="lazy"
 						/>
 
-						<ContentItem :item="entry">
+						<ContentItem :entry="entry">
 							<p class="description">{{ entry.description }}</p>
 						</ContentItem>
 					</li>
