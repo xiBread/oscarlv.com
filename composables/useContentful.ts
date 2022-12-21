@@ -1,10 +1,10 @@
 import { documentToHtmlString as render } from "@contentful/rich-text-html-renderer";
 import type { Entry } from "~/util/types";
-import { type EntriesQueries, createClient } from "contentful";
+import ctf, { type EntriesQueries } from "contentful";
 
 export default function useContentful() {
 	const config = useRuntimeConfig();
-	const client = createClient(config.public.contentful);
+	const client = ctf.createClient(config.public.contentful);
 
 	async function getSingleAsset(title: string): Promise<string> {
 		const { items } = await client.getAssets({ "fields.title": title });
