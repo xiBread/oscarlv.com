@@ -1,10 +1,13 @@
-import type { Item } from "~/util/types";
+import type { Entry } from "~/util/types";
 
-export default function useItemHead(item: Item): void {
-	const title = `${item.title} - Oscar Lee-Vermeren`;
-	const description = /(?<=\n)(.+?)(?=\n|$)/.exec(item.content.replace(/<[^>]+>/g, ""))?.[1];
+export default function useEntryHead(entry: Entry): void {
+	const { render } = useContentful();
+	const body = render(entry.body);
 
-	const image = "image" in item ? `https://ik.imagekit.io/olv/${item.image}` : "/portrait.jpg";
+	const title = `${entry.title} - Oscar Lee-Vermeren`;
+	const description = /(?<=\n)(.+?)(?=\n|$)/.exec(body.replace(/<[^>]+>/g, ""))?.[1];
+
+	const image = "image" in entry ? `https://ik.imagekit.io/olv/${entry.image}` : "/portrait.jpg";
 
 	const route = useRoute();
 	const url = new URL(route.path, "https://www.oscarlv.com");

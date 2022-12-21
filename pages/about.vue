@@ -6,19 +6,18 @@
 			>
 				<div class="flex justify-center lg:pl-20">
 					<div class="max-w-xs px-2.5 sm:max-w-sm lg:max-w-none">
-						<NuxtImg
+						<Image
 							class="aspect-square rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-900"
-							src="shattered.jpg"
+							src="shattered"
 							width="800"
 							height="800"
-							alt=""
 						/>
 					</div>
 				</div>
 
 				<article
 					class="use-prose lg:order-first lg:row-span-2"
-					v-html="item.content"
+					v-html="render(entry.body)"
 				></article>
 
 				<div class="lg:pl-20">
@@ -57,12 +56,11 @@
 				</div>
 
 				<div class="col-span-2 mt-3 hidden px-16 lg:block">
-					<NuxtImg
+					<Image
 						src="induction-group"
 						class="aspect-[5/2] -rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-800"
 						width="2500"
 						height="1000"
-						alt=""
 						loading="lazy"
 					/>
 				</div>
@@ -73,15 +71,14 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { Item } from "~/util/types";
 
 const email = "oscar.leevermeren@gmail.com";
 
 const { socials } = useAppConfig();
-const { getSingletonItem } = useDirectusItems();
+const { getLandingPageEntry, render } = useContentful();
 
-const item = await getSingletonItem<Item>({ collection: "about" });
-useItemHead(item);
+const entry = await getLandingPageEntry("About");
+useEntryHead(entry);
 </script>
 
 <style>

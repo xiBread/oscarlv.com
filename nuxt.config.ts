@@ -1,7 +1,7 @@
 import typography from "@tailwindcss/typography";
 
 export default defineNuxtConfig({
-	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt", "nuxt-directus"],
+	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 	css: ["~/assets/main.css"],
 	app: {
 		head: {
@@ -52,17 +52,19 @@ export default defineNuxtConfig({
 			],
 		},
 	},
+	runtimeConfig: {
+		public: {
+			contentful: {
+				accessToken: process.env.CTF_ACCESS_TOKEN,
+				space: process.env.CTF_SPACE_ID,
+			},
+		},
+	},
 	typescript: {
 		shim: false,
 	},
-	directus: {
-		url: process.env.DIRECTUS_URL,
-		token: process.env.DIRECTUS_TOKEN,
-	},
 	image: {
-		imagekit: {
-			baseURL: "https://ik.imagekit.io/olv/",
-		},
+		contentful: {},
 	},
 	tailwindcss: {
 		cssPath: "~/assets/main.css",

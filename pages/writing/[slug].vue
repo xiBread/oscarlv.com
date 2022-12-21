@@ -2,26 +2,21 @@
 	<div class="mt-16 sm:px-8 lg:mt-28">
 		<Container>
 			<div class="mx-auto max-w-3xl">
-				<article class="use-prose !max-w-none" v-html="item.content"></article>
+				<article class="use-prose !max-w-none" v-html="render(entry.body)"></article>
 			</div>
 		</Container>
 	</div>
 </template>
 
 <script setup lang="ts">
-import type { WritingItem } from "~~/util/types";
+import type { WritingEntry } from "~/util/types";
 
 const route = useRoute();
-const { getItems } = useDirectusItems();
+const { getSingleEntry, render } = useContentful();
 
-const [item] = await getItems<[WritingItem]>({
-	collection: "writing",
-	params: {
-		filter: {
-			slug: route.params.slug,
-		},
-	},
+const entry = await getSingleEntry<WritingEntry>("writing", {
+	"fields.slug": route.params.slug,
 });
 
-useItemHead(item);
+useEntryHead(entry);
 </script>

@@ -1,41 +1,46 @@
 <template>
-	<NuxtLayout name="content">
-		<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
-			<li
-				v-for="item in items"
-				:key="item.slug"
-				class="group relative flex flex-col items-start"
-			>
-				<NuxtImg
-					:src="item.image!"
-					class="z-20 mb-6 aspect-square rounded-2xl object-cover"
-					width="800"
-					height="800"
-					alt=""
-					loading="lazy"
-				/>
+	<div class="mt-16 sm:mt-28 sm:px-8">
+		<Container>
+			<header class="use-prose max-w-2xl" v-html="render(page.body)"></header>
 
-				<ContentItem :item="item">
-					<p class="description">{{ item.description }}</p>
-				</ContentItem>
-			</li>
-		</ul>
-	</NuxtLayout>
+			<div class="mt-16 sm:mt-20">
+				<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
+					<li
+						v-for="entry in entries"
+						:key="entry.slug"
+						class="group relative flex flex-col items-start"
+					>
+						<NuxtImg
+							:src="entry.image.fields.file.url"
+							class="z-20 mb-6 aspect-square rounded-2xl object-cover"
+							width="800"
+							height="800"
+							alt=""
+							loading="lazy"
+						/>
+
+						<ContentItem :item="entry">
+							<p class="description">{{ entry.description }}</p>
+						</ContentItem>
+					</li>
+				</ul>
+			</div>
+		</Container>
+	</div>
 </template>
 
 <script setup lang="ts">
-import type { ArtItem } from "~/util/types";
+import type { ArtEntry } from "~/util/types";
 
-const { getItems } = useDirectusItems();
+const { getEntries, getLandingPageEntry, render } = useContentful();
 
-const items = await getItems<ArtItem[]>({
-	collection: "art",
-	params: {
-		filter: {
-			slug: {
-				_neq: "index",
-			},
-		},
-	},
+const page = await getLandingPageEntry("Art");
+useEntryHead(page);
+
+const { items } = await getEntries<ArtEntry>({
+	content_type: "art",
+	order: "fields.title",
 });
+
+const entries = items.map((entry) => entry.fields);
 </script>

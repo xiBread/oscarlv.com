@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="item.content"></header>
+			<header class="use-prose max-w-2xl" v-html="render(entry.body)"></header>
 
 			<div class="mt-6 flex gap-7">
 				<NuxtLink
@@ -26,12 +26,11 @@
 				:key="path"
 				class="relative aspect-[6/7] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
-				<NuxtImg
+				<Image
 					:src="path"
 					class="absolute inset-0 h-full w-full object-cover"
 					width="1800"
 					height="2100"
-					alt=""
 					loading="lazy"
 				/>
 			</div>
@@ -41,19 +40,12 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { Item } from "~/util/types";
 
 const { socials } = useAppConfig();
-const { getSingletonItem } = useDirectusItems();
+const { getLandingPageEntry, render } = useContentful();
 
-const item = await getSingletonItem<Item>({ collection: "home" });
-useItemHead(item);
+const entry = await getLandingPageEntry("Home");
+useEntryHead(entry);
 
-const featured = [
-	"rose-fire.jpg",
-	"portraits/leaves.jpg",
-	"portraits/market.jpg",
-	"signals.jpg",
-	"traveler.jpg",
-];
+const featured = ["rose-fire", "Portrait: Abigail", "Portrait: Grace", "signals", "traveler"];
 </script>

@@ -1,20 +1,25 @@
-export interface Item {
-	id: number;
-	slug: string;
+import type { Document } from "@contentful/rich-text-types";
+
+export interface Entry {
 	title: string;
-	content: string;
+	body: Document;
 }
 
-export interface ArtItem extends Item {
-	image: string | null;
-	description: string | null;
+export interface ContentEntry extends Entry {
+	slug: string;
 }
 
-export interface WritingItem extends Item {
+export interface ArtEntry extends ContentEntry {
+	image: any;
+	description: string;
+}
+
+export interface WritingEntry extends ContentEntry {
 	category: string;
 	explicit: boolean;
 }
 
-export interface AwardItem extends Item {
+export interface AwardEntry extends Entry {
+	order: number;
 	date: string;
 }
