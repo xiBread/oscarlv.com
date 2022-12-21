@@ -4,7 +4,10 @@ import ctf, { type EntriesQueries } from "contentful";
 
 export default function useContentful() {
 	const config = useRuntimeConfig();
-	const client = ctf.createClient(config.public.contentful);
+	const client = ctf.createClient({
+		space: config.public.contentful.space,
+		accessToken: config.public.contentful.accessToken,
+	});
 
 	async function getSingleAsset(title: string): Promise<string> {
 		const { items } = await client.getAssets({ "fields.title": title });
