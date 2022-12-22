@@ -11,6 +11,10 @@
 			dark:prose-invert
 			dark:prose-p:text-neutral-400;
 	}
+
+	.description {
+		@apply relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400;
+	}
 }
 
 :root {

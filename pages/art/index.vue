@@ -33,11 +33,7 @@
 							</NuxtLink>
 						</div>
 
-						<p
-							class="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400"
-						>
-							{{ entry.description }}
-						</p>
+						<p class="description">{{ entry.description }}</p>
 					</li>
 				</ul>
 			</div>
