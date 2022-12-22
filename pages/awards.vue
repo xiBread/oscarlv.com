@@ -42,7 +42,7 @@
 
 								<div
 									class="description [&_a]:dark:font-medium [&_a]:dark:text-white [&_a]:dark:underline"
-									v-html="render(entry.body)"
+									v-html="entry.body"
 								></div>
 							</div>
 
@@ -75,7 +75,19 @@ const { items } = await getEntries<AwardEntry>({
 	order: "-fields.date,-fields.order,fields.title",
 });
 
-const entries = items.map((entry) => ({ id: entry.sys.id, ...entry.fields }));
+const entries = items.map((entry) => ({
+	...entry.fields,
+	id: entry.sys.id,
+	body: render(entry.fields.body, {
+		renderNode: {
+			"asset-hyperlink": (node, next) => {
+				return `<a href="https:${node.data.target.fields.file.url}" target="_blank">${next(
+					node.content
+				)}</a>`;
+			},
+		},
+	}),
+}));
 
 const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;
 </script>
