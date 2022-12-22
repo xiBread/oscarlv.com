@@ -22,12 +22,12 @@
 	<div class="mt-16 sm:mt-20">
 		<div class="-my-4 flex justify-center gap-6 overflow-hidden py-4 sm:gap-10">
 			<div
-				v-for="path in featured"
-				:key="path"
+				v-for="name in featured"
+				:key="name"
 				class="relative aspect-[6/7] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
 				<Image
-					:src="path"
+					:src="name"
 					class="absolute inset-0 h-full w-full object-cover"
 					width="1800"
 					height="2100"
@@ -47,5 +47,5 @@ const { getLandingPageEntry, render } = useContentful();
 const entry = await getLandingPageEntry("Home");
 useEntryHead(entry);
 
-const featured = ["rose-fire", "Portrait: Abigail", "Portrait: Grace", "signals", "traveler"];
+const featured = ["Abigail", "Sonder", "Stories", "Signals", "Sofia"];
 </script>
