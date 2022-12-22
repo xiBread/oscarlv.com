@@ -8,7 +8,7 @@
 					<div class="max-w-xs px-2.5 sm:max-w-sm lg:max-w-none">
 						<Image
 							class="aspect-square rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-900"
-							src="shattered"
+							src="Shattered"
 							width="800"
 							height="800"
 						/>
@@ -57,7 +57,7 @@
 
 				<div class="col-span-2 mt-3 hidden px-16 lg:block">
 					<Image
-						src="induction-group"
+						src="Induction"
 						class="aspect-[5/2] -rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-800"
 						width="2500"
 						height="1000"
