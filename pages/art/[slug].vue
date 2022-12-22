@@ -54,14 +54,15 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 import type { ArtEntry } from "~/util/types";
 
 const route = useRoute();
-const { getAssets, getSingleEntry, render } = useContentful();
+const { getAssets, getSingleEntry, prependHeading, render } = useContentful();
 
 const slug = route.params.slug;
 
 const entry = await getSingleEntry<ArtEntry>("art", { "fields.slug": slug });
-useEntryHead(entry);
-
 const { items } = await getAssets({ "metadata.tags.sys.id[in]": `art.${slug}` });
+
+useEntryHead(entry);
+prependHeading(entry);
 
 const assets = items
 	.map((asset) => ({

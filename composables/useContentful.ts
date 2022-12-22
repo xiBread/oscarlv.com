@@ -1,4 +1,5 @@
 import { documentToHtmlString as render } from "@contentful/rich-text-html-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import type { Entry } from "~/util/types";
 import ctf, { type EntriesQueries, createClient } from "contentful";
 
@@ -7,6 +8,21 @@ export default function useContentful() {
 	const client = (import.meta.env.DEV ? createClient : ctf.createClient)(
 		config.public.contentful
 	);
+
+	function prependHeading(entry: Entry): void {
+		entry.body.content.unshift({
+			nodeType: BLOCKS.HEADING_1,
+			data: {},
+			content: [
+				{
+					nodeType: "text",
+					data: {},
+					value: entry.title,
+					marks: [],
+				},
+			],
+		});
+	}
 
 	async function getSingleAsset(title: string): Promise<string> {
 		const { items } = await client.getAssets({ "fields.title": title });
@@ -30,6 +46,7 @@ export default function useContentful() {
 	return {
 		...client,
 		render,
+		prependHeading,
 		getSingleAsset,
 		getSingleEntry,
 		getLandingPageEntry: (title: string): Promise<Entry> => {
