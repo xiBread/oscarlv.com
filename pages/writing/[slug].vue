@@ -25,7 +25,7 @@ const entry = await getSingleEntry<WritingEntry>("writing", {
 const body = render(entry.body, {
 	renderNode: {
 		[BLOCKS.EMBEDDED_ASSET]: (node) => {
-			return `<img src="${node.data.target.fields.file.url}" />`;
+			return `<img src="https:${node.data.target.fields.file.url}" />`;
 		},
 	},
 });
