@@ -40,15 +40,10 @@ const { getEntries, getLandingPageEntry, render } = useContentful();
 const page = await getLandingPageEntry("Writing");
 useEntryHead(page);
 
-const { items } = await getEntries<WritingEntry>({ content_type: "writing" });
+const { items } = await getEntries<WritingEntry>({
+	content_type: "writing",
+	order: "fields.category,fields.title",
+});
 
-const normalize = (str: string) => str.replace(/^The (.+)/, "$1");
-
-const entries = items
-	.map((entry) => entry.fields)
-	.sort(
-		(a, b) =>
-			a.category.localeCompare(b.category) ||
-			normalize(a.title).localeCompare(normalize(b.title))
-	);
+const entries = items.map((entry) => entry.fields);
 </script>
