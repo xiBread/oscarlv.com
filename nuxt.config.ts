@@ -1,5 +1,3 @@
-import typography from "@tailwindcss/typography";
-
 export default defineNuxtConfig({
 	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 	css: ["~/assets/main.css"],
@@ -69,10 +67,5 @@ export default defineNuxtConfig({
 	tailwindcss: {
 		cssPath: "~/assets/main.css",
 		viewer: false,
-		config: {
-			content: [],
-			darkMode: "class",
-			plugins: [typography({ className: "prose" })],
-		},
 	},
 });

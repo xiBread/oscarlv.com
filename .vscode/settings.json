@@ -6,5 +6,7 @@
 		"heading-increment": false,
 		"no-emphasis-as-heading": false
 	},
-	"tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
+	"tailwindCSS.files.exclude": [
+		"**/.nuxt/**"
+	]
 }
