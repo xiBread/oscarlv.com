@@ -5,9 +5,7 @@
 
 			<div class="mt-20 space-y-28 sm:mt-28">
 				<div v-for="(entries, category) in groups" :key="category">
-					<ul
-						class="relative grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5"
-					>
+					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
 						<span
 							class="absolute -top-14 -left-px select-none text-4xl font-bold text-neutral-500/30"
 						>
@@ -17,13 +15,15 @@
 						<li
 							v-for="entry in entries"
 							:key="entry.slug"
-							class="group relative flex flex-col items-start"
+							class="relative flex flex-col items-start"
 						>
 							<NuxtLink
 								:to="`${$route.path}/${entry.slug}`"
 								:title="entry.title + (entry.explicit ? ' (Explicit)' : '')"
-								class="text-base font-semibold text-black dark:text-white"
+								class="font-semibold text-black dark:text-white"
 							>
+								<span class="absolute inset-0 z-20"></span>
+
 								<div class="relative z-10 flex items-center">
 									{{ entry.title }}
 
@@ -34,6 +34,12 @@
 									/>
 								</div>
 							</NuxtLink>
+
+							<p
+								class="description overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
+							>
+								{{ getFirstLine(entry.body.content[0]) }}
+							</p>
 						</li>
 					</ul>
 				</div>
@@ -43,6 +49,7 @@
 </template>
 
 <script setup lang="ts">
+import { BLOCKS, type Text, type Block } from "@contentful/rich-text-types";
 import { Icon } from "@iconify/vue";
 import type { WritingEntry } from "~/util/types";
 
@@ -63,4 +70,15 @@ const groups = items
 
 		return group;
 	}, {});
+
+function getFirstLine(block: Block): string {
+	if (block.nodeType === BLOCKS.QUOTE) {
+		return getFirstLine(block.content[0] as Block);
+	}
+
+	const text = (block.content[0] as Text).value;
+	const firstLine = /([^\n"]+[^,"\s])/.exec(text)![1];
+
+	return firstLine + (/\w$/.test(firstLine) ? "." : "");
+}
 </script>
