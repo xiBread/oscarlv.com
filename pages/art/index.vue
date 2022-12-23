@@ -19,16 +19,11 @@
 							loading="lazy"
 						/>
 
-						<div class="text-base font-semibold text-black dark:text-white">
-							<div
-								class="absolute -inset-y-6 -inset-x-4 z-0 bg-neutral-200 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-neutral-800 sm:-inset-x-6 sm:rounded-2xl"
-							></div>
+						<div class="font-semibold text-black dark:text-white">
+							<div class="inset-bg"></div>
 
 							<NuxtLink :to="`${$route.path}/${entry.slug}`" :title="entry.title">
-								<span
-									class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"
-								></span>
-
+								<span class="inset-link"></span>
 								<span class="relative z-10">{{ entry.title }}</span>
 							</NuxtLink>
 						</div>

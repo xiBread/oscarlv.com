@@ -3,11 +3,11 @@
 		<Container>
 			<header class="use-prose max-w-2xl" v-html="render(page.body)"></header>
 
-			<div class="mt-20 space-y-28 sm:mt-28">
+			<div class="mt-20 space-y-[8.5rem] sm:mt-28">
 				<div v-for="(entries, category) in groups" :key="category">
 					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
 						<span
-							class="absolute -top-14 -left-px select-none text-4xl font-bold text-neutral-500/30"
+							class="absolute -top-[4.5rem] -left-px select-none text-4xl font-bold text-neutral-500/30"
 						>
 							{{ category }}
 						</span>
@@ -15,25 +15,28 @@
 						<li
 							v-for="entry in entries"
 							:key="entry.slug"
-							class="relative flex flex-col items-start"
+							class="group relative flex flex-col items-start"
 						>
-							<NuxtLink
-								:to="`${$route.path}/${entry.slug}`"
-								:title="entry.title + (entry.explicit ? ' (Explicit)' : '')"
-								class="font-semibold text-black dark:text-white"
-							>
-								<span class="absolute inset-0 z-20"></span>
+							<div class="font-semibold text-black dark:text-white">
+								<div class="inset-bg"></div>
 
-								<div class="relative z-10 flex items-center">
-									{{ entry.title }}
+								<NuxtLink
+									:to="`${$route.path}/${entry.slug}`"
+									:title="entry.title + (entry.explicit ? ' (Explicit)' : '')"
+								>
+									<span class="inset-link"></span>
 
-									<Icon
-										v-if="entry.explicit"
-										icon="material-symbols:explicit"
-										class="ml-2 h-4 w-4 text-neutral-600 dark:text-neutral-400"
-									/>
-								</div>
-							</NuxtLink>
+									<div class="relative z-10 flex items-center">
+										{{ entry.title }}
+
+										<Icon
+											v-if="entry.explicit"
+											icon="material-symbols:explicit"
+											class="ml-2 h-4 w-4 text-neutral-600 dark:text-neutral-400"
+										/>
+									</div>
+								</NuxtLink>
+							</div>
 
 							<p
 								class="description overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
