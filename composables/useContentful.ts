@@ -30,7 +30,6 @@ export default function useContentful() {
 	): Promise<T> {
 		const response = await client.getEntries<T>({
 			content_type: type,
-			limit: 1,
 			...query,
 		});
 
