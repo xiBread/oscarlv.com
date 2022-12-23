@@ -15,3 +15,9 @@
 		</Body>
 	</Html>
 </template>
+
+<script setup lang="ts">
+if (typeof process !== "undefined") {
+	process.browser = true;
+}
+</script>
