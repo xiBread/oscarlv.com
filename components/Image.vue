@@ -19,9 +19,11 @@ const props = defineProps<ImageProps>();
 
 let url = ref(props.src);
 
-const { getSingleAsset } = useContentful();
+const { getAssets } = useContentful();
 
 if (!props.src.startsWith("https")) {
-	url.value = await getSingleAsset(props.src);
+	const { items } = await getAssets({ "fields.title": props.src });
+
+	url.value = items[0].fields.file!.url;
 }
 </script>

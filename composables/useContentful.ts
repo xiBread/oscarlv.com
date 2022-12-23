@@ -24,13 +24,7 @@ export default function useContentful() {
 		});
 	}
 
-	async function getSingleAsset(title: string): Promise<string> {
-		const { items } = await client.getAssets({ "fields.title": title });
-
-		return items[0].fields.file!.url;
-	}
-
-	async function getSingleEntry<T extends Record<string, any>>(
+	async function getEntry<T extends Record<string, any>>(
 		type: string,
 		query: EntriesQueries<T>
 	): Promise<T> {
@@ -47,10 +41,9 @@ export default function useContentful() {
 		...client,
 		render,
 		prependHeading,
-		getSingleAsset,
-		getSingleEntry,
+		getEntry,
 		getLandingPageEntry: (title: string): Promise<Entry> => {
-			return getSingleEntry("landing-page", { "fields.title": title });
+			return getEntry("landing-page", { "fields.title": title });
 		},
 	};
 }
