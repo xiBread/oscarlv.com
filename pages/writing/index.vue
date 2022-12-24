@@ -32,7 +32,7 @@
 										<Icon
 											v-if="entry.explicit"
 											icon="material-symbols:explicit"
-											class="ml-2 h-4 w-4 text-neutral-600 dark:text-neutral-400"
+											class="ml-2 h-4 w-4 text-neutral-400 dark:text-neutral-500"
 										/>
 									</div>
 								</NuxtLink>
