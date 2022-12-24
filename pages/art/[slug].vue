@@ -22,28 +22,30 @@
 					</button>
 				</div>
 
-				<Dialog as="div" :open="isOpen" class="relative z-50" @close="closeModal()">
-					<div
-						class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"
-					></div>
+				<ClientOnly>
+					<Dialog as="div" :open="isOpen" class="relative z-50" @close="closeModal()">
+						<div
+							class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"
+						></div>
 
-					<div class="fixed inset-0 overflow-y-auto">
-						<div class="flex min-h-full items-center justify-center">
-							<DialogPanel class="flex h-full items-center overflow-hidden">
-								<NuxtImg
-									:src="target"
-									class="m-auto max-h-screen max-w-full p-6 sm:p-16"
-									@load="isLoading = false"
-								/>
+						<div class="fixed inset-0 overflow-y-auto">
+							<div class="flex min-h-full items-center justify-center">
+								<DialogPanel class="flex h-full items-center overflow-hidden">
+									<NuxtImg
+										:src="target"
+										class="m-auto max-h-screen max-w-full p-6 sm:p-16"
+										@load="isLoading = false"
+									/>
 
-								<span
-									v-show="isLoading"
-									class="absolute box-border inline-block h-12 w-12 animate-spin rounded-full border-4 border-b-transparent"
-								></span>
-							</DialogPanel>
+									<span
+										v-show="isLoading"
+										class="absolute box-border inline-block h-12 w-12 animate-spin rounded-full border-4 border-b-transparent"
+									></span>
+								</DialogPanel>
+							</div>
 						</div>
-					</div>
-				</Dialog>
+					</Dialog>
+				</ClientOnly>
 			</div>
 		</Container>
 	</div>
