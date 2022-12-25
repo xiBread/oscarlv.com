@@ -6,11 +6,16 @@
 			<div class="mt-16 sm:mt-20">
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					<button
-						v-for="asset in assets"
+						v-for="(asset, i) in assets"
 						:key="asset.id"
 						type="button"
 						class="bg-neutral-100 dark:bg-neutral-800"
-						@click="openModal(asset.url)"
+						@click="
+							() => {
+								target = i;
+								toggleDialog();
+							}
+						"
 					>
 						<NuxtImg
 							:src="asset.url"
@@ -21,42 +26,65 @@
 						/>
 					</button>
 				</div>
-
-				<ClientOnly>
-					<Dialog as="div" :open="isOpen" class="relative z-50" @close="closeModal()">
-						<div
-							class="fixed inset-0 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/70"
-						></div>
-
-						<div class="fixed inset-0 overflow-y-auto">
-							<div class="flex min-h-full items-center justify-center">
-								<DialogPanel class="flex h-full items-center overflow-hidden">
-									<NuxtImg
-										:src="target"
-										class="m-auto max-h-screen max-w-full p-6 sm:p-16"
-										@load="isLoading = false"
-									/>
-
-									<span
-										v-show="isLoading"
-										class="absolute box-border inline-block h-12 w-12 animate-spin rounded-full border-4 border-b-transparent"
-									></span>
-								</DialogPanel>
-							</div>
-						</div>
-					</Dialog>
-				</ClientOnly>
 			</div>
 		</Container>
+
+		<ClientOnly>
+			<Dialog as="div" :open="isOpen" class="relative z-50" @close="toggleDialog()">
+				<div class="fixed inset-0 flex items-center justify-center">
+					<DialogPanel class="text-white">
+						<DialogBackdrop class="fixed inset-0 z-40 bg-black/70 backdrop-blur-md" />
+
+						<div class="flex flex-col items-center justify-center">
+							<NuxtImg
+								:src="assets[target].url"
+								class="relative block max-h-[80vh] max-w-[80vw] shadow-lg"
+							/>
+
+							<DialogTitle class="mt-3 font-semibold">
+								{{ assets[target].title }}
+							</DialogTitle>
+						</div>
+
+						<button
+							type="button"
+							class="absolute top-6 right-6"
+							aria-label="Close lightbox"
+							@click="toggleDialog()"
+						>
+							<Icon icon="heroicons:x-mark-20-solid" />
+						</button>
+
+						<div class="absolute bottom-6 right-6 flex items-center">
+							<span class="mr-3 text-sm font-medium">
+								{{ target + 1 }} of {{ assets.length }}
+							</span>
+
+							<button type="button" aria-label="Previous image" @click="navigate(-1)">
+								<Icon icon="heroicons:chevron-left-20-solid" />
+							</button>
+
+							<button type="button" aria-label="Next image" @click="navigate(1)">
+								<Icon icon="heroicons:chevron-right-20-solid" />
+							</button>
+						</div>
+					</DialogPanel>
+				</div>
+			</Dialog>
+		</ClientOnly>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { Dialog, DialogPanel } from "@headlessui/vue";
+import { Icon } from "@iconify/vue";
+import { Dialog, DialogPanel, DialogBackdrop, DialogTitle } from "@headlessui/vue";
 import type { ArtEntry } from "~/util/types";
 
 const route = useRoute();
+const [isOpen, toggleDialog] = useToggle();
 const { getAssets, getEntry, prependHeading, render } = useContentful();
+
+const target = ref(0);
 
 const slug = route.params.slug;
 
@@ -74,32 +102,17 @@ const assets = items
 	}))
 	.sort((a, b) => a.title.localeCompare(b.title));
 
-const isLoading = ref(true);
-const isOpen = ref(false);
-const target = ref("");
-
-function openModal(url: string) {
-	isOpen.value = true;
-	target.value = url;
-}
-
-function closeModal() {
-	isOpen.value = false;
-	isLoading.value = true;
-}
-
-function navigateModal(direction: number) {
+function navigate(direction: number) {
 	if (!isOpen.value) return;
 
-	const current = assets.findIndex((asset) => asset.url === target.value);
-	const next =
+	const current = target.value;
+
+	target.value =
 		direction === -1
 			? (current > 0 ? current : assets.length) - 1
 			: (current + 1) % assets.length;
-
-	target.value = assets[next].url;
 }
 
-onKeyStroke("ArrowLeft", () => navigateModal(-1));
-onKeyStroke("ArrowRight", () => navigateModal(1));
+onKeyStroke("ArrowLeft", () => navigate(-1));
+onKeyStroke("ArrowRight", () => navigate(1));
 </script>
