@@ -30,7 +30,7 @@
 		</Container>
 
 		<ClientOnly>
-			<Dialog as="div" :open="isOpen" class="relative z-50" @close="toggleDialog()">
+			<Dialog class="relative z-50" :open="isOpen" @close="toggleDialog()">
 				<div class="fixed inset-0 flex items-center justify-center">
 					<DialogPanel class="text-white">
 						<DialogBackdrop class="fixed inset-0 z-40 bg-black/70 backdrop-blur-md" />
