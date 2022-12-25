@@ -41,7 +41,7 @@
 								</dl>
 
 								<div
-									class="description [&_a]:dark:font-medium [&_a]:dark:text-white [&_a]:dark:underline"
+									class="description [&_a]:font-medium [&_a]:text-black [&_a]:underline [&_a]:dark:text-white"
 									v-html="entry.body"
 								></div>
 							</div>
