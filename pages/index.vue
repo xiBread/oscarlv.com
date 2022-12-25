@@ -42,10 +42,11 @@
 import { Icon } from "@iconify/vue";
 
 const { socials } = useAppConfig();
-const { getLandingPageEntry, render } = useContentful();
+const { getAsset, getLandingPageEntry, render } = useContentful();
 
 const entry = await getLandingPageEntry("Home");
 useEntryHead(entry);
 
-const featured = ["Abigail", "Sonder", "Stories", "Signals", "Sofia"];
+const asset = await getAsset("1qpXt6AG7ysZr3EHfpES0C");
+const featured = asset.fields.description!.split(",");
 </script>
