@@ -38,7 +38,7 @@
 						<div class="flex flex-col items-center justify-center">
 							<NuxtImg
 								:src="assets[target].url"
-								class="relative block max-h-[80vh] max-w-[80vw] shadow-lg"
+								class="relative block max-h-[90vh] max-w-[90vw] shadow-lg"
 							/>
 
 							<DialogTitle class="mt-3 font-semibold">
