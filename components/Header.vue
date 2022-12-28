@@ -16,8 +16,8 @@
 							<button
 								type="button"
 								class="mx-3 my-2"
-								aria-label="Theme toggle"
-								:title="`Switch to ${isDark ? 'light' : 'dark'} mode`"
+								:aria-label="title"
+								:title="title"
 								@click="toggle()"
 							>
 								<Icon
@@ -40,6 +40,8 @@ import { Icon } from "@iconify/vue";
 
 const isDark = useDark();
 const toggle = useToggle(isDark);
+
+const title = `Switch to ${isDark ? "light" : "dark"} mode`;
 </script>
 
 <style>
