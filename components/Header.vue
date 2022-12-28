@@ -17,6 +17,7 @@
 								type="button"
 								class="mx-3 my-2"
 								aria-label="Theme toggle"
+								:title="`Switch to ${isDark ? 'light' : 'dark'} mode`"
 								@click="toggle()"
 							>
 								<Icon
@@ -32,7 +33,7 @@
 	</header>
 </template>
 
-<script setup lang="ts">
+<script setup lang="tsx">
 // @ts-expect-error
 import logo from "~/assets/logo.svg?raw";
 import { Icon } from "@iconify/vue";
