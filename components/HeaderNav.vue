@@ -24,9 +24,7 @@
 			</PopoverButton>
 
 			<Transition v-bind="transitionProps">
-				<PopoverOverlay
-					class="fixed inset-0 z-50 bg-neutral-800/40 opacity-100 backdrop-blur-sm dark:bg-black/70"
-				/>
+				<PopoverOverlay class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" />
 			</Transition>
 
 			<Transition v-bind="transitionProps">
