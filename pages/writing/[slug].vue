@@ -13,15 +13,11 @@
 
 <script setup lang="ts">
 import { BLOCKS } from "@contentful/rich-text-types";
-import type { WritingEntry } from "~/util/types";
 
 const route = useRoute();
-const { getEntry, prependHeading, render } = useContentful();
+const { getWritingEntry, prependHeading, render } = useContentful();
 
-const entry = await getEntry<WritingEntry>("writing", {
-	"fields.slug": route.params.slug,
-});
-
+const entry = await getWritingEntry(route.params.slug as string);
 prependHeading(entry);
 
 const body = render(entry.body, {

@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="render(entry.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)"></header>
 
 			<div class="mt-16 sm:mt-20">
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,21 +78,20 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { Dialog, DialogPanel, DialogBackdrop, DialogTitle } from "@headlessui/vue";
-import type { ArtEntry } from "~/util/types";
 
 const route = useRoute();
+const ctf = useContentful();
 const [isOpen, toggleDialog] = useToggle();
-const { getAssets, getEntry, prependHeading, render } = useContentful();
 
 const target = ref(0);
 
 const slug = route.params.slug;
 
-const entry = await getEntry<ArtEntry>("art", { "fields.slug": slug });
-const { items } = await getAssets({ "metadata.tags.sys.id[in]": `art.${slug}` });
+const entry = await ctf.getArtEntry(slug as string);
+const { items } = await ctf.getAssets({ "metadata.tags.sys.id[in]": `art.${slug}` });
 
 useEntryHead(entry);
-prependHeading(entry);
+ctf.prependHeading(entry);
 
 const assets = items
 	.map((asset) => ({

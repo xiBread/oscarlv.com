@@ -1,6 +1,6 @@
 import { documentToHtmlString as render } from "@contentful/rich-text-html-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import type { Entry } from "~/util/types";
+import type { ArtEntry, Entry, WritingEntry } from "~/util/types";
 import ctf, { type EntriesQueries, createClient } from "contentful";
 
 export default function useContentful() {
@@ -24,25 +24,22 @@ export default function useContentful() {
 		});
 	}
 
-	async function getEntry<T extends Record<string, any>>(
-		type: string,
-		query: EntriesQueries<T>
-	): Promise<T> {
-		const response = await client.getEntries<T>({
-			content_type: type,
-			...query,
-		});
-
-		return response.items[0].fields as T;
+	async function getEntry<T extends Record<string, any>>(type: string, query: EntriesQueries) {
+		return (await client.getEntries<T>({ content_type: type, ...query })).items[0].fields;
 	}
 
 	return {
 		...client,
 		render,
 		prependHeading,
-		getEntry,
-		getLandingPageEntry: (title: string): Promise<Entry> => {
-			return getEntry("landing-page", { "fields.title": title });
+		getArtEntry: (slug: string) => {
+			return getEntry<ArtEntry>("art", { "fields.slug": slug });
+		},
+		getWritingEntry: (slug: string) => {
+			return getEntry<WritingEntry>("writing", { "fields.slug": slug });
+		},
+		getLandingPageEntry: (title: string) => {
+			return getEntry<Entry>("landing-page", { "fields.title": title });
 		},
 	};
 }
