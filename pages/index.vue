@@ -22,7 +22,7 @@
 	<div class="mt-16 sm:mt-20">
 		<div class="-my-4 flex justify-center gap-6 overflow-hidden py-4 sm:gap-10">
 			<div
-				v-for="name in featured"
+				v-for="(name, i) in featured"
 				:key="name"
 				class="relative aspect-[6/7] w-44 flex-none rotate-2 overflow-hidden rounded-xl bg-neutral-50 shadow-lg dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
 			>
@@ -31,7 +31,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					width="1800"
 					height="2100"
-					loading="lazy"
+					:loading="i % 4 ? 'eager' : 'lazy'"
 				/>
 			</div>
 		</div>
