@@ -46,14 +46,28 @@
 								></div>
 							</div>
 
-							<dl
-								class="relative z-10 order-first mt-1 mb-3 hidden items-center text-sm text-neutral-500 md:block"
-							>
-								<dt class="sr-only">Date</dt>
-								<dd>
-									<time :datetime="entry.date">{{ format(entry.date) }}</time>
-								</dd>
-							</dl>
+							<div class="relative z-10 order-first hidden md:block">
+								<svg
+									viewBox="0 0 9 9"
+									class="absolute right-full top-2.5 mr-5 h-[calc(0.5rem+1px)] w-[calc(0.5rem+1px)] overflow-visible text-neutral-300 dark:text-neutral-600"
+								>
+									<circle
+										cx="4.5"
+										cy="4.5"
+										r="4.5"
+										stroke="currentColor"
+										class="fill-white dark:fill-[#0a0a0a]"
+										stroke-width="2"
+									/>
+								</svg>
+
+								<dl class="mt-1 mb-3 items-center text-sm text-neutral-500">
+									<dt class="sr-only">Date</dt>
+									<dd>
+										<time :datetime="entry.date">{{ format(entry.date) }}</time>
+									</dd>
+								</dl>
+							</div>
 						</article>
 					</div>
 				</div>
