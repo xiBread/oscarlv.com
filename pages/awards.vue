@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
 
 			<div class="mt-16 sm:mt-20">
 				<div
@@ -36,7 +36,7 @@
 
 									<div
 										class="description [&_a]:font-medium [&_a]:text-black [&_a]:underline [&_a]:dark:text-white"
-										v-html="entry.body"
+										v-html="ctf.render(entry.body)"
 									></div>
 								</button>
 
@@ -106,12 +106,12 @@ import type { AssetFields } from "contentful";
 const target = ref<AssetFields>();
 
 const [isOpen, toggleDialog] = useToggle();
-const { getEntries, getLandingPageEntry, render } = useContentful();
+const ctf = useContentful();
 
-const page = await getLandingPageEntry("Awards");
+const page = await ctf.getLandingPageEntry("Awards");
 useEntryHead(page);
 
-const { items } = await getEntries<AwardEntry>({
+const { items } = await ctf.getEntries<AwardEntry>({
 	content_type: "award",
 	order: "-fields.date,-fields.order,fields.title",
 });
@@ -119,7 +119,6 @@ const { items } = await getEntries<AwardEntry>({
 const entries = items.map((entry) => ({
 	...entry.fields,
 	id: entry.sys.id,
-	body: render(entry.fields.body),
 }));
 
 const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;

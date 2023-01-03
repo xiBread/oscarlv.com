@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
 
 			<div class="mt-16 sm:mt-20">
 				<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
@@ -39,12 +39,12 @@
 <script setup lang="ts">
 import type { ArtEntry } from "~/util/types";
 
-const { getEntries, getLandingPageEntry, render } = useContentful();
+const ctf = useContentful();
 
-const page = await getLandingPageEntry("Art");
+const page = await ctf.getLandingPageEntry("Art");
 useEntryHead(page);
 
-const { items } = await getEntries<ArtEntry>({
+const { items } = await ctf.getEntries<ArtEntry>({
 	content_type: "art",
 	order: "fields.title",
 });

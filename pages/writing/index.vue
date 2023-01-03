@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
 
 			<div class="mt-28 space-y-32 sm:mt-32">
 				<div v-for="(entries, category) in groups" :key="category">
@@ -56,12 +56,12 @@ import { BLOCKS, type Block, type Text } from "@contentful/rich-text-types";
 import { Icon } from "@iconify/vue";
 import type { WritingEntry } from "~/util/types";
 
-const { getEntries, getLandingPageEntry, render } = useContentful();
+const ctf = useContentful();
 
-const page = await getLandingPageEntry("Writing");
+const page = await ctf.getLandingPageEntry("Writing");
 useEntryHead(page);
 
-const { items } = await getEntries<WritingEntry>({
+const { items } = await ctf.getEntries<WritingEntry>({
 	content_type: "writing",
 	order: "fields.category,fields.title",
 });

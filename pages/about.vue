@@ -17,7 +17,7 @@
 
 				<article
 					class="use-prose lg:order-first lg:row-span-2"
-					v-html="render(entry.body)"
+					v-html="ctf.render(entry.body)"
 				></article>
 
 				<div class="lg:pl-20">
@@ -75,9 +75,9 @@ import { Icon } from "@iconify/vue";
 const email = "oscar.leevermeren@gmail.com";
 
 const { socials } = useAppConfig();
-const { getLandingPageEntry, render } = useContentful();
+const ctf = useContentful();
 
-const entry = await getLandingPageEntry("About");
+const entry = await ctf.getLandingPageEntry("About");
 useEntryHead(entry);
 </script>
 

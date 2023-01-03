@@ -15,12 +15,12 @@
 import { BLOCKS } from "@contentful/rich-text-types";
 
 const route = useRoute();
-const { getWritingEntry, prependHeading, render } = useContentful();
+const ctf = useContentful();
 
-const entry = await getWritingEntry(route.params.slug as string);
-prependHeading(entry);
+const entry = await ctf.getWritingEntry(route.params.slug as string);
+ctf.prependHeading(entry);
 
-const body = render(entry.body, {
+const body = ctf.render(entry.body, {
 	renderNode: {
 		[BLOCKS.EMBEDDED_ASSET]: (node) => {
 			return `<img src="https:${node.data.target.fields.file.url}" />`;

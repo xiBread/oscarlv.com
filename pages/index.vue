@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="render(entry.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)"></header>
 
 			<div class="mt-6 flex gap-7">
 				<NuxtLink
@@ -42,11 +42,11 @@
 import { Icon } from "@iconify/vue";
 
 const { socials } = useAppConfig();
-const { getAsset, getLandingPageEntry, render } = useContentful();
+const ctf = useContentful();
 
-const entry = await getLandingPageEntry("Home");
+const entry = await ctf.getLandingPageEntry("Home");
 useEntryHead(entry);
 
-const asset = await getAsset("1qpXt6AG7ysZr3EHfpES0C");
+const asset = await ctf.getAsset("1qpXt6AG7ysZr3EHfpES0C");
 const featured = asset.fields.description!.split(",");
 </script>
