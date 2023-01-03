@@ -14,11 +14,31 @@
 							class="md:grid md:grid-cols-4 md:items-baseline"
 						>
 							<div class="group relative flex flex-col items-start md:col-span-3">
-								<span
-									class="text-base font-semibold tracking-tight text-black dark:text-white"
+								<div class="inset-bg"></div>
+
+								<button
+									class="z-10 text-left"
+									type="button"
+									@click="
+										() => {
+											target = entry.ref.fields;
+											toggleDialog();
+										}
+									"
 								>
-									{{ entry.title }}
-								</span>
+									<span class="inset-link"></span>
+
+									<span
+										class="text-base font-semibold tracking-tight text-black dark:text-white"
+									>
+										{{ entry.title }}
+									</span>
+
+									<div
+										class="description [&_a]:font-medium [&_a]:text-black [&_a]:underline [&_a]:dark:text-white"
+										v-html="entry.body"
+									></div>
+								</button>
 
 								<dl
 									class="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-500 md:hidden"
@@ -39,11 +59,6 @@
 										</time>
 									</dd>
 								</dl>
-
-								<div
-									class="description [&_a]:font-medium [&_a]:text-black [&_a]:underline [&_a]:dark:text-white"
-									v-html="entry.body"
-								></div>
 							</div>
 
 							<div class="relative z-10 order-first hidden md:block">
@@ -73,12 +88,24 @@
 				</div>
 			</div>
 		</Container>
+
+		<Lightbox
+			v-if="target"
+			:open="isOpen"
+			:src="target.file!.url"
+			:title="target.title!"
+			:close="toggleDialog"
+		/>
 	</div>
 </template>
 
 <script setup lang="ts">
 import type { AwardEntry } from "~/util/types";
+import type { AssetFields } from "contentful";
 
+const target = ref<AssetFields>();
+
+const [isOpen, toggleDialog] = useToggle();
 const { getEntries, getLandingPageEntry, render } = useContentful();
 
 const page = await getLandingPageEntry("Awards");
@@ -92,15 +119,7 @@ const { items } = await getEntries<AwardEntry>({
 const entries = items.map((entry) => ({
 	...entry.fields,
 	id: entry.sys.id,
-	body: render(entry.fields.body, {
-		renderNode: {
-			"asset-hyperlink": (node, next) => {
-				return `<a href="https:${node.data.target.fields.file.url}" target="_blank">${next(
-					node.content
-				)}</a>`;
-			},
-		},
-	}),
+	body: render(entry.fields.body),
 }));
 
 const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;

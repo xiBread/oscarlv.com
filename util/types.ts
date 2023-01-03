@@ -1,4 +1,9 @@
 import type { Document } from "@contentful/rich-text-types";
+import type { AssetFields } from "contentful";
+
+interface Asset {
+	fields: AssetFields;
+}
 
 export interface Entry {
 	title: string;
@@ -10,7 +15,7 @@ export interface ContentEntry extends Entry {
 }
 
 export interface ArtEntry extends ContentEntry {
-	image: any;
+	image: Asset;
 	description: string;
 }
 
@@ -22,4 +27,5 @@ export interface WritingEntry extends ContentEntry {
 export interface AwardEntry extends Entry {
 	order: number;
 	date: string;
+	ref: Asset;
 }

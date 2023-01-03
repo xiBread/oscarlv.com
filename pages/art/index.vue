@@ -11,7 +11,7 @@
 						class="group relative flex flex-col items-start"
 					>
 						<NuxtImg
-							:src="entry.image.fields.file.url"
+							:src="entry.image.fields.file!.url"
 							class="z-20 mb-6 aspect-square rounded-2xl object-cover"
 							width="800"
 							height="800"

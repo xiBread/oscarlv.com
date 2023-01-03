@@ -29,54 +29,30 @@
 			</div>
 		</Container>
 
-		<ClientOnly>
-			<Dialog class="relative z-50" :open="isOpen" @close="toggleDialog()">
-				<div class="fixed inset-0 flex items-center justify-center">
-					<DialogPanel class="text-white">
-						<DialogBackdrop class="fixed inset-0 z-40 bg-black/70 backdrop-blur-md" />
+		<Lightbox
+			:open="isOpen"
+			:src="assets[target].url"
+			:title="assets[target].title"
+			:close="toggleDialog"
+		>
+			<div class="absolute bottom-6 right-6 flex items-center">
+				<span class="mr-3 text-sm font-medium">
+					{{ target + 1 }} of {{ assets.length }}
+				</span>
 
-						<div class="flex flex-col items-center justify-center">
-							<NuxtImg
-								:src="assets[target].url"
-								class="relative block max-h-[90vh] max-w-[90vw] shadow-lg"
-							/>
+				<button type="button" aria-label="Previous image" @click="navigate(-1)">
+					<Icon icon="heroicons:chevron-left-20-solid" />
+				</button>
 
-							<DialogTitle class="mt-3 font-semibold">
-								{{ assets[target].title }}
-							</DialogTitle>
-						</div>
-
-						<button
-							type="button"
-							class="absolute top-6 right-6"
-							aria-label="Close lightbox"
-							@click="toggleDialog()"
-						>
-							<Icon icon="heroicons:x-mark-20-solid" />
-						</button>
-
-						<div class="absolute bottom-6 right-6 flex items-center">
-							<span class="mr-3 text-sm font-medium">
-								{{ target + 1 }} of {{ assets.length }}
-							</span>
-
-							<button type="button" aria-label="Previous image" @click="navigate(-1)">
-								<Icon icon="heroicons:chevron-left-20-solid" />
-							</button>
-
-							<button type="button" aria-label="Next image" @click="navigate(1)">
-								<Icon icon="heroicons:chevron-right-20-solid" />
-							</button>
-						</div>
-					</DialogPanel>
-				</div>
-			</Dialog>
-		</ClientOnly>
+				<button type="button" aria-label="Next image" @click="navigate(1)">
+					<Icon icon="heroicons:chevron-right-20-solid" />
+				</button>
+			</div>
+		</Lightbox>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from "@headlessui/vue";
 import { Icon } from "@iconify/vue";
 
 const route = useRoute();
