@@ -76,8 +76,8 @@
 </template>
 
 <script setup lang="ts">
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from "@headlessui/vue";
 import { Icon } from "@iconify/vue";
-import { Dialog, DialogPanel, DialogBackdrop, DialogTitle } from "@headlessui/vue";
 
 const route = useRoute();
 const ctf = useContentful();

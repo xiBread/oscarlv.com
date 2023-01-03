@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { BLOCKS, type Text, type Block } from "@contentful/rich-text-types";
+import { BLOCKS, type Block, type Text } from "@contentful/rich-text-types";
 import { Icon } from "@iconify/vue";
 import type { WritingEntry } from "~/util/types";
 

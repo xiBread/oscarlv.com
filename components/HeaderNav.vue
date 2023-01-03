@@ -65,8 +65,8 @@
 </template>
 
 <script setup lang="ts">
+import { Popover, PopoverButton, PopoverOverlay, PopoverPanel } from "@headlessui/vue";
 import { Icon } from "@iconify/vue";
-import { PopoverPanel, PopoverOverlay, Popover, PopoverButton } from "@headlessui/vue";
 
 const { navigation } = useAppConfig();
 
