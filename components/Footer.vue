@@ -20,7 +20,7 @@
 						<p
 							class="select-none opacity-50 transition-opacity hover:opacity-100 sm:order-first"
 						>
-							&copy; 2022 Oscar Lee-Vermeren
+							&copy; 2023 Oscar Lee-Vermeren
 						</p>
 					</div>
 				</Container>
