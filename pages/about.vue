@@ -11,6 +11,7 @@
 							src="Shattered"
 							width="800"
 							height="800"
+							preload
 						/>
 					</div>
 				</div>

@@ -4,6 +4,7 @@
 		:width="$props.width"
 		:height="$props.height"
 		:alt="$props.alt ?? ''"
+		:preload="$props.preload"
 		format="webp"
 	/>
 </template>
@@ -13,6 +14,7 @@ import type { ImgHTMLAttributes } from "vue";
 
 interface ImageProps extends ImgHTMLAttributes {
 	src: string;
+	preload?: boolean;
 }
 
 const props = defineProps<ImageProps>();

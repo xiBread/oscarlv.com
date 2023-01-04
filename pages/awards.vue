@@ -105,8 +105,8 @@ import type { AssetFields } from "contentful";
 
 const target = ref<AssetFields>();
 
-const [isOpen, toggleDialog] = useToggle();
 const ctf = useContentful();
+const [isOpen, toggleDialog] = useToggle();
 
 const page = await ctf.getLandingPageEntry("Awards");
 useEntryHead(page);

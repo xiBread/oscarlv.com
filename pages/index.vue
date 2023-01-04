@@ -32,6 +32,7 @@
 					width="1800"
 					height="2100"
 					:loading="i % 4 ? 'eager' : 'lazy'"
+					:preload="Boolean(i % 4)"
 				/>
 			</div>
 		</div>
