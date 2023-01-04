@@ -49,11 +49,3 @@ body::-webkit-scrollbar {
 	height: 0;
 	width: 0;
 }
-
-/* * {
-	outline: red solid 1px;
-}
-
-*:nth-child(2n) {
-	outline: blue solid 1px;
-} */
