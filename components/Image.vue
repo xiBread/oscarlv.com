@@ -4,7 +4,7 @@
 		:width="$props.width"
 		:height="$props.height"
 		:alt="$props.alt ?? ''"
-		:preload="$props.preload"
+		:preload="preload"
 		format="webp"
 	/>
 </template>
