@@ -29,7 +29,6 @@
 							class="flex [&:not(:first-child)]:mt-6"
 						>
 							<NuxtLink
-								:key="platform"
 								:to="url"
 								class="contact-link"
 								:aria-labelledby="`platform-${i}`"
