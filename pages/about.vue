@@ -30,8 +30,8 @@
 						>
 							<NuxtLink
 								:to="url"
-								class="contact-link"
 								:aria-labelledby="`platform-${i}`"
+								class="contact-link"
 							>
 								<Icon :icon="`cib:${platform.toLowerCase()}`" />
 

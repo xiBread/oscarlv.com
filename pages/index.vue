@@ -28,11 +28,11 @@
 			>
 				<Image
 					:src="name"
+					:loading="i % 4 ? 'eager' : 'lazy'"
+					:preload="Boolean(i % 4)"
 					class="absolute inset-0 h-full w-full object-cover"
 					width="1800"
 					height="2100"
-					:loading="i % 4 ? 'eager' : 'lazy'"
-					:preload="Boolean(i % 4)"
 				/>
 			</div>
 		</div>
