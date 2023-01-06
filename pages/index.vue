@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
 
 			<div class="mt-6 flex gap-7">
 				<NuxtLink

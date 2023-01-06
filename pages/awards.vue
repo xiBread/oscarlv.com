@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
 
 			<div class="mt-16 sm:mt-20">
 				<div
@@ -14,7 +14,7 @@
 							class="md:grid md:grid-cols-4 md:items-baseline"
 						>
 							<div class="group relative flex flex-col items-start md:col-span-3">
-								<div class="inset-bg"></div>
+								<div class="inset-bg" />
 
 								<button
 									class="z-10 text-left"
@@ -26,7 +26,7 @@
 										}
 									"
 								>
-									<span class="inset-link"></span>
+									<span class="inset-link" />
 
 									<span
 										class="text-base font-semibold tracking-tight text-black dark:text-white"
@@ -37,7 +37,7 @@
 									<div
 										class="description [&_a]:font-medium [&_a]:text-black [&_a]:underline [&_a]:dark:text-white"
 										v-html="ctf.render(entry.body)"
-									></div>
+									/>
 								</button>
 
 								<dl
@@ -52,7 +52,7 @@
 											>
 												<span
 													class="h-5 w-0.5 bg-neutral-200 dark:bg-neutral-600"
-												></span>
+												/>
 											</span>
 
 											{{ format(entry.date) }}

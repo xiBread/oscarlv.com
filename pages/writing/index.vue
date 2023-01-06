@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
 
 			<div class="mt-28 space-y-32 sm:mt-32">
 				<div v-for="(entries, category) in groups" :key="category">
@@ -18,13 +18,13 @@
 							class="group relative flex flex-col items-start"
 						>
 							<div class="font-semibold text-black dark:text-white">
-								<div class="inset-bg"></div>
+								<div class="inset-bg" />
 
 								<NuxtLink
 									:to="`${$route.path}/${entry.slug}`"
 									:title="entry.title + (entry.explicit ? ' (Explicit)' : '')"
 								>
-									<span class="inset-link"></span>
+									<span class="inset-link" />
 
 									<div class="relative z-10 flex items-center">
 										{{ entry.title }}

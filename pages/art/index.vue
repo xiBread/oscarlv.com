@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
 		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)"></header>
+			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
 
 			<div class="mt-16 sm:mt-20">
 				<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
@@ -20,10 +20,10 @@
 						/>
 
 						<div class="font-semibold text-black dark:text-white">
-							<div class="inset-bg"></div>
+							<div class="inset-bg" />
 
 							<NuxtLink :to="`${$route.path}/${entry.slug}`" :title="entry.title">
-								<span class="inset-link"></span>
+								<span class="inset-link" />
 								<span class="relative z-10">{{ entry.title }}</span>
 							</NuxtLink>
 						</div>

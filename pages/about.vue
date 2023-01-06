@@ -19,7 +19,7 @@
 				<article
 					class="use-prose lg:order-first lg:row-span-2"
 					v-html="ctf.render(entry.body)"
-				></article>
+				/>
 
 				<div class="lg:pl-20">
 					<ul>
