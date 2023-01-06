@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
 	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 	css: ["~/assets/main.css"],
+	build: {
+		transpile: ["@headlessui/vue"],
+	},
 	nitro: {
 		prerender: {
 			ignore: ["/art", "/writing"],
