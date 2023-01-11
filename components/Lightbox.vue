@@ -23,7 +23,7 @@
 						<Icon icon="heroicons:x-mark-20-solid" />
 					</button>
 
-					<slot></slot>
+					<slot />
 				</DialogPanel>
 			</div>
 		</Dialog>

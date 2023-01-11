@@ -1,6 +1,6 @@
 <template>
 	<div class="pointer-events-none fixed inset-0 -z-10">
-		<canvas ref="lichtenberg" class="dark:brightness-[.4]"></canvas>
+		<canvas ref="lichtenberg" class="dark:brightness-[.4]" />
 	</div>
 </template>
 
