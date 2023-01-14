@@ -7,7 +7,7 @@
 				<div v-for="(entries, category) in groups" :key="category">
 					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
 						<span
-							class="absolute -top-16 -left-px select-none text-4xl font-bold text-neutral-500/30"
+							class="absolute -top-[4.5rem] -left-px select-none text-4xl font-bold text-neutral-500/30"
 						>
 							{{ category }}
 						</span>
