@@ -2,39 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.use-prose {
-		@apply prose
-			prose-neutral
-			prose-h1:font-bold
-			prose-h1:leading-tight
-			dark:prose-invert
-			dark:prose-p:text-neutral-400;
-	}
-
-	.description {
-		@apply relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400;
-	}
-
-	.inset-bg {
-		@apply absolute
-			-inset-y-6
-			-inset-x-4
-			z-0
-			bg-neutral-200
-			opacity-0
-			transition-opacity
-			group-hover:opacity-60
-			dark:bg-neutral-800
-			sm:-inset-x-6
-			sm:rounded-2xl;
-	}
-
-	.inset-link {
-		@apply absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl;
-	}
-}
-
 :root {
 	font-family: "Inter var", sans-serif;
 }
@@ -48,4 +15,35 @@ html {
 body::-webkit-scrollbar {
 	height: 0;
 	width: 0;
+}
+
+.use-prose {
+	@apply prose
+		prose-neutral
+		prose-h1:font-bold
+		prose-h1:leading-tight
+		dark:prose-invert
+		dark:prose-p:text-neutral-400;
+}
+
+.description {
+	@apply relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400;
+}
+
+.inset-bg {
+	@apply absolute
+		-inset-y-6
+		-inset-x-4
+		z-0
+		bg-neutral-200
+		opacity-0
+		transition-opacity
+		group-hover:opacity-60
+		dark:bg-neutral-800
+		sm:-inset-x-6
+		sm:rounded-2xl;
+}
+
+.inset-link {
+	@apply absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl;
 }
