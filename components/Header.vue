@@ -5,8 +5,9 @@
 				<Container>
 					<div class="relative flex items-center gap-4">
 						<div class="flex flex-1">
-							<!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
-							<NuxtLink to="/" class="mx-3" aria-label="Home" v-html="logo" />
+							<NuxtLink to="/" class="mx-3" aria-label="Home">
+								<span id="logo" v-html="logo" />
+							</NuxtLink>
 						</div>
 
 						<HeaderNav />
@@ -44,7 +45,7 @@ const title = `Switch to ${isDark ? "light" : "dark"} mode`;
 </script>
 
 <style>
-svg {
+span#logo svg {
 	@apply h-7 w-7 fill-black dark:fill-white;
 }
 </style>
