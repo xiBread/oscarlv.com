@@ -10,7 +10,7 @@
 					<div class="flex max-w-3xl flex-col space-y-16">
 						<article
 							v-for="entry in entries"
-							:key="entry.id"
+							:key="entry.ref.fields.title"
 							class="md:grid md:grid-cols-4 md:items-baseline"
 						>
 							<div class="group relative flex flex-col items-start md:col-span-3">
@@ -116,10 +116,7 @@ const { items } = await ctf.getEntries<AwardEntry>({
 	order: "-fields.date,-fields.order,fields.title",
 });
 
-const entries = items.map((entry) => ({
-	...entry.fields,
-	id: entry.sys.id,
-}));
+const entries = items.map((entry) => entry.fields);
 
 const format = (date: string) => useDateFormat(date, "MMMM D, YYYY").value;
 </script>

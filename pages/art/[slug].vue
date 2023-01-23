@@ -7,18 +7,13 @@
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					<button
 						v-for="(asset, i) in assets"
-						:key="asset.id"
+						:key="asset.title"
 						type="button"
 						class="bg-neutral-100 dark:bg-neutral-800"
-						@click="
-							() => {
-								target = i;
-								toggleDialog();
-							}
-						"
+						@click="() => ((target = i), toggleDialog())"
 					>
 						<NuxtImg
-							:src="asset.url"
+							:src="asset.file!.url"
 							class="aspect-square object-cover"
 							width="800"
 							height="800"
@@ -31,8 +26,8 @@
 
 		<Lightbox
 			:open="isOpen"
-			:src="assets[target].url"
-			:title="assets[target].title"
+			:src="assets[target].file!.url"
+			:title="assets[target].title!"
 			:close="toggleDialog"
 		>
 			<div class="absolute bottom-6 right-6 flex items-center">
@@ -69,13 +64,7 @@ const { items } = await ctf.getAssets({ "metadata.tags.sys.id[in]": `art.${slug}
 useEntryHead(entry);
 ctf.prependHeading(entry);
 
-const assets = items
-	.map((asset) => ({
-		id: asset.sys.id,
-		title: asset.fields.title!,
-		url: asset.fields.file!.url,
-	}))
-	.sort((a, b) => a.title.localeCompare(b.title));
+const assets = items.map((asset) => asset.fields).sort((a, b) => a.title!.localeCompare(b.title!));
 
 function navigate(direction: number) {
 	if (!isOpen.value) return;
