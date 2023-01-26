@@ -34,7 +34,6 @@
 								class="contact-link"
 							>
 								<Icon :icon="`cib:${platform.toLowerCase()}`" />
-
 								<span :id="`platform-${i}`">Follow on {{ platform }}</span>
 							</NuxtLink>
 						</li>
