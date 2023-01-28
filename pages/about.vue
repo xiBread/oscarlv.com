@@ -53,16 +53,6 @@
 						</li>
 					</ul>
 				</div>
-
-				<div class="col-span-2 mt-3 hidden px-16 lg:block">
-					<Image
-						src="Induction"
-						class="aspect-[5/2] -rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-800"
-						width="2500"
-						height="1000"
-						loading="lazy"
-					/>
-				</div>
 			</div>
 		</Container>
 	</div>
