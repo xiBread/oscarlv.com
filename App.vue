@@ -5,7 +5,7 @@
 			<Meta
 				hid="dark"
 				name="theme-color"
-				content="#0a0a0a"
+				content="#101010"
 				media="(prefers-color-scheme: dark)"
 			/>
 
@@ -18,7 +18,7 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body class="flex h-full flex-col dark:bg-[#0a0a0a] dark:text-white">
+		<Body class="flex h-full flex-col dark:bg-[#101010] dark:text-white">
 			<Lichtenberg />
 
 			<div class="relative">
