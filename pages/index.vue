@@ -24,13 +24,13 @@
 			<div
 				v-for="(name, i) in featured"
 				:key="name"
-				class="relative aspect-[6/7] w-44 flex-none rotate-2 bg-neutral-50 dark:bg-neutral-900 sm:w-72 sm:rounded-2xl [&:nth-of-type(3n+2)]:-rotate-2"
+				class="relative aspect-[6/7] w-44 flex-none rotate-2 bg-neutral-50 dark:bg-neutral-900 sm:w-72 [&:nth-of-type(3n+2)]:-rotate-2"
 			>
 				<Image
 					:src="name"
 					:loading="i % 4 ? 'eager' : 'lazy'"
 					:preload="Boolean(i % 4)"
-					class="absolute inset-0 h-full w-full rounded-xl object-cover"
+					class="absolute inset-0 h-full w-full rounded-lg object-cover"
 					width="1800"
 					height="2100"
 				/>

@@ -7,7 +7,7 @@
 				<div class="flex justify-center lg:pl-20">
 					<div class="max-w-xs px-2.5 sm:max-w-sm lg:max-w-none">
 						<Image
-							class="aspect-square rotate-3 rounded-2xl bg-neutral-50 object-cover shadow-lg dark:bg-neutral-900"
+							class="aspect-square rotate-3 rounded-lg bg-neutral-50 object-cover dark:bg-neutral-900"
 							src="Shattered"
 							width="800"
 							height="800"
