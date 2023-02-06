@@ -1,53 +1,59 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
-		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
+		<div class="mx-auto max-w-7xl lg:px-8">
+			<div class="relative px-4 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-2xl lg:max-w-5xl">
+					<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
 
-			<div class="mt-28 space-y-32 sm:mt-32">
-				<div v-for="(entries, category) in groups" :key="category">
-					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
-						<span
-							class="absolute -top-[4.5rem] -left-px select-none text-4xl font-bold text-neutral-500/30"
-						>
-							{{ category }}
-						</span>
-
-						<li
-							v-for="entry in entries"
-							:key="entry.slug"
-							class="group relative flex flex-col items-start"
-						>
-							<div class="font-semibold text-black dark:text-white">
-								<div class="inset-bg" />
-
-								<NuxtLink
-									:to="`${$route.path}/${entry.slug}`"
-									:title="entry.title + (entry.explicit ? ' (Explicit)' : '')"
+					<div class="mt-28 space-y-32 sm:mt-32">
+						<div v-for="(entries, category) in groups" :key="category">
+							<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
+								<span
+									class="absolute -top-[4.5rem] -left-px select-none text-4xl font-bold text-neutral-500/30"
 								>
-									<span class="inset-link" />
+									{{ category }}
+								</span>
 
-									<div class="relative z-10 flex items-center">
-										{{ entry.title }}
+								<li
+									v-for="entry in entries"
+									:key="entry.slug"
+									class="group relative flex flex-col items-start"
+								>
+									<div class="font-semibold text-black dark:text-white">
+										<div class="inset-bg" />
 
-										<Icon
-											v-if="entry.explicit"
-											icon="material-symbols:explicit"
-											class="ml-2 h-4 w-4 text-neutral-400 dark:text-neutral-500"
-										/>
+										<NuxtLink
+											:to="`${$route.path}/${entry.slug}`"
+											:title="
+												entry.title + (entry.explicit ? ' (Explicit)' : '')
+											"
+										>
+											<span class="inset-link" />
+
+											<div class="relative z-10 flex items-center">
+												{{ entry.title }}
+
+												<Icon
+													v-if="entry.explicit"
+													icon="material-symbols:explicit"
+													class="ml-2 h-4 w-4 text-neutral-400 dark:text-neutral-500"
+												/>
+											</div>
+										</NuxtLink>
 									</div>
-								</NuxtLink>
-							</div>
 
-							<p
-								class="description overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
-							>
-								{{ getFirstLine(entry.body.content[0]) }}
-							</p>
-						</li>
-					</ul>
+									<p
+										class="description overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
+									>
+										{{ getFirstLine(entry.body.content[0]) }}
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-		</Container>
+		</div>
 	</div>
 </template>
 

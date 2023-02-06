@@ -1,22 +1,26 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
-		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
+		<div class="mx-auto max-w-7xl lg:px-8">
+			<div class="relative px-4 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-2xl lg:max-w-5xl">
+					<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
 
-			<div class="mt-6 flex gap-7">
-				<NuxtLink
-					v-for="(url, platform) in socials"
-					:key="platform"
-					:to="url"
-					:aria-label="platform"
-				>
-					<Icon
-						:icon="`cib:${platform.toLowerCase()}`"
-						class="h-5 w-5 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
-					/>
-				</NuxtLink>
+					<div class="mt-6 flex gap-7">
+						<NuxtLink
+							v-for="(url, platform) in socials"
+							:key="platform"
+							:to="url"
+							:aria-label="platform"
+						>
+							<Icon
+								:icon="`cib:${platform.toLowerCase()}`"
+								class="h-5 w-5 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
+							/>
+						</NuxtLink>
+					</div>
+				</div>
 			</div>
-		</Container>
+		</div>
 	</div>
 
 	<div class="mt-16 sm:mt-20">

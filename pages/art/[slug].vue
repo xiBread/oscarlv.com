@@ -1,28 +1,32 @@
 <template>
 	<div class="mt-16 sm:mt-28 sm:px-8">
-		<Container>
-			<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
+		<div class="mx-auto max-w-7xl lg:px-8">
+			<div class="relative px-4 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-2xl lg:max-w-5xl">
+					<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
 
-			<div class="mt-16 sm:mt-20">
-				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-					<button
-						v-for="(asset, i) in assets"
-						:key="asset.title"
-						type="button"
-						class="bg-neutral-100 dark:bg-neutral-800"
-						@click="() => ((target = i), toggleDialog())"
-					>
-						<NuxtImg
-							:src="asset.file!.url"
-							class="aspect-square object-cover"
-							width="800"
-							height="800"
-							loading="lazy"
-						/>
-					</button>
+					<div class="mt-16 sm:mt-20">
+						<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+							<button
+								v-for="(asset, i) in assets"
+								:key="asset.title"
+								type="button"
+								class="bg-neutral-100 dark:bg-neutral-800"
+								@click="() => ((target = i), toggleDialog())"
+							>
+								<NuxtImg
+									:src="asset.file!.url"
+									class="aspect-square object-cover"
+									width="800"
+									height="800"
+									loading="lazy"
+								/>
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
-		</Container>
+		</div>
 
 		<Lightbox
 			:open="isOpen"
