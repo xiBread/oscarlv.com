@@ -8,13 +8,7 @@
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare"
 	},
-	"prettier": {
-		"endOfLine": "lf",
-		"htmlWhitespaceSensitivity": "ignore",
-		"printWidth": 100,
-		"tabWidth": 4,
-		"useTabs": true
-	},
+	"prettier": "@xibread/prettier-config",
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^16.0.2",
 		"@headlessui/vue": "^1.7.7",
@@ -29,6 +23,7 @@
 		"@typescript-eslint/parser": "^5.49.0",
 		"@vueuse/core": "^9.11.1",
 		"@vueuse/nuxt": "^9.11.1",
+		"@xibread/prettier-config": "^1.0.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-vue": "^9.9.0",
 		"h3": "^1.1.0",
