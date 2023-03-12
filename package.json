@@ -11,7 +11,7 @@
 	"prettier": "@xibread/prettier-config",
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^16.0.2",
-		"@headlessui/vue": "^1.7.10",
+		"@headlessui/vue": "^1.7.12",
 		"contentful": "^10.0.0-beta-v10.8"
 	},
 	"devDependencies": {
@@ -19,16 +19,15 @@
 		"@nuxt/image": "npm:@nuxt/image-edge",
 		"@nuxtjs/tailwindcss": "^6.4.1",
 		"@tailwindcss/typography": "^0.5.9",
-		"@typescript-eslint/eslint-plugin": "^5.53.0",
-		"@typescript-eslint/parser": "^5.53.0",
+		"@typescript-eslint/eslint-plugin": "^5.54.1",
+		"@typescript-eslint/parser": "^5.54.1",
 		"@vueuse/core": "^9.13.0",
 		"@vueuse/nuxt": "^9.13.0",
-		"@xibread/prettier-config": "^1.0.0",
-		"eslint-config-prettier": "^8.6.0",
+		"eslint-config-prettier": "^8.7.0",
 		"eslint-plugin-vue": "^9.9.0",
 		"h3": "^1.5.0",
-		"nuxt": "^3.2.2",
+		"nuxt": "^3.2.3",
 		"prettier": "^2.8.4",
-		"prettier-plugin-tailwindcss": "^0.2.3"
+		"prettier-plugin-tailwindcss": "^0.2.4"
 	}
 }
