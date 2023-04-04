@@ -1,5 +1,10 @@
+---
+title: About
+---
+
+
 # Oscar Lee-Vermeren
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, reiciendis earum. Distinctio magni aspernatur commodi consectetur quasi veritatis eligendi pariatur praesentium, ipsam perferendis consequatur nisi! Nostrum asperiores amet maxime ratione.
+I'm a self-taught full-stack developer focused on reliability. Many of my projects are built using modern tools such as Nuxt, TypeScript, Tailwind CSS, and PostgreSQL.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo accusamus atque rerum itaque distinctio architecto fuga quibusdam eveniet quasi ut soluta, ducimus illo dolorem nesciunt, saepe numquam quos dolore. Ex.
+I write in my free time and do fine art photography as a hobby. I love learning and innovation, so I'm always open to trying and experimenting with new technologies and art forms.
