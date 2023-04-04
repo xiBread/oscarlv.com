@@ -1,6 +1,10 @@
 <template>
-	<ContainerLayout class="mt-14 sm:mt-28">
-		<div v-if="!data?.custom" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+	<Container v-if="data?.custom" class="mt-16 sm:mt-32">
+		<ContentDoc class="with-prose !max-w-none" />
+	</Container>
+
+	<ContainerLayout v-else class="mt-14 sm:mt-28">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			<button
 				v-for="(asset, i) in assets"
 				:key="asset.title"

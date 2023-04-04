@@ -1,7 +1,7 @@
 ---
 type: 1.Photography
 title: Portraits
-description: Portraits of friends and strangers.
+description: Revealing the unique character of every individual.
 cover: abigail.jpg
 ---
 
