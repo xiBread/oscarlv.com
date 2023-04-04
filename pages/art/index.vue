@@ -1,60 +1,45 @@
 <template>
-	<div class="mt-16 sm:mt-28 sm:px-8">
-		<div class="mx-auto max-w-7xl lg:px-8">
-			<div class="relative px-4 sm:px-8 lg:px-12">
-				<div class="mx-auto max-w-2xl lg:max-w-5xl">
-					<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
+	<ContainerLayout>
+		<div class="mt-28 space-y-44 sm:mt-32">
+			<div v-for="(group, type) in groups" :key="type">
+				<ul class="relative grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
+					<h2
+						class="absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40"
+					>
+						{{ type }}
+					</h2>
 
-					<div class="mt-16 sm:mt-20">
-						<ul class="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
-							<li
-								v-for="entry in entries"
-								:key="entry.slug"
-								class="group relative flex flex-col items-start"
-							>
-								<NuxtImg
-									:src="entry.image.fields.file!.url"
-									class="z-20 mb-6 aspect-square rounded-lg object-cover"
-									width="800"
-									height="800"
-									alt=""
-									loading="lazy"
-								/>
+					<Card
+						v-for="collection in group ?? []"
+						:key="collection._id"
+						:href="collection._path!"
+						tag="li"
+					>
+						<NuxtImg
+							:src="`/img${collection._path}/${collection.cover}`"
+							class="z-20 mb-6 aspect-square rounded-lg object-cover"
+							width="1000"
+							height="1000"
+							format="webp"
+							loading="lazy"
+						/>
 
-								<div class="font-semibold text-black dark:text-white">
-									<div class="inset-bg" />
-
-									<NuxtLink
-										:to="`${$route.path}/${entry.slug}`"
-										:title="entry.title"
-									>
-										<span class="inset-link" />
-										<span class="relative z-10">{{ entry.title }}</span>
-									</NuxtLink>
-								</div>
-
-								<p class="description">{{ entry.description }}</p>
-							</li>
-						</ul>
-					</div>
-				</div>
+						<template #link>{{ collection.title }}</template>
+						<template #description>{{ collection.description }}</template>
+					</Card>
+				</ul>
 			</div>
 		</div>
-	</div>
+	</ContainerLayout>
 </template>
 
 <script setup lang="ts">
-import type { ArtEntry } from "~/util/types";
+import groupBy from "~/util/groupBy.js";
 
-const ctf = useContentful();
+const { data } = await useAsyncData(() => queryContent("art/").find());
 
-const page = await ctf.getLandingPageEntry("Art");
-useEntryHead(page);
-
-const { items } = await ctf.getEntries<ArtEntry>({
-	content_type: "art",
-	order: "fields.title",
-});
-
-const entries = items.map((entry) => entry.fields);
+const groups = groupBy(
+	(data.value ?? []).sort((a, b) => +a.type[0] - +b.type[0]),
+	(i) => i.type.slice(2)
+);
 </script>

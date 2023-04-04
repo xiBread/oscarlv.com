@@ -1,6 +1,6 @@
 <template>
 	<div class="flex h-screen items-center justify-center">
-		<h1 class="mr-5 border-r border-neutral-600 pr-5 text-2xl font-semibold leading-relaxed">
+		<h1 class="mr-5 border-r border-zinc-600 pr-5 text-2xl font-semibold leading-relaxed">
 			404
 		</h1>
 

@@ -18,8 +18,16 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body class="flex h-full flex-col dark:bg-[#101010] dark:text-white">
+		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-white">
 			<Lichtenberg />
+
+			<div class="fixed inset-0 flex justify-center sm:px-8">
+				<div class="flex w-full max-w-7xl lg:px-8">
+					<div
+						class="w-full ring-1 ring-zinc-200 backdrop-blur-[6px] dark:ring-zinc-800"
+					/>
+				</div>
+			</div>
 
 			<div class="relative">
 				<Header />

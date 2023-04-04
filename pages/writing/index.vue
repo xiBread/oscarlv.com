@@ -1,84 +1,68 @@
 <template>
-	<div class="mt-16 sm:mt-28 sm:px-8">
-		<div class="mx-auto max-w-7xl lg:px-8">
-			<div class="relative px-4 sm:px-8 lg:px-12">
-				<div class="mx-auto max-w-2xl lg:max-w-5xl">
-					<header class="use-prose max-w-2xl" v-html="ctf.render(page.body)" />
+	<ContainerLayout>
+		<div class="mt-28 space-y-32 sm:mt-32">
+			<div v-for="(entries, category) in groups" :key="category">
+				<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
+					<h2
+						class="absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40"
+					>
+						{{ category }}
+					</h2>
 
-					<div class="mt-28 space-y-32 sm:mt-32">
-						<div v-for="(entries, category) in groups" :key="category">
-							<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
-								<span
-									class="absolute -top-[4.5rem] -left-px select-none text-4xl font-bold text-neutral-500/30"
-								>
-									{{ category }}
-								</span>
+					<Card
+						v-for="entry in entries"
+						:key="entry.slug"
+						:href="`${$route.path}/${entry.slug}`"
+						:title="`${entry.title}${entry.explicit ? ' (Explicit)' : ''}`"
+						tag="li"
+					>
+						<template #link>
+							<span class="flex items-center">
+								{{ entry.title }}
 
-								<li
-									v-for="entry in entries"
-									:key="entry.slug"
-									class="group relative flex flex-col items-start"
-								>
-									<div class="font-semibold text-black dark:text-white">
-										<div class="inset-bg" />
+								<Icon
+									v-if="entry.explicit"
+									name="material-symbols:explicit"
+									class="ml-2.5 h-5 w-5 text-zinc-400 dark:text-zinc-500"
+								/>
+							</span>
+						</template>
 
-										<NuxtLink
-											:to="`${$route.path}/${entry.slug}`"
-											:title="
-												entry.title + (entry.explicit ? ' (Explicit)' : '')
-											"
-										>
-											<span class="inset-link" />
-
-											<div class="relative z-10 flex items-center">
-												{{ entry.title }}
-
-												<Icon
-													v-if="entry.explicit"
-													icon="material-symbols:explicit"
-													class="ml-2 h-4 w-4 text-neutral-400 dark:text-neutral-500"
-												/>
-											</div>
-										</NuxtLink>
-									</div>
-
-									<p
-										class="description overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
-									>
-										{{ getFirstLine(entry.body.content[0]) }}
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+						<template #description>
+							{{ getFirstLine(entry.body.content[0]) }}
+						</template>
+					</Card>
+				</ul>
 			</div>
 		</div>
-	</div>
+	</ContainerLayout>
 </template>
 
+<script lang="ts">
+export interface WritingEntry {
+	slug: string;
+	category: string;
+	explicit: boolean;
+	title: string;
+	body: Document;
+}
+</script>
+
 <script setup lang="ts">
-import { BLOCKS, type Block, type Text } from "@contentful/rich-text-types";
-import { Icon } from "@iconify/vue";
-import type { WritingEntry } from "~/util/types";
+import { BLOCKS, type Block, type Document, type Text } from "@contentful/rich-text-types";
+import groupBy from "~/util/groupBy";
 
 const ctf = useContentful();
-
-const page = await ctf.getLandingPageEntry("Writing");
-useEntryHead(page);
 
 const { items } = await ctf.getEntries<WritingEntry>({
 	content_type: "writing",
 	order: "fields.category,fields.title",
 });
 
-const groups = items
-	.map((entry) => entry.fields)
-	.reduce<Record<string, WritingEntry[]>>((group, entry) => {
-		(group[entry.category] ??= []).push(entry);
-
-		return group;
-	}, {});
+const groups = groupBy(
+	items.map((entry) => entry.fields),
+	(i) => i.category
+);
 
 function getFirstLine(block: Block): string {
 	if (block.nodeType === BLOCKS.QUOTE) {

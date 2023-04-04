@@ -1,57 +1,48 @@
 <template>
-	<div class="mt-16 sm:mt-28 sm:px-8">
-		<div class="mx-auto max-w-7xl lg:px-8">
-			<div class="relative px-4 sm:px-8 lg:px-12">
-				<div class="mx-auto max-w-2xl lg:max-w-5xl">
-					<header class="use-prose max-w-2xl" v-html="ctf.render(entry.body)" />
+	<Container class="my-14 flex items-center sm:my-24">
+		<div class="flex max-w-2xl flex-col items-center text-center">
+			<ContentDoc tag="header" class="with-prose" />
 
-					<div class="mt-6 flex gap-7">
-						<NuxtLink
-							v-for="(url, platform) in socials"
-							:key="platform"
-							:to="url"
-							:aria-label="platform"
-						>
-							<Icon
-								:icon="`cib:${platform.toLowerCase()}`"
-								class="h-5 w-5 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
-							/>
-						</NuxtLink>
-					</div>
-				</div>
+			<div class="mt-6 flex gap-6">
+				<NuxtLink v-for="(url, platform) in socials" :key="platform" :to="url">
+					<Icon
+						:name="`cib:${platform}`"
+						class="h-5 w-5 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+					/>
+				</NuxtLink>
 			</div>
 		</div>
-	</div>
+	</Container>
 
-	<div class="mt-16 sm:mt-20">
-		<div class="-my-4 flex justify-center gap-6 overflow-hidden py-4 sm:gap-10">
-			<div
-				v-for="(name, i) in featured"
-				:key="name"
-				class="relative aspect-[6/7] w-44 flex-none rotate-2 bg-neutral-50 dark:bg-neutral-900 sm:w-72 [&:nth-of-type(3n+2)]:-rotate-2"
-			>
-				<Image
-					:src="name"
-					:loading="i % 4 ? 'eager' : 'lazy'"
-					:preload="Boolean(i % 4)"
-					class="absolute inset-0 h-full w-full rounded-lg object-cover"
-					width="1800"
-					height="2100"
-				/>
-			</div>
-		</div>
-	</div>
+	<HeroGrid />
+
+	<Container class="mt-24 md:mt-28">
+		<span class="with-prose prose-h2:text-3xl">
+			<h2>Awards</h2>
+		</span>
+
+		<ol class="flex max-w-xl flex-col gap-y-4">
+			<li v-for="(award, i) in awards" :key="i" class="with-prose">
+				<h4 class="flex items-baseline">
+					<span class="mr-2">{{ award.year }}</span>
+					{{ award.title }}
+				</h4>
+
+				<p class="!mt-4">{{ award.description }}</p>
+			</li>
+		</ol>
+	</Container>
 </template>
 
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import type json from "../content/awards.json";
 
-const { socials } = useAppConfig();
-const ctf = useContentful();
+const { data } = await useAsyncData(() => queryContent("awards").findOne());
+const awards = ((data.value?.body ?? []) as typeof json).reverse();
 
-const entry = await ctf.getLandingPageEntry("Home");
-useEntryHead(entry);
-
-const asset = await ctf.getAsset("1qpXt6AG7ysZr3EHfpES0C");
-const featured = asset.fields.description!.split(",");
+const socials = {
+	twitter: "https://www.twitter.com/oleevermeren",
+	instagram: "https://www.instagram.com/isocausality",
+	github: "https://www.github.com/xiBread",
+};
 </script>

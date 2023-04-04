@@ -1,28 +1,37 @@
 <template>
-	<div class="mt-16 sm:px-8 lg:mt-28">
-		<div class="mx-auto max-w-7xl lg:px-8">
-			<div class="relative px-4 sm:px-8 lg:px-12">
-				<div class="mx-auto max-w-2xl lg:max-w-5xl">
-					<div class="mx-auto max-w-3xl">
-						<article
-							class="use-prose !max-w-none [&_p]:whitespace-pre-wrap"
-							v-html="body"
-						/>
-					</div>
-				</div>
-			</div>
+	<Container class="mt-14 lg:mt-28">
+		<div class="mx-auto max-w-3xl">
+			<article class="with-prose !max-w-none [&_p]:whitespace-pre-wrap" v-html="body" />
 		</div>
-	</div>
+	</Container>
 </template>
 
 <script setup lang="ts">
 import { BLOCKS } from "@contentful/rich-text-types";
+import type { WritingEntry } from "./index.vue";
 
 const route = useRoute();
 const ctf = useContentful();
 
-const entry = await ctf.getWritingEntry(route.params.slug as string);
-ctf.prependHeading(entry);
+const entries = await ctf.getEntries<WritingEntry>({
+	content_type: "writing",
+	"fields.slug": route.params.slug,
+});
+
+const entry = entries.items[0].fields;
+
+entry.body.content.unshift({
+	nodeType: BLOCKS.HEADING_1,
+	data: {},
+	content: [
+		{
+			nodeType: "text",
+			data: {},
+			value: entry.title,
+			marks: [],
+		},
+	],
+});
 
 const body = ctf.render(entry.body, {
 	renderNode: {
@@ -31,6 +40,4 @@ const body = ctf.render(entry.body, {
 		},
 	},
 });
-
-useEntryHead(entry);
 </script>

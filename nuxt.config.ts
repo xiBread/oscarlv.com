@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
-	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+	// prettier-ignore
+	modules: [
+		"@nuxt/content",
+		"@nuxt/image",
+		"@nuxtjs/tailwindcss",
+		"@vueuse/nuxt",
+		"nuxt-icon"
+	],
 	css: ["~/assets/main.css"],
 	build: {
 		transpile: ["@headlessui/vue"],
