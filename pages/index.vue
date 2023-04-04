@@ -1,7 +1,13 @@
 <template>
 	<Container class="my-14 flex items-center sm:my-24">
 		<div class="flex max-w-2xl flex-col items-center text-center">
-			<ContentDoc tag="header" class="with-prose" />
+			<header class="with-prose">
+				<h1>Curiosity through the eyes of art and logic.</h1>
+				<p>
+					Programmer and amateur artist from China based in Michigan. Always looking for
+					new ways to amaze myself to satiate my endeavor to create.
+				</p>
+			</header>
 
 			<div class="mt-6 flex gap-6">
 				<NuxtLink v-for="(url, platform) in socials" :key="platform" :to="url">
@@ -36,6 +42,8 @@
 
 <script setup lang="ts">
 import type json from "../content/awards.json";
+
+useHead({ title: "Oscar Lee-Vermeren" });
 
 const { data } = await useAsyncData(() => queryContent("awards").findOne());
 const awards = ((data.value?.body ?? []) as typeof json).reverse();
