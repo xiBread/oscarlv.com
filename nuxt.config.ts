@@ -24,7 +24,10 @@ export default defineNuxtConfig({
 		shim: false,
 	},
 	image: {
-		contentful: {},
+		provider: "contentful",
+		contentful: {
+			baseURL: "https://images.ctfassets.net/14cg5n5pc9y2",
+		},
 	},
 	tailwindcss: {
 		cssPath: "~/assets/main.css",

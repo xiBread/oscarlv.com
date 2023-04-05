@@ -16,7 +16,7 @@
 						tag="li"
 					>
 						<NuxtImg
-							:src="`/img${collection._path}/${collection.cover}`"
+							:src="collection.cover"
 							class="z-20 mb-6 aspect-square rounded-lg object-cover"
 							width="1000"
 							height="1000"

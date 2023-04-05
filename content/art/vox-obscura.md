@@ -2,7 +2,7 @@
 type: 1.Photography
 title: Vox Obscura
 description: Visualizing subtleties of the human experience that have no language.
-cover: nocturnal.jpg
+cover: /7Ks4WnFXWbuqm4K1n19wwQ/d20b61e4e6095db40d13ae4ad3aa71f4/nocturnal.jpg
 ---
 
 # Vox Obscura
