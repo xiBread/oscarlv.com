@@ -11,6 +11,9 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ["@headlessui/vue"],
 	},
+	nitro: {
+		preset: "service-worker",
+	},
 	runtimeConfig: {
 		public: {
 			contentful: {
