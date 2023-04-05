@@ -11,9 +11,6 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ["@headlessui/vue"],
 	},
-	nitro: {
-		preset: "service-worker",
-	},
 	runtimeConfig: {
 		public: {
 			contentful: {
@@ -22,15 +19,11 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	ssr: false,
 	typescript: {
 		shim: false,
 	},
 	image: {
-		provider: "contentful",
-		contentful: {
-			baseURL: "https://images.ctfassets.net/14cg5n5pc9y2",
-		},
+		contentful: {},
 	},
 	tailwindcss: {
 		cssPath: "~/assets/main.css",

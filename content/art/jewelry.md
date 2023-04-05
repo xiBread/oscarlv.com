@@ -2,7 +2,7 @@
 type: 2.Experimental
 title: Jewelry
 description: Using the third dimension to elevate art.
-cover: /JNd0GciQRbu6HGe4odBqy/9fbc75e14b674c14fdb95c3ee7fbd14a/art-nouveau-kc-1.jpg
+cover: art-nouveau-kc-f.jpg
 custom: true
 ---
 
