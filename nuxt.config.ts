@@ -11,16 +11,6 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ["@headlessui/vue"],
 	},
-	nitro: {
-		prerender: {
-			ignore: ["/art", "/writing"],
-		},
-	},
-	routeRules: {
-		"/": { ssr: false },
-		"/about": { ssr: false },
-		"/awards": { ssr: false },
-	},
 	runtimeConfig: {
 		public: {
 			contentful: {
