@@ -6,7 +6,7 @@
 					<div class="flex flex-1">
 						<NuxtLink to="/" class="mx-3" aria-label="Home">
 							<svg
-								class="h-7 w-7 fill-black dark:fill-white"
+								class="h-8 w-8 fill-black dark:fill-white"
 								viewBox="0 0 24 24"
 								aria-hidden="true"
 							>
