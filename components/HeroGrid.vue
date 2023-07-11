@@ -1,5 +1,5 @@
 <template>
-	<div class="relative z-20 flex items-center justify-center gap-5 py-4 sm:gap-6">
+	<div class="relative z-20 flex items-center justify-center gap-5 py-4 sm:gap-6 overflow-hidden">
 		<div v-rellax class="hidden flex-col gap-5 sm:gap-6 lg:flex" data-rellax-speed="3">
 			<HeroGridItem class="aspect-[2/3] w-36 lg:w-52" :src="images[0]" />
 		</div>
