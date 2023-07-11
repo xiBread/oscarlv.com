@@ -18,7 +18,7 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-white">
+		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-[#040404] dark:text-white">
 			<Lichtenberg />
 
 			<div class="fixed inset-0 flex justify-center sm:px-8">
