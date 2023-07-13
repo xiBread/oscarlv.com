@@ -4,7 +4,7 @@
 			<ContentRenderer
 				:value="data!"
 				tag="article"
-				class="prose dark:prose-invert dark:prose-p:text-zinc-400 max-w-none [&_p]:whitespace-pre-wrap"
+				class="prose dark:prose-invert dark:prose-p:text-zinc-400 max-w-none [&_p]:whitespace-pre-wrap prose-h1:text-5xl"
 			/>
 		</div>
 	</Container>
