@@ -36,7 +36,7 @@ Okay. I have feelings for you.
 
 You said chase what makes me feel alive, and I've been chasing you this whole time. I've been too scared to say anything, but you told me to run into a storm.
 
-*I'm sorry… I don't really know what to say.*
+*I'm sorry&hellip; I don't really know what to say.*
 
 That's okay. I didn't expect you to respond. I know I just sprang this on you.
 

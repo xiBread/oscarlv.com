@@ -36,7 +36,7 @@ But?
 
 *There's always a but.*
 
-…But I think she's already in a relationship.
+&hellip;But I think she's already in a relationship.
 
 *You really dug yourself into a hole this time. Why do you think that?*
 

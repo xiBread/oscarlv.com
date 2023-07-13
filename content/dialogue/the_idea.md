@@ -30,11 +30,11 @@ But–
 
 *I'm going to ask you a question. I don't even care if you're honest with me; just be honest with yourself.*
 
-Ok…
+Ok&hellip;
 
 *Are you actually in love with me, or do you just love the idea of a trophy partner?*
 
-"Trophy partner" is a pretty cynical way to put it, don't you think? …I don't know what you're expecting me to say.
+"Trophy partner" is a pretty cynical way to put it, don't you think? &hellip;I don't know what you're expecting me to say.
 
 *Sounds like an answer to me.*
 
@@ -48,17 +48,17 @@ God, I am *so* in LOVE with you! I can barely feel my face from the butterflies 
 
 The sight of your glorious face makes me physically melt. A night full of stars could *never* compare to–
 
-*Can you shut the fuck up?! …I'm sorry.*
+*Can you shut the fuck up?! &hellip;I'm sorry.*
 
 I just hate fighting with you.
 
-*I hate fighting with you too… It's the pressure of having to say it back.*
+*I hate fighting with you too&hellip; It's the pressure of having to say it back.*
 
 Huh?
 
-*That's my answer to your question. You're just always so… comfortable when you say it. You look like you feel safe whenever you say, "I love you." It makes me feel guilty if I don't say it because I'll hurt you. So I say it.*
+*That's my answer to your question. You're just always so&hellip; comfortable when you say it. You look like you feel safe whenever you say, "I love you." It makes me feel guilty if I don't say it because I'll hurt you. So I say it.*
 
-Oh… Then I think I understand what you meant by the "idea of you."
+Oh&hellip; Then I think I understand what you meant by the "idea of you."
 
 *You think so?*
 

@@ -30,7 +30,7 @@ Both of us know that's bullshit.
 
 God, what don't you get? I like you! I have feelings for you! I want to spend more time with you, but you've just disappeared for no reason!
 
-*…I know.*
+*&hellip;I know.*
 
 You know? Is that why you distance yourself? You're scared of me confessing my feelings to you?
 
