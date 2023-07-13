@@ -18,10 +18,10 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-[#040404] dark:text-white">
+		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300">
 			<Lichtenberg />
 
-			<div class="fixed inset-0 flex justify-center sm:px-8">
+			<div v-if="readingBlur" class="fixed inset-0 flex justify-center sm:px-8">
 				<div class="flex w-full max-w-7xl lg:px-8">
 					<div
 						class="w-full ring-1 ring-zinc-200 backdrop-blur-[6px] dark:ring-zinc-800"
@@ -45,7 +45,8 @@
 <script setup lang="ts">
 useHead({ script: [{ src: "/theme.js", type: "module" }] });
 
-if (typeof process !== "undefined") {
-	process.browser = true;
-}
+const readingBlur = useLocalStorage("reading_blur", true);
+
+onKeyStroke("b", (event) => event.metaKey && useToggle(readingBlur)());
+onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())());
 </script>

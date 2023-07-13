@@ -23,10 +23,6 @@
 						</NuxtLink>
 					</div>
 
-					<div class="flex flex-1 justify-end md:justify-center">
-						<HeaderNav />
-					</div>
-
 					<div class="flex justify-end md:flex-1">
 						<button
 							type="button"

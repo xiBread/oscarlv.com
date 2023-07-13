@@ -6,16 +6,29 @@
 					<div
 						class="flex flex-col items-center justify-between gap-6 text-sm text-zinc-500 sm:flex-row"
 					>
-						<nav class="flex gap-6 font-medium">
+						<div class="flex items-center">
+							<div class="flex gap-6">
+								<NuxtLink
+									v-for="(url, platform) in socials"
+									:key="platform"
+									:to="url"
+								>
+									<Icon
+										:name="`bi:${platform}`"
+										class="h-5 w-5 text-zinc-400 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300"
+									/>
+								</NuxtLink>
+							</div>
+
+							<!-- <div class="h-5 w-px mx-6 bg-zinc-200 dark:bg-zinc-700/90" />
+
 							<NuxtLink
-								v-for="item in navigation"
-								:key="item"
-								:to="`/${item.toLowerCase()}`"
-								class="hover:text-black dark:hover:text-white"
+								to="/about"
+								class="hover:text-zinc-700 font-medium dark:hover:text-zinc-300"
 							>
-								{{ item }}
-							</NuxtLink>
-						</nav>
+								About
+							</NuxtLink> -->
+						</div>
 
 						<p class="text-zinc-400 dark:text-zinc-500 sm:order-first">
 							&copy; {{ new Date().getFullYear() }} Oscar Lee-Vermeren
@@ -28,5 +41,10 @@
 </template>
 
 <script setup lang="ts">
-const navigation = ["Art", "Writing", "About"];
+const socials = {
+	twitter: "https://www.twitter.com/_oscar_lv",
+	discord: "https://discord.gg/KqjSvdj3",
+	spotify: "https://stats.fm/oscarlv",
+	github: "https://www.github.com/xiBread",
+};
 </script>

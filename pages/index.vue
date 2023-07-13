@@ -1,56 +1,55 @@
 <template>
-	<Container class="my-14 flex items-center sm:my-24">
-		<div class="flex max-w-2xl flex-col items-center text-center">
-			<header class="with-prose">
-				<h1>Curiosity through the eyes of art and logic.</h1>
-				<p>
-					Programmer and amateur artist from China based in Michigan. Always looking for
-					new ways to amaze myself to satiate my endeavor to create.
+	<Container class="mt-32 h-[65vh] flex items-center">
+		<div
+			:class="[
+				'flex flex-col items-center text-center',
+				(quote?.content?.length ?? 0) > 70 ? 'max-w-3xl' : 'max-w-xl',
+			]"
+		>
+			<header class="prose dark:prose-invert max-w-none">
+				<h1 class="quote text-4xl/tight lg:text-left font-mono">{{ quote?.content }}</h1>
+
+				<p class="lg:text-right text-zinc-500 dark:text-zinc-400">
+					&mdash; {{ quote?.quotee }},
+					<cite>{{ quote?.source }}</cite>
 				</p>
 			</header>
 
-			<div class="mt-6 flex gap-6">
-				<NuxtLink v-for="(url, platform) in socials" :key="platform" :to="url">
-					<Icon
-						:name="`cib:${platform}`"
-						class="h-5 w-5 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
-					/>
-				</NuxtLink>
-			</div>
+			<NuxtLink
+				class="mt-14 text-zinc-500 dark:text-zinc-400 font-medium italic group hover:text-zinc-700 dark:hover:text-zinc-200"
+				to="/explore"
+			>
+				<span class="group-hover:underline">explore</span>
+				{{ " " }} &rarr;
+			</NuxtLink>
 		</div>
-	</Container>
-
-	<HeroGrid />
-
-	<Container class="mt-24 md:mt-28">
-		<span class="with-prose prose-h2:text-3xl">
-			<h2>Awards</h2>
-		</span>
-
-		<ol class="flex max-w-xl flex-col gap-y-4">
-			<li v-for="(award, i) in awards" :key="i" class="with-prose">
-				<h4 class="flex items-baseline">
-					<span class="mr-2">{{ award.year }}</span>
-					{{ award.title }}
-				</h4>
-
-				<p class="!mt-4">{{ award.description }}</p>
-			</li>
-		</ol>
 	</Container>
 </template>
 
 <script setup lang="ts">
-import type json from "../content/awards.json";
+import type json from "../content/quotes.json";
 
-useHead({ title: "Oscar Lee-Vermeren" });
+type Quote = (typeof json)[0];
 
-const { data } = await useAsyncData(() => queryContent("awards").findOne());
-const awards = ((data.value?.body ?? []) as typeof json).reverse();
+const quote = ref<Quote>();
 
-const socials = {
-	twitter: "https://www.twitter.com/oleevermeren",
-	instagram: "https://www.instagram.com/isocausality",
-	github: "https://www.github.com/xiBread",
-};
+const { data } = await useAsyncData(() => queryContent("quotes").findOne());
+const quotes = (data.value?.body ?? []) as Quote[];
+
+useHead({ title: "olv." });
+
+onMounted(() => (quote.value = quotes[(Math.random() * quotes.length) | 0]));
+onKeyStroke("Enter", () => useRouter().push("/explore"));
 </script>
+
+<style>
+.quote {
+	@apply before:content-['"']
+		before:-ml-[1ch]
+		before:text-zinc-400
+		after:content-['"']
+		after:text-zinc-400
+		dark:before:text-zinc-600
+		dark:after:text-zinc-600;
+}
+</style>

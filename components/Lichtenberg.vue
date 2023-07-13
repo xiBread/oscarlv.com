@@ -1,6 +1,6 @@
 <template>
 	<div class="pointer-events-none fixed inset-0 -z-10">
-		<canvas ref="lichtenberg" class="dark:brightness-[.3]" />
+		<canvas ref="lichtenberg" class="dark:brightness-[.2]" />
 	</div>
 </template>
 
@@ -34,7 +34,7 @@ onMounted(() => {
 	if (width > 640) {
 		queue.push(
 			() => move(0, rand() * height, 0), // Left
-			() => move(width, rand() * height, Math.PI) // Right
+			() => move(width, rand() * height, Math.PI), // Right
 		);
 	}
 

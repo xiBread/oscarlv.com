@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,15 +17,4 @@ html {
 body::-webkit-scrollbar {
 	height: 0;
 	width: 0;
-}
-
-.with-prose {
-	@apply prose
-		prose-zinc
-		dark:prose-invert
-		prose-h1:text-4xl
-		prose-h1:font-bold
-		prose-h1:tracking-tight
-		dark:prose-p:text-zinc-400
-		sm:prose-h1:text-5xl/tight;
 }
