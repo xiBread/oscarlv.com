@@ -21,18 +21,27 @@
 									className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-70 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
 								/>
 
-								<NuxtLink :to="entry._path!.split('/')[2]">
+								<NuxtLink
+									:to="entry._path!.split('/')[2]"
+									@click="read.push(entry._id)"
+								>
 									<span
 										className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
 									/>
+
 									<span className="relative z-10">
-										<span class="flex items-center">
-											{{ entry.title }}
+										<span class="flex items-center space-x-2">
+											<h3>{{ entry.title }}</h3>
 
 											<Icon
 												v-if="entry.explicit"
 												name="material-symbols:explicit"
-												class="ml-2.5 h-5 w-5 text-zinc-400 dark:text-zinc-500"
+												class="h-5 w-5 text-zinc-400 dark:text-zinc-500"
+											/>
+
+											<span
+												v-if="!read.includes(entry._id)"
+												class="rounded-full bg-sky-400 h-2 w-2"
 											/>
 										</span>
 									</span>
@@ -56,6 +65,8 @@
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 useHead({ title: "olv. | explore" });
+
+const read = useLocalStorage<string[]>("read", []);
 
 const { data } = await useAsyncData(() =>
 	queryContent()
