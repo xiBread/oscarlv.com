@@ -12,12 +12,15 @@
 
 <script setup lang="ts">
 const route = useRoute();
+const read = useLocalStorage<string[]>("read", []);
 
 const { data } = await useAsyncData(() =>
 	queryContent()
 		.where({ _path: { $contains: [route.path.split("/")[1]] } })
 		.findOne(),
 );
+
+read.value.push(data.value!._id);
 
 useHead({ title: `olv. | ${data.value?.title}` });
 </script>
