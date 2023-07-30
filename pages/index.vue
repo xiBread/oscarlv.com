@@ -10,8 +10,8 @@
 				<h1 class="quote text-4xl/tight lg:text-left font-mono">{{ quote?.content }}</h1>
 
 				<p class="lg:text-right text-zinc-500 dark:text-zinc-400">
-					&mdash; {{ quote?.quotee }},
-					<cite>{{ quote?.source }}</cite>
+					&mdash; {{ quote?.quotee + (quote?.source ? ", " : "") }}
+					<cite v-if="quote?.source">{{ quote.source }}</cite>
 				</p>
 			</header>
 
