@@ -1,4 +1,6 @@
 <template>
+	<Title>olv.</Title>
+
 	<Container class="mt-32 h-[65vh] flex items-center">
 		<div
 			:class="[
@@ -35,8 +37,6 @@ const quote = ref<Quote>();
 
 const { data } = await useAsyncData(() => queryContent("quotes").findOne());
 const quotes = (data.value?.body ?? []) as Quote[];
-
-useHead({ title: "olv." });
 
 onMounted(() => (quote.value = quotes[(Math.random() * quotes.length) | 0]));
 onKeyStroke("Enter", () => useRouter().push("/explore"));

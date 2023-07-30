@@ -1,4 +1,6 @@
 <template>
+	<Title>explore &bullet; olv.</Title>
+
 	<Container class="px-2 mt-16 sm:mt-32">
 		<div class="mt-16 sm:mt-20">
 			<div class="mt-28 space-y-32 sm:mt-32">
@@ -60,8 +62,6 @@
 
 <script setup lang="ts">
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
-
-useHead({ title: "olv. | explore" });
 
 const read = useLocalStorage<string[]>("read", []);
 const visited = useLocalStorage("visited", false);

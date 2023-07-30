@@ -1,4 +1,6 @@
 <template>
+	<Title>{{ entry.title }} &bullet; olv.</Title>
+
 	<Container class="mt-14 lg:mt-28">
 		<div class="mx-auto max-w-4xl">
 			<ContentRenderer
@@ -28,6 +30,4 @@ const { data } = await useAsyncData(() =>
 
 const entry = data.value!;
 read.value.push(entry._id);
-
-useHead({ title: `olv. | ${entry.title}` });
 </script>
