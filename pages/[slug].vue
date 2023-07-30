@@ -1,10 +1,16 @@
 <template>
 	<Container class="mt-14 lg:mt-28">
-		<div class="mx-auto max-w-3xl">
+		<div class="mx-auto max-w-4xl">
 			<ContentRenderer
-				:value="data!"
+				:value="entry"
 				tag="article"
-				class="prose dark:prose-invert dark:prose-p:text-zinc-400 max-w-none [&_p]:whitespace-pre-wrap prose-h1:text-5xl"
+				:class="[
+					'prose dark:prose-invert max-w-none [&_p]:max-w-[50ch] [&_p]:whitespace-pre-wrap prose-h1:text-5xl',
+					entry._dir === 'dialogue' &&
+						(entry.startPosition === 'odd'
+							? 'dialogue-start-odd'
+							: 'dialogue-start-even'),
+				]"
 			/>
 		</div>
 	</Container>
@@ -20,7 +26,8 @@ const { data } = await useAsyncData(() =>
 		.findOne(),
 );
 
-read.value.push(data.value!._id);
+const entry = data.value!;
+read.value.push(entry._id);
 
-useHead({ title: `olv. | ${data.value!.title}` });
+useHead({ title: `olv. | ${entry.title}` });
 </script>
