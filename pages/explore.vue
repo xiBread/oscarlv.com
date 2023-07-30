@@ -64,6 +64,7 @@ import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 useHead({ title: "olv. | explore" });
 
 const read = useLocalStorage<string[]>("read", []);
+const visited = useLocalStorage("visited", false);
 
 const { data } = await useAsyncData(() =>
 	queryContent()
@@ -71,7 +72,12 @@ const { data } = await useAsyncData(() =>
 		.find(),
 );
 
-const groups = (data.value ?? []).reduce(
+if (!visited.value) {
+	read.value.push(...data.value!.map((entry) => entry._id));
+	visited.value = true;
+}
+
+const groups = data.value!.reduce(
 	(prev, group) => {
 		const key = (group._dir as string)
 			.replace(/^_*(.)/, (_, $1) => $1.toUpperCase())

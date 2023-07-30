@@ -22,5 +22,5 @@ const { data } = await useAsyncData(() =>
 
 read.value.push(data.value!._id);
 
-useHead({ title: `olv. | ${data.value?.title}` });
+useHead({ title: `olv. | ${data.value!.title}` });
 </script>
