@@ -7,8 +7,10 @@
 				:value="entry"
 				tag="article"
 				:class="[
-					'prose dark:prose-invert max-w-none [&_p]:max-w-[50ch] [&_p]:whitespace-pre-wrap prose-h1:text-5xl',
+					'prose dark:prose-invert max-w-none [&_p]:whitespace-pre-wrap prose-h1:text-5xl',
+					entry.manual ? 'max-w-none' : '[&_p]:max-w-[50ch]',
 					entry._dir === 'dialogue' &&
+						!entry.manual &&
 						(entry.startPosition === 'odd'
 							? 'dialogue-start-odd'
 							: 'dialogue-start-even'),
