@@ -23,7 +23,7 @@
 									className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl"
 								/>
 
-								<NuxtLink :to="entry._path!.split('/')[2]">
+								<NuxtLink :href="entry._path!.split('/')[2]">
 									<span
 										className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
 									/>

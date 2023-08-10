@@ -4,7 +4,7 @@
 			<Container class="top-6 w-full sm:px-8">
 				<div class="relative flex items-center gap-4">
 					<div class="flex flex-1">
-						<NuxtLink to="/" class="mx-3" aria-label="Home">
+						<NuxtLink href="/" class="mx-3" aria-label="Home">
 							<svg
 								class="h-8 w-8 fill-black dark:fill-white"
 								viewBox="0 0 24 24"
@@ -47,5 +47,5 @@
 const isDark = useDark();
 const toggle = useToggle(isDark);
 
-const title = `Switch to ${isDark ? "light" : "dark"} mode`;
+const title = `Switch href ${isDark ? "light" : "dark"} mode`;
 </script>

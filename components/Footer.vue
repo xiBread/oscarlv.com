@@ -11,7 +11,7 @@
 								<NuxtLink
 									v-for="(url, platform) in socials"
 									:key="platform"
-									:to="url"
+									:href="url"
 								>
 									<Icon
 										:name="`bi:${platform}`"
@@ -23,7 +23,7 @@
 							<!-- <div class="h-5 w-px mx-6 bg-zinc-200 dark:bg-zinc-700/90" />
 
 							<NuxtLink
-								to="/about"
+								href="/about"
 								class="hover:text-zinc-700 font-medium dark:hover:text-zinc-300"
 							>
 								About

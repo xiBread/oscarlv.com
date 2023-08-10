@@ -19,7 +19,7 @@
 
 			<NuxtLink
 				class="mt-14 text-zinc-500 dark:text-zinc-400 font-medium italic group hover:text-zinc-700 dark:hover:text-zinc-200"
-				to="/explore"
+				href="/explore"
 			>
 				<span class="group-hover:underline">explore</span>
 				{{ " " }} &rarr;
