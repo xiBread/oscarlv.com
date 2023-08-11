@@ -25,37 +25,39 @@ onMounted(() => {
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = "#e1e1e14d";
 
-	let fixed = 0;
+	const mid = () => rand() * 0.6 + 0.2;
+
 	let queue = [
-		() => move(rand() * width, 0, Math.PI / 2), // Bottom
-		() => move(rand() * width, height, Math.PI / -2), // Top
+		() => draw(mid() * width, -5, Math.PI / 2), // Bottom
+		() => draw(mid() * width, height + 5, Math.PI / -2), // Top
 	];
 
 	if (width > 640) {
 		queue.push(
-			() => move(0, rand() * height, 0), // Left
-			() => move(width, rand() * height, Math.PI), // Right
+			() => draw(-5, mid() * height, 0), // Left
+			() => draw(width + 5, mid() * height, Math.PI), // Right
 		);
 	}
 
 	let lastRequest = performance.now();
 
 	const { pause } = useRafFn(() => {
-		if (performance.now() - lastRequest < 25) return;
+		// 120 fps
+		if (performance.now() - lastRequest < 60) return;
 		lastRequest = performance.now();
-
-		fixed++;
 
 		const frames = queue;
 		queue = [];
 
 		if (!frames.length) pause();
 
-		frames.forEach((frame) => frame());
+		for (const frame of frames) {
+			rand() < 0.5 ? frames.push(frame) : frame();
+		}
 	});
 
-	function move(x: number, y: number, rad: number) {
-		const distance = rand() * 8;
+	function draw(x: number, y: number, rad: number, n = ref(0)) {
+		const distance = rand() * 6;
 		const [dx, dy] = [x + distance * Math.cos(rad), y + distance * Math.sin(rad)];
 
 		ctx.beginPath();
@@ -63,14 +65,19 @@ onMounted(() => {
 		ctx.lineTo(dx, dy);
 		ctx.stroke();
 
+		// Bounds checking
 		if (dx < -100 || dx > width + 100 || dy < -100 || dy > height + 100) return;
 
-		if (fixed <= 4 || rand() > 0.5) {
-			queue.push(() => move(dx, dy, rad + rand() * 0.25));
+		const rate = n.value++ <= 30 ? 0.8 : 0.5;
+
+		// Left
+		if (rand() < rate) {
+			queue.push(() => draw(dx, dy, rad + rand() * 0.25, n));
 		}
 
-		if (fixed <= 4 || rand() > 0.5) {
-			queue.push(() => move(dx, dy, rad - rand() * 0.25));
+		// Right
+		if (rand() < rate) {
+			queue.push(() => draw(dx, dy, rad - rand() * 0.25, n));
 		}
 	}
 });
