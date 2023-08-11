@@ -4,18 +4,20 @@
 			<div class="border-t border-zinc-200 py-14 dark:border-zinc-700/80">
 				<ContainerInner>
 					<div
-						class="flex flex-col items-center justify-between gap-6 text-sm text-zinc-500 sm:flex-row"
+						class="flex flex-col items-center justify-between gap-6 text-sm sm:flex-row"
 					>
 						<div class="flex items-center">
 							<div class="flex gap-6">
 								<NuxtLink
-									v-for="(url, platform) in socials"
+									v-for="([icon, url], platform) in socials"
 									:key="platform"
 									:href="url"
 								>
-									<Icon
-										:name="`bi:${platform}`"
-										class="h-5 w-5 text-zinc-400 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300"
+									<span
+										:class="[
+											'text-[1.25rem] opacity-50 hover:opacity-100',
+											icon,
+										]"
 									/>
 								</NuxtLink>
 							</div>
@@ -42,9 +44,9 @@
 
 <script setup lang="ts">
 const socials = {
-	twitter: "https://www.twitter.com/_oscar_lv",
-	discord: "https://discord.gg/KqjSvdj3",
-	spotify: "https://stats.fm/oscarlv",
-	github: "https://www.github.com/xiBread",
+	twitter: ["i-[bi--twitter]", "https://www.twitter.com/_oscar_lv"],
+	discord: ["i-[bi--discord]", "https://discord.gg/KqjSvdj3"],
+	spotify: ["i-[bi--spotify]", "https://stats.fm/oscarlv"],
+	github: ["i-[bi--github]", "https://www.github.com/xiBread"],
 };
 </script>

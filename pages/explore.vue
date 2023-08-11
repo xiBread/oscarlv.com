@@ -32,10 +32,9 @@
 										<span class="flex items-center space-x-2">
 											<h3>{{ entry.title }}</h3>
 
-											<Icon
+											<span
 												v-if="entry.explicit"
-												name="material-symbols:explicit"
-												class="h-5 w-5 text-zinc-400 dark:text-zinc-500"
+												class="text-[1.25rem] opacity-30 dark:opacity-40 i-[material-symbols--explicit]"
 											/>
 
 											<span

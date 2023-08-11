@@ -31,9 +31,8 @@
 							:title="title"
 							@click="toggle()"
 						>
-							<Icon
-								:name="isDark ? 'octicon:sun-16' : 'octicon:moon-16'"
-								class="block h-5 w-5 text-zinc-500 hover:text-purple-500 dark:hover:text-yellow-300"
+							<span
+								class="text-[1.25rem] opacity-50 hover:opacity-100 dark:i-[octicon--moon-16] i-[octicon--sun-16]"
 							/>
 						</button>
 					</div>
@@ -47,5 +46,5 @@
 const isDark = useDark();
 const toggle = useToggle(isDark);
 
-const title = `Switch href ${isDark ? "light" : "dark"} mode`;
+const title = `Switch to ${isDark ? "light" : "dark"} mode`;
 </script>

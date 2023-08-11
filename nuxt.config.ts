@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 		"@nuxt/content",
 		"@nuxtjs/tailwindcss",
 		"@vueuse/nuxt",
-		"nuxt-icon"
 	],
 	css: ["~/assets/main.css"],
 	typescript: {
