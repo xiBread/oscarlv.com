@@ -16,11 +16,11 @@
 		class="relative z-20 flex items-center justify-center gap-5 overflow-hidden py-4 sm:gap-6"
 		xyz="fade down duration-10 delay-2"
 	>
-		<div class="xyz-in hidden flex-col gap-5 sm:gap-6 lg:flex">
+		<div v-rellax class="xyz-in hidden flex-col gap-5 sm:gap-6 lg:flex" data-rellax-speed="3">
 			<UseTemplate class="aspect-[2/3] w-36 lg:w-52" src="/portraits/abigail.jpg" />
 		</div>
 
-		<div class="flex flex-col gap-5 sm:gap-6">
+		<div v-rellax class="flex flex-col gap-5 sm:gap-6" data-rellax-speed="1">
 			<UseTemplate
 				class="xyz-in aspect-[4/3] w-44 md:w-52"
 				src="/vox_obscura/sonder.jpg"
@@ -33,11 +33,16 @@
 			/>
 		</div>
 
-		<div class="xyz-in flex flex-col gap-5 sm:gap-6" xyz="inherit up delay-5">
+		<div
+			v-rellax
+			class="xyz-in flex flex-col gap-5 sm:gap-6"
+			xyz="inherit up delay-5"
+			data-rellax-speed="0"
+		>
 			<UseTemplate class="aspect-[2/3] w-72 lg:w-96" src="/portraits/sam.jpg" />
 		</div>
 
-		<div class="flex flex-col gap-5 sm:gap-6">
+		<div v-rellax class="flex flex-col gap-5 sm:gap-6" data-rellax-speed="1">
 			<UseTemplate
 				class="xyz-in aspect-[3/4] w-44 md:w-52"
 				src="/portraits/angela.jpg"
@@ -50,7 +55,7 @@
 			/>
 		</div>
 
-		<div class="xyz-in hidden flex-col gap-5 sm:gap-6 lg:flex">
+		<div v-rellax class="xyz-in hidden flex-col gap-5 sm:gap-6 lg:flex" data-rellax-speed="3">
 			<UseTemplate class="aspect-[2/3] w-36 lg:w-52" src="/portraits/emily.jpg" />
 		</div>
 	</div>
