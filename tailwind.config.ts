@@ -11,8 +11,8 @@ export default {
 		forms(),
 		typography(),
 		addDynamicIconSelectors({ prefix: "i" }),
-		plugin(({ matchUtilities, theme }) => {
-			matchUtilities(
+		plugin(({ matchComponents, theme }) => {
+			matchComponents(
 				{
 					"dialogue-start": (value) => ({
 						[`p:not(:has([continue])):nth-child(${value})`]: {
