@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		"@nuxtjs/tailwindcss",
 		"@vueuse/nuxt",
 	],
-	css: ["~/assets/main.css"],
+	css: ["@animxyz/core", "~/assets/main.css"],
 	typescript: {
 		shim: false,
 	},

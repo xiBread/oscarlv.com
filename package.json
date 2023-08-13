@@ -18,6 +18,7 @@
 		]
 	},
 	"dependencies": {
+		"@animxyz/core": "^0.6.6",
 		"@headlessui/vue": "^1.7.15"
 	},
 	"devDependencies": {
