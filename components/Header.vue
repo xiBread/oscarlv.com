@@ -36,7 +36,7 @@
 							@click="toggle()"
 						>
 							<span
-								class="i-[octicon--sun-16] text-[1.25rem] opacity-50 dark:i-[octicon--moon-16] hover:opacity-100"
+								class="i-[octicon--moon-16] text-[1.25rem] opacity-50 dark:i-[octicon--sun-16] hover:opacity-100"
 							/>
 						</button>
 					</div>
