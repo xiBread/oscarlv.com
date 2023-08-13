@@ -17,9 +17,3 @@
 
 	<PhotoWall />
 </template>
-
-<style>
-:root {
-	--xyz-translate-default: 14px !important;
-}
-</style>

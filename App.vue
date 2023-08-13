@@ -50,3 +50,22 @@ const blur = useLocalStorage("blur", true);
 onKeyStroke("b", (event) => event.metaKey && useToggle(blur)());
 onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())());
 </script>
+
+<style>
+:root {
+	--xyz-translate-default: 14px !important;
+
+	font-family: "Inter var", sans-serif;
+	font-feature-settings: "ss01", "cv11";
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+</style>
