@@ -1,6 +1,6 @@
 # Alone
 
-I used to be scared to be myself.
+I used to be scared to be by myself.
 
 I'd sink deeper and deeper
 Into my own fabric of reality,
