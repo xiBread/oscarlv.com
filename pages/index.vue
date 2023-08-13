@@ -8,9 +8,9 @@
 		>
 			<h1 class="xyz-in">Curiosity through the eyes of expression.</h1>
 
-			<p class="xyz-in">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dignissimos eligendi
-				nihil tenetur cum maxime similique a, dolores nostrum fugit aspernatur voluptatem.
+			<p class="xyz-in mt-0">
+				Fine-art photographer, writer, and full-stack developer from China based in
+				Michigan. Always looking for new ways to satiate my endeavor to create.
 			</p>
 		</div>
 	</Container>
