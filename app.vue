@@ -65,7 +65,6 @@ html {
 }
 
 body::-webkit-scrollbar {
-	height: 0;
 	width: 0;
 }
 </style>
