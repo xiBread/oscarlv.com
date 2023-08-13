@@ -1,4 +1,6 @@
 <template>
+	<Title>about &bullet; olv.</Title>
+
 	<Container class="mt-16 sm:mt-32">
 		<ContentDoc tag="article" class="slide prose prose-zinc mx-auto dark:prose-invert" />
 	</Container>
