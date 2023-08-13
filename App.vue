@@ -47,8 +47,8 @@ useHead({ script: [{ src: "/theme.js", type: "module" }] });
 
 const blur = useLocalStorage("blur", true);
 
-onKeyStroke("b", (event) => event.metaKey && useToggle(blur)());
-onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())());
+onKeyStroke("b", (event) => event.metaKey && useToggle(blur)(), { dedupe: true });
+onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())(), { dedupe: true });
 </script>
 
 <style>
