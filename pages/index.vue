@@ -16,7 +16,3 @@
 
 	<PhotoWall />
 </template>
-
-<script setup lang="ts">
-onKeyStroke("Enter", () => useRouter().push("/explore"));
-</script>
