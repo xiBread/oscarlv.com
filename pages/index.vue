@@ -1,37 +1,43 @@
 <template>
 	<Title>olv.</Title>
 
-	<Container class="mt-32 h-[65vh] flex items-center">
+	<Container class="my-14 flex items-center sm:my-20">
 		<div
-			:class="[
-				'flex flex-col items-center text-center',
-				(quote?.content?.length ?? 0) > 70 ? 'max-w-3xl' : 'max-w-xl',
-			]"
+			class="prose flex max-w-2xl flex-col items-center text-center dark:prose-invert prose-h1:text-5xl/tight"
 		>
-			<header class="prose dark:prose-invert max-w-none">
-				<h1 class="quote text-4xl/tight lg:text-left font-mono">{{ quote?.content }}</h1>
+			<h1>Curiosity through the eyes of expression.</h1>
 
-				<p class="lg:text-right text-zinc-500 dark:text-zinc-400">
+			<div class="not-prose">
+				<blockquote class="mb-2 whitespace-pre-wrap italic">
+					"{{ quote?.content }}"
+				</blockquote>
+
+				<p class="text-zinc-500 dark:text-zinc-400">
 					&mdash; {{ quote?.quotee + (quote?.source ? ", " : "") }}
-					<cite v-if="quote?.source">{{ quote.source }}</cite>
-				</p>
-			</header>
 
-			<NuxtLink
-				class="mt-14 text-zinc-500 dark:text-zinc-400 font-medium italic group hover:text-zinc-700 dark:hover:text-zinc-200"
-				href="/explore"
-			>
-				<span class="group-hover:underline">explore</span>
-				{{ " " }} &rarr;
-			</NuxtLink>
+					<cite v-if="quote?.source" class="font-medium">
+						<NuxtLink
+							v-if="typeof quote.source === 'object'"
+							:href="quote.source.url"
+							class="underline decoration-zinc-500 underline-offset-2 hover:text-white"
+						>
+							{{ quote.source.text }}
+						</NuxtLink>
+
+						<template v-else>{{ quote.source }}</template>
+					</cite>
+				</p>
+			</div>
 		</div>
 	</Container>
+
+	<PhotoWall />
 </template>
 
 <script setup lang="ts">
 import type json from "../content/quotes.json";
 
-type Quote = (typeof json)[0];
+type Quote = (typeof json)[number];
 
 const quote = ref<Quote>();
 
@@ -41,15 +47,3 @@ const quotes = (data.value?.body ?? []) as Quote[];
 onMounted(() => (quote.value = quotes[(Math.random() * quotes.length) | 0]));
 onKeyStroke("Enter", () => useRouter().push("/explore"));
 </script>
-
-<style>
-.quote {
-	@apply before:content-['"']
-		before:-ml-[1ch]
-		before:text-zinc-400
-		after:content-['"']
-		after:text-zinc-400
-		dark:before:text-zinc-600
-		dark:after:text-zinc-600;
-}
-</style>

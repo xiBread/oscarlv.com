@@ -7,7 +7,7 @@
 				:value="entry"
 				tag="article"
 				:class="[
-					'prose dark:prose-invert max-w-none [&_p]:whitespace-pre-wrap prose-h1:text-5xl',
+					'prose max-w-none dark:prose-invert prose-h1:text-5xl [&_p]:whitespace-pre-wrap',
 					entry.manual ? 'max-w-none' : '[&_p]:max-w-[50ch]',
 					entry._dir === 'dialogue' &&
 						!entry.manual &&
@@ -26,7 +26,7 @@ const read = useLocalStorage<string[]>("read", []);
 
 const { data } = await useAsyncData(() =>
 	queryContent()
-		.where({ _path: { $contains: [route.path.split("/")[1]] } })
+		.where({ _path: { $contains: [route.params.slug as string] } })
 		.findOne(),
 );
 

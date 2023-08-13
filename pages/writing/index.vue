@@ -1,7 +1,7 @@
 <template>
-	<Title>explore &bullet; olv.</Title>
+	<Title>writing &bullet; olv.</Title>
 
-	<Container class="px-2 mt-16 sm:mt-32">
+	<Container class="mt-16 px-2 sm:mt-32">
 		<div class="mt-16 sm:mt-20">
 			<div class="mt-28 space-y-32 sm:mt-32">
 				<div v-for="(entries, category) in groups" :key="category">
@@ -23,7 +23,7 @@
 									className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl"
 								/>
 
-								<NuxtLink :href="entry._path!.split('/')[2]">
+								<NuxtLink :href="`/writing/${entry._path!.split('/')[2]}`">
 									<span
 										className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
 									/>
@@ -34,12 +34,12 @@
 
 											<span
 												v-if="entry.explicit"
-												class="text-[1.25rem] opacity-30 dark:opacity-40 i-[material-symbols--explicit]"
+												class="i-[material-symbols--explicit] text-[1.25rem] opacity-30 dark:opacity-40"
 											/>
 
 											<span
 												v-if="!read.includes(entry._id)"
-												class="rounded-full bg-sky-400 h-2 w-2"
+												class="h-2 w-2 rounded-full bg-sky-400"
 											/>
 										</span>
 									</span>

@@ -23,6 +23,10 @@
 						</NuxtLink>
 					</div>
 
+					<div class="flex flex-1 justify-end md:justify-center">
+						<HeaderNav />
+					</div>
+
 					<div class="flex justify-end md:flex-1">
 						<button
 							type="button"
@@ -32,7 +36,7 @@
 							@click="toggle()"
 						>
 							<span
-								class="text-[1.25rem] opacity-50 hover:opacity-100 dark:i-[octicon--moon-16] i-[octicon--sun-16]"
+								class="i-[octicon--sun-16] text-[1.25rem] opacity-50 dark:i-[octicon--moon-16] hover:opacity-100"
 							/>
 						</button>
 					</div>
