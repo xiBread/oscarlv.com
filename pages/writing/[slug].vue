@@ -7,7 +7,7 @@
 				tag="article"
 				:value="entry"
 				:class="[
-					'prose max-w-none dark:prose-invert prose-h1:text-5xl [&_p]:whitespace-pre-wrap',
+					'prose prose-zinc max-w-none dark:prose-invert prose-h1:text-5xl [&_p]:whitespace-pre-wrap',
 					entry.overrides || '[&_p]:max-w-[50ch]',
 					entry._dir === 'dialogue' &&
 						(entry.startPosition === 'odd'
