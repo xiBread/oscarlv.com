@@ -31,8 +31,7 @@
 						<button
 							type="button"
 							class="mx-3 my-2"
-							:aria-label="title"
-							:title="title"
+							aria-label="Switch theme"
 							@click="toggle()"
 						>
 							<span
@@ -49,6 +48,4 @@
 <script setup lang="ts">
 const isDark = useDark();
 const toggle = useToggle(isDark);
-
-const title = `Switch to ${isDark ? "light" : "dark"} mode`;
 </script>
