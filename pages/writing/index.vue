@@ -3,8 +3,8 @@
 
 	<Container class="mt-16 px-2 sm:mt-32">
 		<div class="mt-16 sm:mt-20">
-			<div class="mt-28 space-y-32 sm:mt-32">
-				<div v-for="(entries, category) in groups" :key="category">
+			<div class="mt-28 space-y-32 sm:mt-32" xyz="fade duration-10 delay-1 up stagger-2">
+				<div v-for="(entries, category) in groups" :key="category" class="xyz-in">
 					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
 						<h2
 							class="absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40"
