@@ -66,7 +66,7 @@ const read = useLocalStorage<string[]>("read", []);
 const visited = useLocalStorage("visited", false);
 
 const { data } = await useAsyncData(() =>
-	queryContent()
+	queryContent("writing")
 		.where({ _dir: { $ne: "" } })
 		.find(),
 );

@@ -24,7 +24,7 @@ const route = useRoute();
 const read = useLocalStorage<string[]>("read", []);
 
 const { data } = await useAsyncData(() =>
-	queryContent()
+	queryContent("writing")
 		.where({ _path: { $contains: [route.params.slug as string] } })
 		.findOne(),
 );
