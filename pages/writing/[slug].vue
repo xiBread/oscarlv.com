@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 const route = useRoute();
-const read = useLocalStorage<string[]>("read", []);
 
 const { data } = await useAsyncData(() =>
 	queryContent("writing")
@@ -30,5 +29,4 @@ const { data } = await useAsyncData(() =>
 );
 
 const entry = data.value!;
-read.value.push(entry._id);
 </script>

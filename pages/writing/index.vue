@@ -36,11 +36,6 @@
 												v-if="entry.explicit"
 												class="i-[material-symbols--explicit] text-[1.25rem] opacity-30 dark:opacity-40"
 											/>
-
-											<span
-												v-if="!read.includes(entry._id)"
-												class="h-2 w-2 rounded-full bg-sky-400"
-											/>
 										</span>
 									</span>
 								</NuxtLink>
@@ -62,19 +57,11 @@
 <script setup lang="ts">
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
-const read = useLocalStorage<string[]>("read", []);
-const visited = useLocalStorage("visited", false);
-
 const { data } = await useAsyncData(() =>
 	queryContent("writing")
 		.where({ _dir: { $ne: "" } })
 		.find(),
 );
-
-if (!visited.value) {
-	read.value.push(...data.value!.map((entry) => entry._id));
-	visited.value = true;
-}
 
 const groups = data.value!.reduce(
 	(prev, group) => {
