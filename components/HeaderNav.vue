@@ -4,7 +4,7 @@
 			<li v-for="page in pages" :key="page">
 				<NuxtLink
 					:href="`/${page.toLowerCase()}`"
-					class="relative mx-4 my-2 block hover:text-black dark:hover:text-white"
+					class="relative mx-4 my-2 block transition-colors hover:text-black dark:hover:text-white"
 				>
 					{{ page }}
 				</NuxtLink>

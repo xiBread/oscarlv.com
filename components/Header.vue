@@ -1,6 +1,6 @@
 <template>
 	<header class="relative z-40 flex flex-col">
-		<div class="top-0 z-10 h-16 pt-6">
+		<div class="top-0 z-10 h-16 pt-8">
 			<Container class="top-6 w-full sm:px-8">
 				<div class="relative flex items-center gap-4">
 					<div class="flex flex-1">
@@ -30,12 +30,12 @@
 					<div class="flex justify-end md:flex-1">
 						<button
 							type="button"
-							class="mx-3 my-2"
+							class="m-2 flex"
 							aria-label="Switch theme"
 							@click="toggle()"
 						>
 							<span
-								class="i-[octicon--moon-16] text-[1.25rem] opacity-50 dark:i-[octicon--sun-16] hover:opacity-100"
+								class="i-[octicon--moon-16] text-[1.25rem] opacity-50 transition-opacity dark:i-[octicon--sun-16] hover:opacity-100"
 							/>
 						</button>
 					</div>
