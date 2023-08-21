@@ -1,14 +1,6 @@
 <template>
 	<Html lang="en" class="antialiased" data-overlayscrollbars-initialize>
 		<Head>
-			<Meta hid="light" name="theme-color" content="#ffffff" />
-			<Meta
-				hid="dark"
-				name="theme-color"
-				content="#101010"
-				media="(prefers-color-scheme: dark)"
-			/>
-
 			<Meta property="og:type" content="website" />
 
 			<Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
