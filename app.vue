@@ -1,5 +1,5 @@
 <template>
-	<Html lang="en">
+	<Html lang="en" class="antialiased" data-overlayscrollbars-initialize>
 		<Head>
 			<Meta hid="light" name="theme-color" content="#ffffff" />
 			<Meta
@@ -18,7 +18,10 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300">
+		<Body
+			class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300"
+			data-overlayscrollbars-initialize
+		>
 			<Lichtenberg />
 
 			<div v-if="blur" class="fixed inset-0 flex justify-center sm:px-8">
@@ -60,11 +63,10 @@ onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())(), { dedupe: t
 }
 
 html {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
 	width: 0;
 }
 </style>
