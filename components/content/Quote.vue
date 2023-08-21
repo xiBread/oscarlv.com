@@ -2,7 +2,7 @@
 	<div class="mb-10">
 		<blockquote class="mb-2 whitespace-pre-wrap">"{{ quote.content }}"</blockquote>
 
-		<p class="mt-2 text-sm text-zinc-400">
+		<p class="mt-2 text-sm dark:text-zinc-400">
 			&mdash; {{ quote.quotee + (quote.source ? ", " : "") }}
 
 			<cite v-if="quote.source">
