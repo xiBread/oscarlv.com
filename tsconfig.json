@@ -1,6 +1,6 @@
 {
-	"extends": "./.nuxt/tsconfig.json",
+	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
-		"esModuleInterop": true
+		"jsx": "preserve",
 	}
 }

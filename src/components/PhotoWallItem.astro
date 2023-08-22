@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"div"> {
+	src: string;
+	width: number;
+	height: number;
+}
+
+const props = Astro.props;
+const src = `https://ik.imagekit.io/olv${props.src}?f-webp`;
+---
+
+<div
+	class:list={[
+		"relative flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900",
+		props.class,
+	]}
+	xyz={props.xyz}
+>
+	<Image
+		src={src}
+		width={props.width}
+		height={props.height}
+		alt=""
+		loading="lazy"
+		class="absolute inset-0 h-full w-full object-cover"
+	/>
+</div>
