@@ -13,7 +13,7 @@
 		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300">
 			<Lichtenberg />
 
-			<div v-if="blur" class="fixed inset-0 flex justify-center sm:px-8">
+			<div class="fixed inset-0 flex justify-center sm:px-8">
 				<div class="flex w-full max-w-7xl lg:px-8">
 					<div
 						class="w-full ring-1 ring-zinc-200 backdrop-blur-[6px] dark:ring-zinc-800"
@@ -37,9 +37,6 @@
 <script setup lang="ts">
 useHead({ script: [{ src: "/theme.js", type: "module" }] });
 
-const blur = useLocalStorage("blur", true);
-
-onKeyStroke("b", (event) => event.metaKey && useToggle(blur)(), { dedupe: true });
 onKeyStroke("i", (event) => event.metaKey && useToggle(useDark())(), { dedupe: true });
 </script>
 
