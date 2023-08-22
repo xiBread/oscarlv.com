@@ -1,6 +1,8 @@
 <template>
 	<DefineTemplate v-slot="{ src }">
-		<div class="relative flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
+		<div
+			class="relative flex-none overflow-hidden rounded-xl bg-zinc-100 shadow-md dark:bg-zinc-900"
+		>
 			<NuxtImg
 				:src="src"
 				class="absolute inset-0 h-full w-full object-cover"
