@@ -1,5 +1,5 @@
 <template>
-	<Html lang="en" class="antialiased" data-overlayscrollbars-initialize>
+	<Html lang="en" class="antialiased">
 		<Head>
 			<Meta property="og:type" content="website" />
 
@@ -10,10 +10,7 @@
 			<Link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		</Head>
 
-		<Body
-			class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300"
-			data-overlayscrollbars-initialize
-		>
+		<Body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300">
 			<Lichtenberg />
 
 			<div v-if="blur" class="fixed inset-0 flex justify-center sm:px-8">
