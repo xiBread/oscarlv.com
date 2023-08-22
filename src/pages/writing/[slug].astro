@@ -32,7 +32,8 @@ const { Content } = await entry.render();
 				class:list={[
 					"prose prose-zinc max-w-none dark:prose-invert [&_p]:whitespace-pre-wrap",
 					entry.data.overrides || "[&_p]:max-w-[50ch]",
-					entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even",
+					entry.slug.startsWith("dialogue") &&
+						(entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even"),
 				]}
 			>
 				<h1 class="text-5xl">{entry.data.title}</h1>

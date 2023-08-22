@@ -20,6 +20,7 @@
 	},
 	"dependencies": {
 		"@animxyz/core": "^0.6.6",
+		"@astrojs/mdx": "^0.19.7",
 		"@astrojs/tailwind": "^4.0.0",
 		"@astrojs/vercel": "^3.8.2",
 		"@astrojs/vue": "^2.2.1",

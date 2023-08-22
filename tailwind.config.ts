@@ -4,7 +4,7 @@ import plugin from "tailwindcss/plugin";
 
 export default {
 	darkMode: "class",
-	content: ["./src/**/*.{astro,html,js,md,ts,vue}"],
+	content: ["./src/**/*.{astro,html,js,md,mdx,ts,vue}"],
 	plugins: [
 		typography(),
 		plugin(({ matchComponents, theme }) => {
@@ -23,7 +23,7 @@ export default {
 						even: "even",
 						odd: "odd",
 					},
-				}
+				},
 			);
 		}),
 	],
