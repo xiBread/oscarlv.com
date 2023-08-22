@@ -19,15 +19,15 @@
 					>
 						<div class="font-semibold text-zinc-800 dark:text-zinc-100">
 							<div
-								className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl"
+								class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl"
 							/>
 
 							<NuxtLink :href="`/writing/${entry._path!.split('/')[3]}`">
 								<span
-									className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
+									class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
 								/>
 
-								<span className="relative z-10">
+								<span class="relative z-10">
 									<span class="flex items-center space-x-2">
 										<h3>{{ entry.title }}</h3>
 
