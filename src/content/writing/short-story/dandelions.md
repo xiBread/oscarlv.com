@@ -1,5 +1,6 @@
 ---
 title: Dandelions
+excerpt: Oh, and pick up any dandelions you find.
 overrides: "[&>p]:indent-[4ch]"
 ---
 
@@ -80,6 +81,7 @@ She sighed. "You really want to know?"
 "Oh… I'm sorry, I shouldn't have asked that."
 
 "No, it's okay… I only found out because he had me down as his emergency contact, which I didn't even know until the medics called me." She stared at the ground in silence, holding her basket in front of her. He walked up next to her and put his hand on her shoulder.
+
 "Every year, on his birthday, I pick flowers and make a bouquet to put on his grave. I usually do it alone, but this year I just felt like I needed someone with me." She cleared her throat as it started to break and rubbed away the tears forming in her eyes. "So, thank you for coming along."
 
 "Dude, of course." He set down his basket to hug her. "I'll come with you every year if you want."

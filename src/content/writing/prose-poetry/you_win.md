@@ -1,7 +1,7 @@
 ---
 title: You Win
 explicit: true
-overrides: "max-w-none"
+overrides: max-w-none
 ---
 
 "All good things must come to an end," is how it goes, isn't it? I guess I never really understood what it meant until I lost you.

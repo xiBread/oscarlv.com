@@ -67,7 +67,7 @@ function excerpt(body: string): string {
 									</div>
 
 									<p class="relative z-10 mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
-										{excerpt(entry.body)}
+										{entry.data.excerpt ?? excerpt(entry.body)}
 									</p>
 								</li>
 							))}
