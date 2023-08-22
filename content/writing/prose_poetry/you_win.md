@@ -1,5 +1,6 @@
 ---
 explicit: true
+overrides: "max-w-none"
 ---
 
 # You Win
@@ -8,9 +9,9 @@ explicit: true
 
 I'm still full of questions, but I'm not sure if I even want answers anymore. Do you ever wonder about me like the way I wonder about you? Do your siblings ever bring me up at dinner? Do you ever wish we could just start over?
 
-Are you okay? The last time we spoke, you didn't seem alright. But that's not my place anymore. So, I can't ask.
+Are you okay? The last time we spoke, you didn't seem alright. But that's not my place anymore, so, I can't ask.
 
-Do you even think about what happened and wonder where we would be if it didn't? I do, but that probably makes me sound crazy. Because I should just let you go, right? I should just move on, drop everything I knew about you and pretend we never even happened. Pretend I didn't approach you and try to build a bond I believed in. But I can't pretend that it didn't happen.
+Do you even think about what happened and wonder where we would be if it didn't? I do, but that probably makes me sound crazy. Because I should just let you go, right? I should just move on, drop everything I knew about you, and pretend we never even happened. Pretend I didn't approach you and try to build a bond I believed in. But I can't pretend that it didn't happen.
 
 I saw so much going for you, you know? So much positivity, even though you never failed to push me back down. I'm not blaming you, though. But I just want to know, did you actually care about me, or was it really just a game?
 
