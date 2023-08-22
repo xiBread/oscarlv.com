@@ -1,0 +1,80 @@
+---
+import Container from "../../components/container/Container.astro";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const entries = await getCollection("writing", (entry) => !entry.data.single);
+
+const groups = entries.reduce(
+	(all, group) => {
+		const category = group.slug
+			.split("/")[0]
+			.replace(/^(.)/, (_, $1) => $1.toUpperCase())
+			.replace(/-(.)/, (_, $1) => ` ${$1.toUpperCase()}`);
+
+		(all[category] ??= []).push(group);
+
+		return all;
+	},
+	{} as Record<string, typeof entries>,
+);
+
+function excerpt(body: string): string {
+	return /([^\n"]+[^,"\s])/.exec(body.split("\n")[1])![1].replace(/(?<=\w$)/, ".");
+}
+---
+
+<Layout title="writing">
+	<Container class="mt-20 px-2 sm:mt-36">
+		<div class="mt-32 space-y-32 sm:mt-36" xyz="fade duration-10 delay-1 up stagger-2">
+			{
+				Object.entries(groups).map(([category, entries]) => (
+					<div class="xyz-in">
+						<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
+							<h2 class="absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40">
+								{category}
+							</h2>
+
+							{entries.map((entry) => (
+								<li class="group relative flex flex-col items-start">
+									<div class="font-semibold text-zinc-800 dark:text-zinc-100">
+										<div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl" />
+
+										<a href={`/writing/${entry.slug.split("/")[1]}`}>
+											<span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+
+											<span class="relative z-10">
+												<span class="flex items-center space-x-2">
+													<h3>{entry.data.title}</h3>
+
+													{entry.data.explicit && (
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															width="20"
+															height="20"
+															viewBox="0 0 24 24"
+															class="opacity-30 dark:opacity-40"
+														>
+															<path
+																fill="currentColor"
+																d="M9 17h6v-2h-4v-2h4v-2h-4V9h4V7H9v10Zm-4 4q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.588 1.413T19 21H5Z"
+															/>
+														</svg>
+													)}
+												</span>
+											</span>
+										</a>
+									</div>
+
+									<p class="relative z-10 mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
+										{excerpt(entry.body)}
+									</p>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</Layout>

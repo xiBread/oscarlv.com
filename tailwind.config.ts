@@ -1,16 +1,12 @@
-import { addDynamicIconSelectors } from "@iconify/tailwind";
-import forms from "@tailwindcss/forms";
 import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
 export default {
 	darkMode: "class",
-	content: [],
+	content: ["./src/**/*.{astro,html,js,md,ts,vue}"],
 	plugins: [
-		forms(),
 		typography(),
-		addDynamicIconSelectors({ prefix: "i" }),
 		plugin(({ matchComponents, theme }) => {
 			matchComponents(
 				{
@@ -27,7 +23,7 @@ export default {
 						even: "even",
 						odd: "odd",
 					},
-				},
+				}
 			);
 		}),
 	],

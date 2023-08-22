@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/container/Container.astro";
+import type { GetStaticPathsResult } from "astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+	const entries = await getCollection("writing", (entry) => !entry.data.single);
+
+	return entries.map((entry) => {
+		return {
+			params: {
+				slug: entry.slug.split("/")[1],
+			},
+			props: { entry },
+		};
+	});
+}
+
+export interface Props {
+	entry: CollectionEntry<"writing">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<Container class="mt-14 lg:mt-28">
+		<div class="mx-auto max-w-4xl">
+			<article
+				class:list={[
+					"prose prose-zinc max-w-none dark:prose-invert [&_p]:whitespace-pre-wrap",
+					entry.data.overrides || "[&_p]:max-w-[50ch]",
+					entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even",
+				]}
+			>
+				<h1 class="text-5xl">{entry.data.title}</h1>
+				<Content />
+			</article>
+		</div>
+	</Container>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import ContainerInner from "./container/ContainerInner.astro";
+import ContainerOuter from "./container/ContainerOuter.astro";
+---
+
+<footer class="mt-32">
+	<ContainerOuter>
+		<div class="border-t border-zinc-200 py-14 dark:border-zinc-700/80">
+			<ContainerInner>
+				<div class="flex flex-col items-center justify-between gap-6 text-sm sm:flex-row">
+					<div class="flex items-center">
+						<nav class="flex gap-6 text-sm font-medium text-zinc-500">
+							{
+								["Art", "Writing", "About"].map((page) => (
+									<a href={`/${page.toLowerCase()}`}>
+										<span class="transition-colors hover:text-black dark:hover:text-white">
+											{page}
+										</span>
+									</a>
+								))
+							}
+						</nav>
+					</div>
+
+					<p class="text-zinc-500 sm:order-first">
+						&copy; {new Date().getFullYear()} Oscar Lee-Vermeren
+					</p>
+				</div>
+			</ContainerInner>
+		</div>
+	</ContainerOuter>
+</footer>

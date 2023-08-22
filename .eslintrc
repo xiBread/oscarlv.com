@@ -1,51 +1,41 @@
 {
 	"root": true,
 	"env": {
+		"browser": true,
 		"node": true,
-		"es2022": true,
-		"vue/setup-compiler-macros": true
+		"es2022": true
 	},
 	"extends": [
 		"prettier",
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:vue/vue3-recommended"
+		"plugin:astro/recommended"
 	],
 	"plugins": [
 		"@typescript-eslint"
 	],
 	"parserOptions": {
-		"extraFileExtensions": [
-			".vue"
-		],
-		"parser": "@typescript-eslint/parser",
-		"project": "./tsconfig.eslint.json"
+		"parser": "@typescript-eslint/parser"
 	},
 	"ignorePatterns": [
-		".nuxt",
-		".output",
+		"*.d.ts",
 		"node_modules"
 	],
 	"rules": {
-		"no-undef": 0,
-		"@typescript-eslint/ban-ts-comment": 0,
-		"@typescript-eslint/explicit-member-accessibility": 2,
-		"@typescript-eslint/no-explicit-any": 0,
-		"@typescript-eslint/no-non-null-assertion": 0,
-		"vue/html-indent": 0,
-		"vue/html-self-closing": [
-			2,
-			{
-				"html": {
-					"void": "always",
-					"normal": "always",
-					"component": "always"
-				}
+		"@typescript-eslint/no-non-null-assertion": 0
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.astro"
+			],
+			"parser": "astro-eslint-parser",
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [
+					".astro"
+				]
 			}
-		],
-		"vue/max-attributes-per-line": 0,
-		"vue/multi-word-component-names": 0,
-		"vue/no-v-html": 0,
-		"vue/singleline-html-element-content-newline": 0
-	}
+		}
+	]
 }
