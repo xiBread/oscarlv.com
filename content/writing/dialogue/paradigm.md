@@ -1,5 +1,5 @@
 ---
-overrides: "max-w-none text-justify"
+overrides: "max-w-none"
 ---
 
 # Paradigm
