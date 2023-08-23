@@ -1,12 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import { Image, type RemoteImageProps } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
 
-export interface Props extends HTMLAttributes<"div"> {
-	src: string;
-	width: number;
-	height: number;
-}
+export interface Props extends HTMLAttributes<"div">, RemoteImageProps {}
 
 const props = Astro.props;
 const src = `https://ik.imagekit.io/olv${props.src}?f-webp`;
