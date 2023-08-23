@@ -16,18 +16,7 @@
 	<Popover class="md:hidden">
 		<PopoverButton class="mx-4 my-2 flex items-center text-sm font-medium">
 			<span class="text-zinc-600 dark:text-zinc-400">Menu</span>
-
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="20"
-				height="20"
-				viewBox="0 0 16 16"
-				class="ml-3 fill-zinc-500"
-			>
-				<path
-					d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"
-				></path>
-			</svg>
+			<span class="i-[octicon--chevron-down-16] ml-3 text-xl text-zinc-500"></span>
 		</PopoverButton>
 
 		<Transition
@@ -56,17 +45,7 @@
 			>
 				<div class="flex flex-row-reverse items-center justify-between">
 					<PopoverButton class="-m-1 p-1">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 16 16"
-							class="fill-zinc-500"
-						>
-							<path
-								d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"
-							></path>
-						</svg>
+						<span class="i-[octicon--three-bars-16] text-lg text-zinc-500"></span>
 					</PopoverButton>
 
 					<span class="text-sm font-medium text-zinc-500">Menu</span>

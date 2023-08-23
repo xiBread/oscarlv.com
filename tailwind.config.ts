@@ -1,3 +1,4 @@
+import { addDynamicIconSelectors } from "@iconify/tailwind";
 import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
@@ -7,6 +8,7 @@ export default {
 	content: ["./src/**/*.{astro,html,js,md,mdx,ts,vue}"],
 	plugins: [
 		typography(),
+		addDynamicIconSelectors({ prefix: "i" }),
 		plugin(({ matchComponents, theme }) => {
 			matchComponents(
 				{
