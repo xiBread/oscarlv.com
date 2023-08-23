@@ -19,6 +19,7 @@
 	},
 	"ignorePatterns": [
 		"*.d.ts",
+		"*.vue",
 		"node_modules"
 	],
 	"rules": {
