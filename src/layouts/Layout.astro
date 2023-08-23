@@ -52,12 +52,14 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 </html>
 
 <script is:inline>
-	const useDark = matchMedia?.("(prefers-color-scheme: dark)").matches;
-	const theme = localStorage.getItem("theme") ?? "auto";
+	(() => {
+		const useDark = matchMedia?.("(prefers-color-scheme: dark)").matches;
+		const theme = localStorage.getItem("theme") ?? "auto";
 
-	if (theme === "dark" || (useDark && theme !== "light")) {
-		document.documentElement.classList.add("dark");
-	}
+		if (theme === "dark" || (useDark && theme !== "light")) {
+			document.documentElement.classList.add("dark");
+		}
+	})();
 </script>
 
 <style>
