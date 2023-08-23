@@ -1,11 +1,12 @@
 ---
+import Lightbox from "./Lightbox.vue";
 import { Image, type RemoteImageProps } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
 
 export interface Props extends HTMLAttributes<"div">, Omit<RemoteImageProps, "alt"> {}
 
 const props = Astro.props;
-const src = `https://ik.imagekit.io/olv${props.src}?f-webp`;
+const src = `https://ik.imagekit.io/olv${props.src}?tr=w-${props.width},h-${props.height}&f-webp`;
 ---
 
 <div
@@ -15,11 +16,13 @@ const src = `https://ik.imagekit.io/olv${props.src}?f-webp`;
 	]}
 	xyz={props.xyz}
 >
-	<Image
-		src={src}
-		width={props.width}
-		height={props.height}
-		alt=""
-		class="absolute inset-0 h-full w-full object-cover"
-	/>
+	<Lightbox client:only>
+		<Image
+			src={src}
+			width={props.width}
+			height={props.height}
+			alt=""
+			class="absolute inset-0 h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
+		/>
+	</Lightbox>
 </div>
