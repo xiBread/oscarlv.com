@@ -2,5 +2,44 @@
 	"markdown.validate.enabled": false,
 	"markdownlint.config": {
 		"no-emphasis-as-header": false
-	}
+	},
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"quotes.json"
+			],
+			"schema": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"content": {
+							"type": "string"
+						},
+						"quotee": {
+							"type": "string"
+						},
+						"source": {
+							"oneOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"text": {
+											"type": "string"
+										},
+										"url": {
+											"type": "string",
+										}
+									}
+								}
+							],
+						},
+					},
+				}
+			}
+		}
+	]
 }
