@@ -26,7 +26,7 @@ onMounted(() => {
 	ctx.scale(dpr, dpr);
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.lineWidth = 1;
-	ctx.strokeStyle = "#e1e1e14d";
+	ctx.strokeStyle = "#bfbfbf4d";
 
 	const mid = () => rand() * 0.6 + 0.2;
 
