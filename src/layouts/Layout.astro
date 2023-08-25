@@ -3,6 +3,7 @@ import "@animxyz/core";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Lichtenberg from "../components/Lichtenberg.vue";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
 	title?: string;
@@ -27,15 +28,17 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
 		<title>{title}</title>
+
+		<!-- https://github.com/withastro/prettier-plugin-astro/issues/316 -->
+		{() => <ViewTransitions />}
 	</head>
 
-	<body class="flex h-full flex-col bg-zinc-100 dark:bg-black dark:text-zinc-300">
-		<Lichtenberg client:load />
+	<body class="flex h-full flex-col bg-zinc-100 dark:bg-zinc-950 dark:text-zinc-300">
+		<Lichtenberg client:load transition:persist />
 
 		<div class="fixed inset-0 flex justify-center sm:px-8">
 			<div class="flex w-full max-w-7xl lg:px-8">
-				<div class="w-full ring-1 ring-zinc-200 backdrop-blur-[6px] dark:ring-zinc-800">
-				</div>
+				<div class="w-full ring-1 ring-zinc-200 backdrop-blur-sm dark:ring-zinc-800"></div>
 			</div>
 		</div>
 
@@ -52,14 +55,17 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 </html>
 
 <script is:inline>
-	(() => {
+	function theme() {
 		const useDark = matchMedia?.("(prefers-color-scheme: dark)").matches;
 		const theme = localStorage.getItem("theme") ?? "auto";
 
 		if (theme === "dark" || (useDark && theme !== "light")) {
 			document.documentElement.classList.add("dark");
 		}
-	})();
+	}
+
+	theme();
+	document.addEventListener("astro:beforeload", theme);
 </script>
 
 <style>

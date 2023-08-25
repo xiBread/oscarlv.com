@@ -3,7 +3,7 @@ import Container from "./container/Container.astro";
 import HeaderNav from "./HeaderNav.vue";
 ---
 
-<header class="relative z-40 flex flex-col">
+<header class="relative z-40 flex flex-col" transition:persist>
 	<div class="top-0 z-10 h-16 pt-8">
 		<Container class="top-6 w-full sm:px-8">
 			<div class="relative flex items-center gap-4">
@@ -37,7 +37,7 @@ import HeaderNav from "./HeaderNav.vue";
 				<div class="flex justify-end md:flex-1">
 					<button id="theme" type="button" class="m-2 flex" aria-label="Switch theme">
 						<span
-							class="i-[octicon--moon-16] dark:i-[octicon--sun-16] text-xl opacity-50 transition-opacity hover:opacity-100"
+							class="i-[octicon--moon-16] text-xl opacity-50 transition-opacity dark:i-[octicon--sun-16] hover:opacity-100"
 						></span>
 					</button>
 				</div>
