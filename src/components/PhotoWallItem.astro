@@ -1,27 +1,25 @@
 ---
-import Lightbox from "./Lightbox.vue";
-import { Image, type RemoteImageProps } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
+import Lightbox from "./Lightbox.vue";
+import Image from "./Image.astro";
 
-export interface Props extends HTMLAttributes<"div">, Omit<RemoteImageProps, "alt"> {}
+export type Props = HTMLAttributes<"div"> & Parameters<typeof Image>[0];
 
 const props = Astro.props;
-const src = `https://ik.imagekit.io/olv${props.src}?tr=w-${props.width},h-${props.height}&f-webp`;
 ---
 
 <div
 	class:list={[
-		"relative flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900",
+		"relative flex-none overflow-hidden rounded-xl bg-zinc-200 dark:bg-zinc-900",
 		props.class,
 	]}
 	xyz={props.xyz}
 >
 	<Lightbox client:only>
 		<Image
-			src={src}
+			src={props.src}
 			width={props.width}
 			height={props.height}
-			alt=""
 			class="absolute inset-0 h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
 		/>
 	</Lightbox>

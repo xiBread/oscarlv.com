@@ -1,0 +1,13 @@
+---
+import { type RemoteImageProps, getImage } from "astro:assets";
+
+export type Props = Omit<RemoteImageProps, "alt">;
+
+const { src, ...props } = Astro.props;
+const url = `https://ik.imagekit.io/olv${src}?tr=w-${props.width},h-${props.height}&f-webp`;
+
+// @ts-expect-error
+const img = await getImage({ src: url, ...props });
+---
+
+<img src={img.src} {...img.attributes} />
