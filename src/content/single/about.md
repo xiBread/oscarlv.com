@@ -1,6 +1,5 @@
 ---
 title: Oscar Lee-Vermeren
-single: true
 ---
 
 Dolore cupidatat ad veniam ipsum deserunt reprehenderit esse reprehenderit magna id ullamco ea labore. Dolore reprehenderit culpa fugiat ex deserunt. Duis amet voluptate eiusmod excepteur aute reprehenderit occaecat. Excepteur consequat ullamco eiusmod ea dolor quis do cillum excepteur officia id cillum esse officia.

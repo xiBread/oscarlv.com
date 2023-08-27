@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const entries = await getCollection("writing", (entry) => !entry.data.single);
+const entries = await getCollection("writing");
 
 const groups = entries.reduce(
 	(all, group) => {

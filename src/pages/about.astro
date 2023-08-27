@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 export const prerender = false;
 
-const entry = await getEntry("writing", "about");
+const entry = await getEntry("single", "about");
 const { Content } = await entry.render();
 
 const quote = quotes[Math.floor(Math.random() * quotes.length)];

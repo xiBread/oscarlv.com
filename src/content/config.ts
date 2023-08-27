@@ -1,23 +1,26 @@
 import { defineCollection, z } from "astro:content";
 
+const shared = z.object({ title: z.string() });
+
 export const collections = {
 	art: defineCollection({
 		type: "content",
-		schema: z.object({
-			title: z.string(),
+		schema: shared.extend({
 			description: z.string(),
 			cover: z.string().startsWith("/"),
 		}),
 	}),
 	writing: defineCollection({
 		type: "content",
-		schema: z.object({
-			title: z.string(),
-			single: z.boolean().optional(),
+		schema: shared.extend({
 			excerpt: z.string().optional(),
 			start: z.enum(["even", "odd"]).optional(),
 			explicit: z.boolean().optional(),
 			overrides: z.string().optional(),
 		}),
+	}),
+	single: defineCollection({
+		type: "content",
+		schema: shared,
 	}),
 };

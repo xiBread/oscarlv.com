@@ -5,7 +5,7 @@ import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const entries = await getCollection("art");
-const entry = await getEntry("writing", "art");
+const entry = await getEntry("single", "art");
 
 const { Content } = await entry.render();
 ---
