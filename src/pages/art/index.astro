@@ -12,20 +12,24 @@ const { Content } = await entry.render();
 
 <Layout title="art">
 	<Container class="mt-20">
-		<article class="prose prose-zinc dark:prose-invert">
+		<article class="xyz-in prose prose-zinc dark:prose-invert" xyz="fade up duration-10">
 			<h1 class="mb-8 text-5xl">{entry.data.title}</h1>
 			<Content />
 		</article>
 
-		<ul class="mt-14 grid grid-cols-1 gap-16 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+		<ul
+			class="mt-14 grid grid-cols-1 gap-16 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3"
+			xyz="fade stagger delay-2"
+			style="--xyz-duration: 1.5s"
+		>
 			{
 				entries.map((entry) => (
-					<li class="group relative flex flex-col items-start">
+					<li class="xyz-in group relative flex flex-col items-start">
 						<Image
 							src={entry.data.cover}
 							width={1024}
 							height={1024}
-							class="z-20 mb-6 aspect-square rounded-lg object-cover grayscale transition duration-300 group-hover:filter-none"
+							class="z-20 mb-6 aspect-square rounded-lg object-cover grayscale transition duration-300 group-hover:scale-105 group-hover:filter-none"
 						/>
 
 						<div class="font-semibold text-zinc-800 dark:text-zinc-100">

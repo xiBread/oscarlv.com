@@ -30,12 +30,18 @@ function excerpt(body: string): string {
 			{
 				Object.entries(groups).map(([category, entries]) => (
 					<ul class="relative grid grid-cols-2 gap-12 sm:grid-cols-3">
-						<h2 class="absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40">
+						<h2
+							class="xyz-in absolute -left-px -top-[4.5rem] select-none text-4xl font-bold text-zinc-500/30 dark:text-zinc-400/40"
+							xyz="fade up duration-10"
+						>
 							{category}
 						</h2>
 
 						{entries.map((entry) => (
-							<li class="group relative flex flex-col items-start">
+							<li
+								class="xyz-in group relative flex flex-col items-start"
+								xyz="fade duration-10 delay-3 up"
+							>
 								<div class="font-semibold text-zinc-800 dark:text-zinc-100">
 									<div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/70 sm:-inset-x-6 sm:rounded-2xl" />
 
