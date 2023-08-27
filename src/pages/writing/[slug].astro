@@ -1,8 +1,8 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Container from "../../components/container/Container.astro";
 import type { GetStaticPathsResult } from "astro";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Container from "../../components/container/Container.astro";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const entries = await getCollection("writing", (entry) => !entry.data.single);
