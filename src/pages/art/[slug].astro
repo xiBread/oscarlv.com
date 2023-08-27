@@ -1,0 +1,30 @@
+---
+import type { GetStaticPathsResult } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/container/Container.astro";
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+	const entries = await getCollection("art");
+
+	return entries.map((entry) => {
+		return {
+			params: { slug: entry.slug },
+			props: { entry },
+		};
+	});
+}
+
+export interface Props {
+	entry: CollectionEntry<"art">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<Container>
+		<Content />
+	</Container>
+</Layout>

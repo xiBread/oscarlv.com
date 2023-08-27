@@ -1,5 +1,48 @@
 ---
+import { getCollection, getEntry } from "astro:content";
+import Image from "../../components/Image.astro";
+import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const entries = await getCollection("art");
+const entry = await getEntry("writing", "art");
+
+const { Content } = await entry.render();
 ---
 
-<Layout title="art" />
+<Layout title="art">
+	<Container class="mt-20">
+		<article class="prose prose-zinc dark:prose-invert">
+			<h1 class="mb-8 text-5xl">{entry.data.title}</h1>
+			<Content />
+		</article>
+
+		<ul class="mt-14 grid grid-cols-1 gap-16 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				entries.map((entry) => (
+					<li class="group relative flex flex-col items-start">
+						<Image
+							src={entry.data.cover}
+							width={1024}
+							height={1024}
+							class="z-20 mb-6 aspect-square rounded-lg object-cover grayscale transition duration-300 group-hover:filter-none"
+						/>
+
+						<div class="font-semibold text-zinc-800 dark:text-zinc-100">
+							<div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-300/50 opacity-0 transition duration-300 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+
+							<a href={`/art/${entry.slug}`}>
+								<span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+								<span class="relative z-10">{entry.data.title}</span>
+							</a>
+						</div>
+
+						<p class="relative z-10 mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
+							{entry.data.description}
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</Container>
+</Layout>
