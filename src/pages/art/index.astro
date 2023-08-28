@@ -12,13 +12,16 @@ const { Content } = await entry.render();
 
 <Layout title="art">
 	<Container class="mt-20">
-		<article class="xyz-in prose prose-zinc dark:prose-invert" xyz="fade up duration-10">
+		<article
+			class="xyz-in prose prose-zinc max-w-[70ch] dark:prose-invert"
+			xyz="fade up duration-10"
+		>
 			<h1 class="mb-8 text-5xl">{entry.data.title}</h1>
 			<Content />
 		</article>
 
 		<ul
-			class="mt-20 grid grid-cols-1 gap-16 sm:mt-28 sm:grid-cols-2 lg:grid-cols-3"
+			class="mt-16 grid grid-cols-1 gap-14 sm:mt-24 sm:grid-cols-2 lg:grid-cols-3"
 			xyz="fade up stagger delay-2"
 			style="--xyz-duration: 1.5s"
 		>
@@ -29,7 +32,7 @@ const { Content } = await entry.render();
 							src={entry.data.cover}
 							width={1024}
 							height={1024}
-							class="z-20 mb-6 aspect-square rounded-lg object-cover transition duration-300 sm:grayscale sm:group-hover:scale-105 sm:group-hover:filter-none"
+							class="z-20 mb-6 aspect-square rounded-xl object-cover transition duration-300 sm:grayscale sm:group-hover:scale-105 sm:group-hover:filter-none"
 						/>
 
 						<div class="font-semibold text-zinc-800 dark:text-zinc-100">
