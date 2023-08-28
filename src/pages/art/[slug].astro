@@ -1,8 +1,12 @@
 ---
 import type { GetStaticPathsResult } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import type { FileObject } from "imagekit/dist/libs/interfaces";
+import Image from "../../components/Image.astro";
+import Lightbox from "../../components/Lightbox.vue";
 import Container from "../../components/container/Container.astro";
+import { getFolder } from "../../imagekit";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const entries = await getCollection("art");
@@ -21,10 +25,42 @@ export interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const images = await getFolder(entry.slug);
+
+const columns: FileObject[][] = Array.from({ length: 3 }, () => []);
+
+for (let i = 0; i < images.length; i++) {
+	columns[i % 3].push(images[i]);
+}
 ---
 
 <Layout title={entry.data.title}>
-	<Container>
-		<Content />
+	<Container class="mt-20 sm:mt-28">
+		<article class="prose prose-zinc dark:prose-invert">
+			<h1 class="sm:text-5xl">{entry.data.title}</h1>
+			<Content />
+		</article>
+
+		<div class="mt-16 grid grid-cols-2 gap-6 md:grid-cols-3">
+			{
+				columns.map((column) => (
+					<div class="flex flex-col gap-6">
+						{column.map((image) => (
+							<div class="overflow-hidden rounded-lg">
+								<Lightbox client:only>
+									<Image
+										src={image.filePath}
+										width={image.width}
+										height={image.height}
+										class="h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
+									/>
+								</Lightbox>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
 	</Container>
 </Layout>
