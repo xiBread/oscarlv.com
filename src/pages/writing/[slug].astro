@@ -5,7 +5,7 @@ import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-	const entries = await getCollection("writing", (entry) => !entry.data.single);
+	const entries = await getCollection("writing");
 
 	return entries.map((entry) => {
 		return {
