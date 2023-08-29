@@ -20,7 +20,7 @@ const groups = entries.reduce(
 );
 
 function excerpt(body: string): string {
-	return /([^\n"]+[^,"\s])/.exec(body.split("\n")[1])![1].replace(/(?<=\w$)/, ".");
+	return /([^"*]+)/.exec(body.split("\n")[1])?.[1].replace(/((?<=\w)|,)$/, ".") ?? "";
 }
 ---
 
