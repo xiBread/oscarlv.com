@@ -1,10 +1,10 @@
 ---
-import type { GetStaticPathsResult } from "astro";
+import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 
-export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+export const getStaticPaths: GetStaticPaths = async () => {
 	const entries = await getCollection("writing");
 
 	return entries.map((entry) => {
@@ -15,7 +15,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 			props: { entry },
 		};
 	});
-}
+};
 
 export interface Props {
 	entry: CollectionEntry<"writing">;
