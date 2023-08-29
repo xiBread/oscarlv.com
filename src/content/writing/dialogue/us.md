@@ -1,5 +1,6 @@
 ---
 title: Us
+excerpt: You had no reason to entertain me just because you felt like it.
 explicit: true
 ---
 
