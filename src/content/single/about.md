@@ -9,3 +9,16 @@ I've always been obsessed with how things work. Logic is heavily objective, so n
 Beyond the lines of code, my creative spirit finds solace in photography and writing. I specialize in fine-art photography, allowing me to capture a wide variety of ideas and emotions. I find this art form satisfying because of how much manipulation can be done to the subject in order to get the perfect end result.
 
 My writing draws from personal experiences, dreams of my future, and what I wish I could've done differently. I focus my attention to contemporary poetry and dialogue but have capabilities in short stories and fantasies.
+
+## Skills
+
+| Proficient              | Intermediate | Basic            |
+| ----------------------- | ------------ | ---------------- |
+| Astro                   | C#           | GraphQL          |
+| HTML + CSS / SCSS       | Illustrator  | Julia            |
+| JavaScript / TypeScript | React        | Kotlin           |
+| Lightroom               | Ruby         | SQL / PostgreSQL |
+| Node.js                 | Svelte       |                  |
+| Photoshop               |              |                  |
+| Tailwind CSS / UnoCSS   |              |                  |
+| Vue + Nuxt              |              |                  |
