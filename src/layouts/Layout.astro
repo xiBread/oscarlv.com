@@ -68,7 +68,7 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 	document.addEventListener("astro:beforeload", theme);
 </script>
 
-<style>
+<style is:global>
 	:root {
 		--xyz-translate-default: 14px !important;
 
@@ -82,5 +82,18 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 
 	html::-webkit-scrollbar {
 		width: 0;
+	}
+
+	.prose a {
+		text-decoration: underline theme("colors.neutral.400");
+		text-underline-offset: 2px;
+	}
+
+	.prose a:hover {
+		text-decoration-color: theme("colors.neutral.500");
+	}
+
+	.dark .prose a:hover {
+		text-decoration-color: theme("colors.neutral.300");
 	}
 </style>
