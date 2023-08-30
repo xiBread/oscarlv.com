@@ -13,7 +13,7 @@ export default {
 			matchComponents(
 				{
 					"dialogue-start": (value) => ({
-						[`p:not(:has([continue])):nth-child(${value})`]: {
+						[`p:nth-child(${value})`]: {
 							marginLeft: "auto",
 							textAlign: "right",
 							color: theme("colors.zinc.400"),
