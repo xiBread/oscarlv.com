@@ -13,4 +13,8 @@ export default defineConfig({
 		service: sharpImageService(),
 		domains: ["ik.imagekit.io"],
 	},
+	experimental: {
+		assets: true,
+		viewTransitions: true,
+	},
 });
