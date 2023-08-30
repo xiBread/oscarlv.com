@@ -8,7 +8,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	integrations: [tailwind(), vue(), mdx()],
 	output: "hybrid",
-	adapter: vercel({ imageService: true }),
+	adapter: vercel(),
 	// @ts-expect-error
 	image: {
 		domains: ["ik.imagekit.io"],
