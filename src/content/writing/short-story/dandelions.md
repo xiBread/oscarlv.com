@@ -1,7 +1,6 @@
 ---
 title: Dandelions
 excerpt: Oh, and pick up any dandelions you find.
-overrides: "[&>p]:indent-[4ch]"
 ---
 
 As the engine shut off, he groaned, "Do I really have to be here?"

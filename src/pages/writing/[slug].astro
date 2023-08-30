@@ -24,8 +24,13 @@ export interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const isDialogue = entry.slug.startsWith("dialogue");
-const isShortStory = entry.slug.startsWith("short-story");
+const overrides: Record<string, string[]> = {
+	dialogue: [
+		"[&_p]:max-w-prose",
+		entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even",
+	],
+	"short-story": ["[&>p]:indent-[4ch]"],
+};
 ---
 
 <Layout title={entry.data.title}>
@@ -34,10 +39,7 @@ const isShortStory = entry.slug.startsWith("short-story");
 			<article
 				class:list={[
 					"prose prose-zinc max-w-none dark:prose-invert [&_p]:whitespace-pre-wrap",
-					entry.data.overrides || "[&_p]:max-w-[50ch]",
-					isShortStory && "max-w-none",
-					isDialogue &&
-						(entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even"),
+					...(overrides[entry.slug.split("/")[0]] ?? []),
 				]}
 			>
 				<h1 class="text-5xl">{entry.data.title}</h1>

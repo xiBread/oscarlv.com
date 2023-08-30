@@ -16,7 +16,6 @@ export const collections = {
 			excerpt: z.string().optional(),
 			start: z.enum(["even", "odd"]).optional(),
 			explicit: z.boolean().optional(),
-			overrides: z.string().optional(),
 		}),
 	}),
 	single: defineCollection({
