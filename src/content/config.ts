@@ -14,7 +14,7 @@ export const collections = {
 		type: "content",
 		schema: base.extend({
 			excerpt: z.string().optional(),
-			start: z.enum(["even", "odd"]).optional(),
+			start: z.enum(["left", "right"]).optional(),
 			explicit: z.boolean().optional(),
 		}),
 	}),

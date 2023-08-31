@@ -1,7 +1,7 @@
 ---
 title: Ready
 explicit: true
-start: odd
+start: left
 ---
 
 Why are you avoiding me?

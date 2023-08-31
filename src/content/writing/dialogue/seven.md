@@ -1,6 +1,6 @@
 ---
 title: Seven
-start: odd
+start: left
 ---
 
 What do you think happens after we die?

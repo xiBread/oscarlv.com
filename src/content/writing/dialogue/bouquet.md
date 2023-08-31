@@ -1,6 +1,6 @@
 ---
 title: Bouquet
-start: even
+start: left
 ---
 
 What's this? A bouquet?

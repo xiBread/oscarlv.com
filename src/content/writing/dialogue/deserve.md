@@ -1,6 +1,6 @@
 ---
 title: Deserve
-start: odd
+start: left
 ---
 
 Do you think people are deserving of love?

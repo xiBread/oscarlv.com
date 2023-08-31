@@ -27,7 +27,7 @@ const { Content } = await entry.render();
 const overrides: Record<string, string[]> = {
 	dialogue: [
 		"[&_p]:max-w-prose",
-		entry.data.start === "odd" ? "dialogue-start-odd" : "dialogue-start-even",
+		entry.data.start === "left" ? "dialogue-start-left" : "dialogue-start-right",
 	],
 	"short-story": ["[&>p]:indent-[4ch]"],
 };

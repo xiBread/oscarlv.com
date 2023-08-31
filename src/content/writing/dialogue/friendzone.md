@@ -1,6 +1,6 @@
 ---
 title: Friendzone
-start: odd
+start: left
 ---
 
 How do you know when you like someone?

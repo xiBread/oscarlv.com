@@ -22,8 +22,8 @@ export default {
 				},
 				{
 					values: {
-						even: "even",
-						odd: "odd",
+						left: "even",
+						right: "odd",
 					},
 				},
 			);
