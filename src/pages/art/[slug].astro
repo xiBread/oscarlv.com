@@ -5,8 +5,8 @@ import type { FileObject } from "imagekit/dist/libs/interfaces";
 import Image from "../../components/Image.astro";
 import Lightbox from "../../components/Lightbox.vue";
 import Container from "../../components/container/Container.astro";
-import { getFolder } from "../../imagekit";
 import Layout from "../../layouts/Layout.astro";
+import { getFolder } from "../../lib/imagekit";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const entries = await getCollection("art");
