@@ -65,7 +65,7 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 	}
 
 	theme();
-	document.addEventListener("astro:beforeload", theme);
+	document.addEventListener("astro:after-swap", theme);
 </script>
 
 <style is:global>
