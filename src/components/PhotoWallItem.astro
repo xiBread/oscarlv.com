@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Lightbox from "./Lightbox.vue";
 import Image from "./Image.astro";
+import Lightbox from "./Lightbox.vue";
 
 export type Props = HTMLAttributes<"div"> & Parameters<typeof Image>[0];
 
@@ -15,7 +15,7 @@ const props = Astro.props;
 	]}
 	xyz={props.xyz}
 >
-	<Lightbox client:only>
+	<Lightbox client:only="vue">
 		<Image
 			src={props.src}
 			width={props.width}
