@@ -3,7 +3,7 @@ import PhotoWallItem from "./PhotoWallItem.astro";
 ---
 
 <div
-	class="rellax relative z-20 flex items-center justify-center gap-5 overflow-hidden py-4 sm:gap-6"
+	class="parallax relative z-20 flex items-center justify-center gap-5 overflow-hidden py-4 sm:gap-6"
 	xyz="fade down duration-10 delay-2"
 >
 	<div class="xyz-in hidden flex-col gap-5 sm:gap-6 lg:flex" data-speed="3">
@@ -72,6 +72,6 @@ import PhotoWallItem from "./PhotoWallItem.astro";
 	import parallax from "../lib/parallax";
 
 	document.addEventListener("astro:page-load", () => {
-		parallax(".rellax > div");
+		parallax(".parallax > div");
 	});
 </script>
