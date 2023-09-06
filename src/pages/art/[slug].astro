@@ -34,10 +34,12 @@ for (let i = 0; i < images.length; i++) {
 	columns[i % 3].push(images[i]);
 }
 
-const outlier = columns.reduce((i, col) => i ^ col.length, 0);
-const index = columns.findIndex((col) => col.length === outlier);
+if (images.length > 3) {
+	const outlier = columns.reduce((i, col) => i ^ col.length, 0);
+	const index = columns.findIndex((col) => col.length === outlier);
 
-[columns[1], columns[index]] = [columns[index], columns[1]];
+	[columns[1], columns[index]] = [columns[index], columns[1]];
+}
 ---
 
 <Layout title={entry.data.title}>
