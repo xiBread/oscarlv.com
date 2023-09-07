@@ -11,12 +11,10 @@ import { getFolder } from "../../lib/imagekit";
 export const getStaticPaths: GetStaticPaths = async () => {
 	const entries = await getCollection("art");
 
-	return entries.map((entry) => {
-		return {
-			params: { slug: entry.slug },
-			props: { entry },
-		};
-	});
+	return entries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
 };
 
 export interface Props {
@@ -44,7 +42,7 @@ if (images.length > 3) {
 
 <Layout title={entry.data.title}>
 	<Container class="mt-20 sm:mt-28">
-		<article class="prose prose-zinc dark:prose-invert">
+		<article class="prose prose-zinc max-w-3xl dark:prose-invert">
 			<h1 class="sm:text-5xl">{entry.data.title}</h1>
 			<Content />
 		</article>
