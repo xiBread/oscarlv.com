@@ -15,12 +15,7 @@ export default function parallax(selector: string): void {
 	let y = 0;
 	let targets: TargetData[] = [];
 
-	function setPosition() {
-		const prev = y;
-		y = scrollY;
-
-		return prev !== y;
-	}
+	const setPosition = () => y !== (y = scrollY);
 
 	function defer() {
 		removeEventListener("resize", defer);
@@ -54,7 +49,7 @@ export default function parallax(selector: string): void {
 		}
 	}
 
-	function run() {
+	(function run() {
 		for (let i = 0; i < targets.length; i++) {
 			elements[i].style.cssText = targets[i].style;
 		}
@@ -80,7 +75,5 @@ export default function parallax(selector: string): void {
 		update();
 
 		addEventListener("resize", run);
-	}
-
-	run();
+	})();
 }
