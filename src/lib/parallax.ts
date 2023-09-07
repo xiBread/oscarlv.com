@@ -12,12 +12,12 @@ export default function parallax(selector: string): void {
 	const elements = document.querySelectorAll<HTMLElement>(selector);
 	if (!elements.length) return;
 
-	let [x, y] = [0, 0];
+	let y = 0;
 	let targets: TargetData[] = [];
 
 	function setPosition() {
 		const prev = y;
-		[x, y] = [scrollX, scrollY];
+		y = scrollY;
 
 		return prev !== y;
 	}
@@ -47,7 +47,7 @@ export default function parallax(selector: string): void {
 		for (let i = 0; i < elements.length; i++) {
 			const next = updatePos(
 				targets[i].speed,
-				(x + y - targets[i].top + innerHeight) / (targets[i].height + innerHeight),
+				(y - targets[i].top + innerHeight) / (targets[i].height + innerHeight),
 			);
 
 			elements[i].style.transform = `translateY(${next - targets[i].pos}px)`;
