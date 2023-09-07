@@ -17,7 +17,7 @@
 							"type": "string"
 						},
 						"quotee": {
-							"type": "string"
+							"type": "string",
 						},
 						"source": {
 							"oneOf": [
@@ -38,6 +38,11 @@
 							],
 						},
 					},
+					"required": [
+						"content",
+						"quotee",
+						"source"
+					]
 				}
 			}
 		}
