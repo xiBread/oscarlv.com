@@ -1,7 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import type { FileObject } from "imagekit/dist/libs/interfaces";
 import Image from "../../components/Image.astro";
 import Lightbox from "../../components/Lightbox.vue";
 import Container from "../../components/container/Container.astro";
@@ -25,19 +24,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 const images = await getFolder(entry.slug);
-
-const columns: FileObject[][] = Array.from({ length: 3 }, () => []);
-
-for (let i = 0; i < images.length; i++) {
-	columns[i % 3].push(images[i]);
-}
-
-if (images.length > 3) {
-	const outlier = columns.reduce((i, col) => i ^ col.length, 0);
-	const index = columns.findIndex((col) => col.length === outlier);
-
-	[columns[1], columns[index]] = [columns[index], columns[1]];
-}
 ---
 
 <Layout title={entry.data.title}>
@@ -47,25 +33,21 @@ if (images.length > 3) {
 			<Content />
 		</article>
 
-		<div class="mt-16 grid grid-cols-2 gap-6 md:grid-cols-3">
+		<div class="mt-16 columns-2 gap-4 md:columns-3 md:gap-6">
 			{
-				columns.map((column) => (
-					<div class="flex flex-col gap-6">
-						{column.map((image) => (
-							<div
-								class="xyz-in overflow-hidden rounded-lg"
-								xyz="fade stagger duration-10"
-							>
-								<Lightbox client:only="vue">
-									<Image
-										src={image.filePath}
-										width={image.width}
-										height={image.height}
-										class="h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
-									/>
-								</Lightbox>
-							</div>
-						))}
+				images.map((image) => (
+					<div
+						class="xyz-in mb-4 overflow-hidden rounded-lg md:mb-6"
+						xyz="fade stagger duration-10"
+					>
+						<Lightbox client:only="vue">
+							<Image
+								src={image.filePath}
+								width={image.width}
+								height={image.height}
+								class="h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
+							/>
+						</Lightbox>
 					</div>
 				))
 			}
