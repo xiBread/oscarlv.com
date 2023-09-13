@@ -36,10 +36,7 @@ const images = await getFolder(entry.slug);
 		<div class="mt-16 columns-2 gap-4 md:columns-3 md:gap-6">
 			{
 				images.map((image) => (
-					<div
-						class="xyz-in mb-4 overflow-hidden rounded-lg dark:ring-1 dark:ring-zinc-800 md:mb-6"
-						xyz="fade stagger duration-10"
-					>
+					<div class="mb-4 overflow-hidden rounded-lg dark:ring-1 dark:ring-zinc-800 md:mb-6">
 						<Lightbox client:only="vue">
 							<Image
 								src={image.filePath}
