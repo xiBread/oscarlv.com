@@ -7,8 +7,7 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro",
-		"update": "ncu -x /astro/ -u && npm i"
+		"astro": "astro"
 	},
 	"prettier": {
 		"tabWidth": 4,
