@@ -1,8 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
-import Image from "../../components/Image.astro";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
+import url from "../../lib/url";
 
 const entries = await getCollection("art");
 const entry = await getEntry("single", "art");
@@ -29,9 +30,10 @@ const { Content } = await entry.render();
 				entries.map((entry) => (
 					<li class="xyz-in group relative flex flex-col items-start">
 						<Image
-							src={entry.data.cover}
+							src={url(entry.data.cover, 512, 512)}
 							width={512}
 							height={512}
+							alt={entry.data.title}
 							class="z-20 mb-6 aspect-square rounded-xl object-cover transition duration-300 sm:grayscale sm:group-hover:scale-105 sm:group-hover:filter-none"
 						/>
 

@@ -4,6 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Lichtenberg from "../components/Lichtenberg.vue";
+import Lightbox from "../components/Lightbox.vue";
 
 export interface Props {
 	title?: string;
@@ -51,6 +52,8 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 
 			<Footer />
 		</div>
+
+		<Lightbox client:only="vue" />
 	</body>
 </html>
 

@@ -1,8 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import Image from "../../components/Image.astro";
-import Lightbox from "../../components/Lightbox.vue";
+import { Image } from "astro:assets";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getFolder } from "../../lib/imagekit";
@@ -37,17 +36,22 @@ const images = await getFolder(entry.slug);
 			{
 				images.map((image) => (
 					<div class="mb-4 overflow-hidden rounded-lg dark:ring-1 dark:ring-zinc-800 md:mb-6">
-						<Lightbox client:only="vue">
-							<Image
-								src={image.filePath}
-								width={image.width}
-								height={image.height}
-								class="h-full max-h-[90vh] w-full max-w-[90vw] object-cover"
-							/>
-						</Lightbox>
+						<Image
+							src={image.url}
+							width={image.width}
+							height={image.height}
+							alt={image.name}
+							class="h-full w-full object-cover hover:cursor-pointer"
+						/>
 					</div>
 				))
 			}
 		</div>
 	</Container>
 </Layout>
+
+<script>
+	import { registerImages } from "../../lib/lightbox";
+
+	registerImages();
+</script>
