@@ -63,4 +63,5 @@ function title(name: string): string {
 	import { registerImages } from "../../lib/lightbox";
 
 	registerImages();
+	document.addEventListener("astro:page-load", registerImages);
 </script>
