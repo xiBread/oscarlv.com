@@ -6,6 +6,10 @@ const ik = new ImageKit({
 	urlEndpoint: "https://ik.imagekit.io/olv",
 });
 
-export async function getFolder(folder: string) {
+export function getFolder(folder: string) {
 	return ik.listFiles({ path: folder });
+}
+
+export async function getVault() {
+	return (await ik.listFiles({})).filter((file) => file.filePath.split("/").length === 2);
 }

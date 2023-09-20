@@ -4,7 +4,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
-import { getFolder } from "../../lib/imagekit";
+import { getVault, getFolder } from "../../lib/imagekit";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const entries = await getCollection("art");
@@ -22,7 +22,7 @@ export interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const images = await getFolder(entry.slug);
+const images = await (entry.slug === "vault" ? getVault() : getFolder(entry.slug));
 
 function title(name: string): string {
 	return name
