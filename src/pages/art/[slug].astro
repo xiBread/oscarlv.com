@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import Container from "../../components/container/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getVault, getFolder } from "../../lib/imagekit";
+import type { FileObject } from "imagekit/dist/libs/interfaces";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const entries = await getCollection("art");
@@ -24,12 +25,15 @@ const { Content } = await entry.render();
 
 const images = await (entry.slug === "vault" ? getVault() : getFolder(entry.slug));
 
-function title(name: string): string {
-	return name
-		.split(".")[0]
-		.split("-")
-		.map((word) => word[0].toUpperCase() + word.slice(1))
-		.join(" ");
+function title(file: FileObject): string {
+	return (
+		(file.customMetadata as Record<string, string>).title ??
+		file.name
+			.split(".")[0]
+			.split("-")
+			.map((word) => word[0].toUpperCase() + word.slice(1))
+			.join(" ")
+	);
 }
 ---
 
@@ -48,8 +52,8 @@ function title(name: string): string {
 							src={image.url}
 							width={image.width}
 							height={image.height}
-							alt={`${entry.data.title} - ${title(image.name)}`}
-							title={title(image.name)}
+							alt={`${entry.data.title} - ${title(image)}`}
+							title={title(image)}
 							class="h-full w-full object-cover hover:cursor-pointer"
 						/>
 					</div>
