@@ -23,6 +23,14 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 const images = await getFolder(entry.slug);
+
+function title(name: string): string {
+	return name
+		.split(".")[0]
+		.split("-")
+		.map((word) => word[0].toUpperCase() + word.slice(1))
+		.join(" ");
+}
 ---
 
 <Layout title={entry.data.title}>
@@ -40,7 +48,8 @@ const images = await getFolder(entry.slug);
 							src={image.url}
 							width={image.width}
 							height={image.height}
-							alt={image.name}
+							alt={`${entry.data.title} - ${title(image.name)}`}
+							title={title(image.name)}
 							class="h-full w-full object-cover hover:cursor-pointer"
 						/>
 					</div>

@@ -5,7 +5,9 @@
 				<DialogBackdrop class="fixed inset-0 z-40 bg-neutral-700/70 backdrop-blur-md" />
 
 				<div class="flex flex-col items-center justify-center [&_img]:relative">
-					<img :src="lightbox.target" class="absolute inset-0 h-full max-h-[90vh] w-full max-w-[90vw] object-cover" />
+					<img :src="lightbox.target.src" class="absolute inset-0 h-full max-h-[90vh] w-full max-w-[90vw] object-cover" />
+
+					<h2 class="mt-2 font-medium">{{ lightbox.target.name }}</h2>
 				</div>
 
 				<button
