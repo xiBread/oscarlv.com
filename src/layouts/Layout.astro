@@ -57,6 +57,14 @@ const title = props.title ? `${props.title} \u2022 olv.` : "olv.";
 	</body>
 </html>
 
+<script>
+	import { $lightbox } from "../lib/lightbox";
+
+	document.addEventListener("astro:after-swap", () => {
+		$lightbox.setKey("isOpen", false);
+	});
+</script>
+
 <script is:inline>
 	function theme() {
 		const useDark = matchMedia?.("(prefers-color-scheme: dark)").matches;
