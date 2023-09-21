@@ -3,7 +3,7 @@
 		<div class="fixed inset-0 flex items-center justify-center p-4 md:p-8">
 			<DialogPanel class="text-white">
 				<DialogBackdrop
-					class="fixed inset-0 z-40 bg-black/80 backdrop-blur-md md:bg-neutral-800/70"
+					class="fixed inset-0 z-40 bg-black/80 backdrop-blur-md"
 				/>
 
 				<div
@@ -15,7 +15,7 @@
 					<img
 						:src="lightbox.image.src"
 						:class="[
-							'h-full max-h-[90vh] w-full object-cover',
+							'h-full max-h-[90vh] w-full object-cover dark:ring-1 dark:ring-zinc-700',
 							statement && 'md:max-w-[50%]',
 						]"
 					/>
