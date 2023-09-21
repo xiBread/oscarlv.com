@@ -1,28 +1,26 @@
 <template>
-	<Dialog class="relative z-50" :open="lightbox.isOpen" @close="close()">
-		<div class="fixed inset-0 flex items-center justify-center p-4 md:p-8">
+	<Dialog id="dialog" class="relative z-50" :open="lightbox.isOpen" @close="close()">
+		<div class="fixed inset-0 flex justify-center overflow-auto p-4 md:items-center md:p-8">
 			<DialogPanel class="text-white">
-				<DialogBackdrop
-					class="fixed inset-0 z-40 bg-black/80 backdrop-blur-md"
-				/>
+				<DialogBackdrop class="fixed inset-0 z-40 bg-black/80 backdrop-blur-md" />
 
 				<div
 					:class="[
-						'flex flex-col items-center justify-center',
+						'flex flex-col items-center justify-center pb-4',
 						statement && 'md:flex-row',
 					]"
 				>
 					<img
 						:src="lightbox.image.src"
 						:class="[
-							'h-full max-h-[90vh] w-full object-cover dark:ring-1 dark:ring-zinc-700',
+							'h-full max-h-[90vh] w-full object-cover ring-1 ring-zinc-700',
 							statement && 'md:max-w-[50%]',
 						]"
 					/>
 
 					<div
 						v-if="statement"
-						class="prose prose-zinc !prose-invert mt-10 md:ml-10 md:mt-0"
+						class="prose prose-zinc !prose-invert mt-10 max-w-none md:ml-10 md:mt-0 md:max-w-prose"
 					>
 						<h2 class="text-4xl">{{ lightbox.image.title }}</h2>
 						<p v-html="statement"></p>
@@ -74,3 +72,13 @@ watch(lightbox, async ({ image }) => {
 
 const close = () => $lightbox.setKey("isOpen", false);
 </script>
+
+<style>
+#dialog > div {
+	scrollbar-width: 0;
+}
+
+#dialog > div::-webkit-scrollbar {
+	width: 0;
+}
+</style>
