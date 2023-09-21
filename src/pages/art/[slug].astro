@@ -55,6 +55,7 @@ function title(file: FileObject): string {
 							alt={`${entry.data.title} - ${title(image)}`}
 							title={title(image)}
 							class="h-full w-full object-cover hover:cursor-pointer"
+							data-slug={image.filePath.slice(1, -4)}
 						/>
 					</div>
 				))

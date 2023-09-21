@@ -18,6 +18,10 @@ export const collections = {
 			explicit: z.boolean().optional(),
 		}),
 	}),
+	statements: defineCollection({
+		type: "content",
+		schema: base,
+	}),
 	single: defineCollection({
 		type: "content",
 		schema: base,

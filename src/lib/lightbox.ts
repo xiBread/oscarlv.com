@@ -1,10 +1,7 @@
 import { deepMap } from "nanostores";
 
 export const $lightbox = deepMap({
-	target: {
-		src: "",
-		name: "",
-	},
+	image: {} as HTMLImageElement,
 	isOpen: false,
 });
 
@@ -16,10 +13,7 @@ export function registerImages(): void {
 			"click",
 			() => {
 				$lightbox.set({
-					target: {
-						src: image.src,
-						name: image.title,
-					},
+					image,
 					isOpen: true,
 				});
 			},
