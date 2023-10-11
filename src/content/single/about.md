@@ -15,10 +15,10 @@ My writing draws from personal experiences, dreams of my future, and what I wish
 | Proficient              | Intermediate | Basic            |
 | ----------------------- | ------------ | ---------------- |
 | Astro                   | C#           | GraphQL          |
-| HTML + CSS / SCSS       | Illustrator  | Julia            |
-| JavaScript / TypeScript | React        | Kotlin           |
-| Lightroom               | Ruby         | SQL / PostgreSQL |
-| Node.js                 | Svelte       |                  |
-| Photoshop               |              |                  |
+| HTML + CSS              | Illustrator  | Julia            |
+| JavaScript / TypeScript | Next.js      | Kotlin           |
+| Lightroom               | Ruby         | React            |
+| Node.js                 | Svelte       | SQL / PostgreSQL |
+| Photoshop               |              | SvelteKit        |
 | Tailwind CSS / UnoCSS   |              |                  |
 | Vue + Nuxt              |              |                  |
