@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta property="og:title" content="olv" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://ik.imagekit.io/olv/self-2.png" />
+		<meta property="og:url" content="https://oscarlv.com" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<link rel="preconnect" href="https://rsms.me/inter" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+		<title>olv</title>
+
+		<script type="module" src="/src/main.js" defer></script>
+	</head>
+
+	<body class="antialiased max-w-7xl px-4 mx-auto bg-neutral-950">
+		<div
+			class="background w-screen h-svh -z-10 absolute top-0 left-0 overflow-hidden bg-pink-400"
+		>
+			<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<filter id="blob">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+						<feColorMatrix
+							in="blur"
+							mode="matrix"
+							values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+							result="blob"
+						/>
+						<feBlend in="SourceGraphic" in2="blob" />
+					</filter>
+				</defs>
+			</svg>
+
+			<div class="blob-well size-full *:absolute *:mix-blend-hard-light">
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob follower"></div>
+			</div>
+		</div>
+
+		<main
+			class="h-screen gap-y-6 max-w-prose mx-auto text-neutral-50 flex flex-col items-center justify-center"
+		>
+			<header class="flex items-center flex-col">
+				<img
+					id="avatar"
+					class="rounded-full size-16"
+					src="https://ik.imagekit.io/olv/self-2.png"
+				/>
+
+				<h1 class="font-bold text-4xl mt-4 mb-2">Oscar Lee-Vermeren</h1>
+				<p class="font-medium">Self-taught developer, photographer, and writer.</p>
+			</header>
+
+			<p id="bio" class="uppercase text-justify [text-align-last:justify]">
+				Lorem ipsum dolor sit amet.
+				<b class="highlight blue">Independent photographer.</b>
+				Consectetur adipisicing elit euismod in. Repudiandae maxime a aspernatur, itaque
+				ducimus. Quas natus tempore fugit, inventore ad recusandae nesciunt.
+				<b class="highlight orange">Creative writer.</b>
+				Repellendus nulla culpa, eveniet mollitia provident qui non. Lacinia at quis risus
+				vulputate odio. Nec feugiat nisl pretium fusce id velit ut tortor. Excepteur sint
+				cupidatat non proident, sunt in culpa qui officia deserunt.
+				<b class="highlight green">Full-stack developer.</b>
+				Mollit anim id est laborum, quis lectus nulla volutpat diam ut venenatis in
+				fermentum.
+			</p>
+
+			<footer class="flex justify-between items-center w-full">
+				<div id="socials" class="flex items-center gap-x-2 *:*:size-6"></div>
+
+				<button id="party-btn" class="btn" type="button">
+					<svg
+						class="size-6 fill-current transition-colors"
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						viewBox="0 0 14 14"
+					>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M6.876.201a.75.75 0 0 1 .463.955a3.456 3.456 0 0 0 .107 2.54a.75.75 0 0 1-1.372.607A4.956 4.956 0 0 1 5.921.665A.75.75 0 0 1 6.876.2ZM4.523 2.883a.75.75 0 0 0-1.486-.206a2.85 2.85 0 0 0 .448 1.968a.75.75 0 1 0 1.25-.83a1.35 1.35 0 0 1-.212-.932m5.885 1.407a1.676 1.676 0 0 0-1.564.4l-.012.012l-3.911 3.911l-.005.005a1.667 1.667 0 0 0 .636 2.732l6.232 2.323l.007.003a1.639 1.639 0 0 0 2.102-2.064L11.58 5.385a1.677 1.677 0 0 0-1.173-1.095ZM3.279 7.91a1.31 1.31 0 0 0-.928.133a.75.75 0 1 1-.731-1.31a2.81 2.81 0 0 1 1.991-.286a.75.75 0 0 1-.332 1.463M1.065 3.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2"
+						/>
+					</svg>
+				</button>
+			</footer>
+		</main>
+	</body>
+</html>
