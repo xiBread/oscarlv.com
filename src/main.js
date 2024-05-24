@@ -28,14 +28,15 @@ addEventListener("mousemove", (event) => {
 
 move();
 
-for (const { link, icon } of [
-	{ link: "https://github.com/xiBread", icon: github },
-	{ link: "https://x.com/oliver_mrose", icon: x },
-	{ link: "https://discord.com/users/304260051915374603", icon: discord },
+for (const { label, link, icon } of [
+	{ label: "GitHub", link: "https://github.com/xiBread", icon: github },
+	{ label: "Twitter/X", link: "https://x.com/oliver_mrose", icon: x },
+	{ label: "Discord", link: "https://discord.com/users/304260051915374603", icon: discord },
 ]) {
 	const anchor = document.createElement("a");
 	anchor.className = "btn";
 	anchor.href = link;
+	anchor.ariaLabel = label;
 	anchor.innerHTML = icon;
 
 	socials.append(anchor);
