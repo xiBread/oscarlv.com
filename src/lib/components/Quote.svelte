@@ -6,13 +6,13 @@
 
 <figure>
 	<blockquote
-		class="whitespace-pre-wrap fluid-text-sm"
+		class="text-fluid-sm whitespace-pre-wrap"
 		cite={typeof quote.source === "object" ? quote.source.url : undefined}
 	>
 		<p>{quote.content}</p>
 	</blockquote>
 
-	<figcaption class="mt-2 fluid-text-xs">
+	<figcaption class="text-fluid-xs mt-2">
 		<span class="text-muted-foreground">
 			&mdash; {quote.quotee + (quote.source ? ", " : "")}
 		</span>

@@ -88,10 +88,10 @@
 </svelte:head>
 
 <div id="art-hero" class="relative h-[300svh] px-4">
-	<div class="flex-center sticky top-0 flex h-svh bg-background">
+	<div class="flex-center bg-background sticky top-0 flex h-svh">
 		{#if $breakpoints.lg}
 			<h1
-				class="absolute-center pointer-events-none absolute z-10 uppercase text-white mix-blend-difference fluid-text-5xl"
+				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 uppercase text-white mix-blend-difference"
 			>
 				<div class="relative right-[60%] max-w-min overflow-hidden">
 					<span class="title-1 block opacity-0">Independent</span>
@@ -134,7 +134,7 @@
 <div id="mission" class="relative h-[300lvh] px-4 md:px-8">
 	<div class="flex-center sticky top-0 -mt-[65lvh] flex h-lvh">
 		<div class="max-w-screen-lg">
-			<h2 class="text-center font-black uppercase fluid-text-7xl" bind:this={mission}>
+			<h2 class="text-fluid-7xl text-center font-black uppercase" bind:this={mission}>
 				I specialize in
 				<span class="font-serif font-normal">fine-art</span>
 				photography with an emphasis on highlighting

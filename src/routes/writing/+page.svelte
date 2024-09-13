@@ -39,7 +39,7 @@
 									href="/writing/{entry.slug}"
 								>
 									<div class="flex items-center gap-x-2">
-										<h3 class="font-medium fluid-text-sm">
+										<h3 class="text-fluid-sm font-medium">
 											{entry.title}
 										</h3>
 
@@ -48,7 +48,7 @@
 										{/if}
 									</div>
 
-									<p class="mt-2 line-clamp-2 text-sm text-muted-foreground">
+									<p class="text-muted-foreground mt-2 line-clamp-2 text-sm">
 										{entry.excerpt}
 									</p>
 								</a>
