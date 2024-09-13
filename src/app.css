@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+
+		--border: 240 10% 4%;
+	}
+
+	* {
+		scrollbar-width: none;
+	}
+
+	*::-webkit-scrollbar {
+		display: none;
+	}
+
+	h1 {
+		@apply fluid-text-3xl;
+	}
+
+	h2 {
+		@apply fluid-text-2xl;
+	}
+
+	blockquote {
+		font-style: italic;
+		padding-inline-start: 0.75rem;
+		border-inline-start-width: 0.2rem;
+		border-inline-start-color: theme("colors.muted.DEFAULT");
+
+		p:first-of-type::before,
+		p:first-of-type::after {
+			content: '"';
+		}
+	}
+
+	strong {
+		font-weight: theme("fontWeight.medium");
+	}
+}
+
+@layer utilities {
+	/* https://stackoverflow.com/questions/45883243/ */
+	.blended {
+		background: white;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.absolute-center {
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+	}
+
+	.flex-center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.grid-full {
+		grid-template-columns: repeat(36, minmax(0, 1fr));
+	}
+}
+
+@layer components {
+	.focus:has(> li:hover) li:not(:hover) {
+		filter: blur(2px);
+	}
+
+	.focus > * {
+		transition: filter 500ms ease-in-out;
+	}
+
+	.period::after {
+		content: ".";
+		font-family: theme("fontFamily.sans");
+		font-style: normal;
+		color: theme("colors.vintage.peach");
+	}
+}
