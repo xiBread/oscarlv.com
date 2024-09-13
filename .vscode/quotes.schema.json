@@ -1,0 +1,42 @@
+{
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"content": {
+				"type": "string"
+			},
+			"quotee": {
+				"type": "string"
+			},
+			"source": {
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"text": {
+								"type": "string"
+							},
+							"url": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"text",
+							"url"
+						],
+						"additionalProperties": false
+					}
+				]
+			}
+		},
+		"required": [
+			"content",
+			"quotee"
+		],
+		"additionalProperties": false
+	}
+}

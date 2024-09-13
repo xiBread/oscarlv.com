@@ -1,0 +1,6 @@
+{
+	"yaml.schemas": {
+		".vscode/art.schema.json": "content/art/*.yaml",
+		".vscode/quotes.schema.json": "content/quotes.yaml",
+	}
+}
