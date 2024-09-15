@@ -15,13 +15,40 @@
 	let introTl: Timeline;
 
 	let mission: HTMLElement;
-	let missionWrapper: HTMLElement;
 	let missionTl: Timeline;
 
-	onMount(async () => {
-		await tick();
-
+	onMount(() => {
 		SplitType.create(mission, { types: "words" });
+	});
+
+	onDestroy(() => {
+		introTl?.kill();
+		missionTl?.kill();
+	});
+
+	$effect(() => {
+		const exitTl = gsap
+			.timeline({
+				scrollTrigger: {
+					trigger: "#art-hero",
+					start: "top top",
+					end: "bottom bottom",
+					scrub: true,
+				},
+				defaults: {
+					duration: 1.5,
+					ease: "expo.inOut",
+				},
+			})
+			.to(".distorted", { "--clip-y": "50%" })
+			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
+			.to(".title-2", { y: 100 }, "<");
+
+		return () => exitTl.kill();
+	});
+
+	function onload() {
+		gsap.set([".title-1", ".title-2"], { opacity: 1 });
 
 		introTl = gsap
 			.timeline({
@@ -53,33 +80,7 @@
 				},
 			})
 			.to("#mission .word", { autoAlpha: 0 });
-	});
-
-	onDestroy(() => {
-		introTl?.kill();
-		missionTl?.kill();
-	});
-
-	$effect(() => {
-		const exitTl = gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: "#art-hero",
-					start: "top top",
-					end: "bottom bottom",
-					scrub: true,
-				},
-				defaults: {
-					duration: 1.5,
-					ease: "expo.inOut",
-				},
-			})
-			.to(".distorted", { "--clip-y": "50%" })
-			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
-			.to(".title-2", { y: 100 }, "<");
-
-		return () => exitTl.kill();
-	});
+	}
 </script>
 
 <svelte:head>
@@ -93,13 +94,13 @@
 				class="absolute-center pointer-events-none absolute z-10 uppercase text-white mix-blend-difference fluid-text-5xl"
 			>
 				<div class="relative right-[60%] max-w-min overflow-hidden">
-					<span class="title-1 block">Independent</span>
+					<span class="title-1 block opacity-0">Independent</span>
 				</div>
 
 				<div class="h-28"></div>
 
 				<div class="relative left-[70%] overflow-hidden">
-					<span class="title-2 block">Photographer</span>
+					<span class="title-2 block opacity-0">Photographer</span>
 				</div>
 			</h1>
 		{/if}
@@ -122,6 +123,7 @@
 					<Distortion
 						src="https://ik.imagekit.io/olv/under-pressure.jpg"
 						initial={false}
+						{onload}
 					/>
 				</Canvas>
 			</div>
@@ -130,7 +132,7 @@
 </div>
 
 <div id="mission" class="relative h-[300lvh] px-4 md:px-8">
-	<div class="flex-center sticky top-0 -mt-[65lvh] flex h-lvh" bind:this={missionWrapper}>
+	<div class="flex-center sticky top-0 -mt-[65lvh] flex h-lvh">
 		<div class="max-w-screen-lg">
 			<h2 class="text-center font-black uppercase fluid-text-7xl" bind:this={mission}>
 				I specialize in

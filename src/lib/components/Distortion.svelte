@@ -5,7 +5,13 @@
 	import fragmentShader from "../shaders/distortion.frag";
 	import vertexShader from "../shaders/distortion.vert";
 
-	const { src = "", initial = true } = $props();
+	interface Props {
+		src: string;
+		initial?: boolean;
+		onload?: () => void;
+	}
+
+	const { src, initial = true, onload }: Props = $props();
 
 	const { canvas } = useCanvas();
 	const { load } = useLoader(TextureLoader);
@@ -71,6 +77,8 @@
 
 	async function show() {
 		const texture = await load(src);
+		onload?.();
+
 		if (!initial) return texture;
 
 		showTl = gsap
