@@ -2,7 +2,7 @@
 	import { Canvas } from "@threlte/core";
 	import { gsap } from "gsap";
 	import SplitType from "split-type";
-	import { onDestroy, onMount, tick } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 	import Distortion from "$lib/components/Distortion.svelte";
 	import Gallery from "$lib/components/Gallery.svelte";
 	import { useBreakpoints } from "$lib/composables";
