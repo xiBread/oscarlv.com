@@ -26,7 +26,7 @@
 		missionTl?.kill();
 	});
 
-	$effect(() => {
+	breakpoints.subscribe(({ lg }) => {
 		const exitTl = gsap
 			.timeline({
 				scrollTrigger: {
@@ -41,7 +41,7 @@
 				},
 			})
 			.to(".distorted", { "--clip-y": "50%" })
-			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
+			.to(".title-1", { y: lg ? -100 : 100 })
 			.to(".title-2", { y: 100 }, "<");
 
 		return () => exitTl.kill();
