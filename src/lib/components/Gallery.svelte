@@ -74,7 +74,6 @@
 						<!-- NOTE: Checking if width > 1200 for both dimensions is intentional -->
 						<Image
 							class="h-auto w-full object-cover"
-							style="view-transition-name: {photo.slug};"
 							src={photo.filePath}
 							width={photo.width > 1200 ? photo.width / 4 : photo.width}
 							height={photo.width > 1200 ? photo.height / 4 : photo.height}
