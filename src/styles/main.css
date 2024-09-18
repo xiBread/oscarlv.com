@@ -31,6 +31,28 @@
 	--font-size-fluid-7xl: clamp(2.89rem, 3.27cqi + 2.23rem, 5.37rem);
 }
 
+/* https://stackoverflow.com/questions/45883243/ */
+@utility blended {
+	background: white;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@utility absolute-center {
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@utility flex-center {
+	align-items: center;
+	justify-content: center;
+}
+
+@utility grid-full {
+	grid-template-columns: repeat(36, minmax(0, 1fr));
+}
+
 @layer base {
 	* {
 		scrollbar-width: none;
@@ -71,30 +93,6 @@
 
 	strong {
 		font-weight: var(--font-weight-medium);
-	}
-}
-
-@layer utilities {
-	/* https://stackoverflow.com/questions/45883243/ */
-	.blended {
-		background: white;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.absolute-center {
-		top: 50%;
-		left: 50%;
-		translate: -50% -50%;
-	}
-
-	.flex-center {
-		align-items: center;
-		justify-content: center;
-	}
-
-	.grid-full {
-		grid-template-columns: repeat(36, minmax(0, 1fr));
 	}
 }
 
