@@ -10,7 +10,7 @@
 	const next = $derived(data.photos[current + 1]);
 </script>
 
-<div class="flex h-svh items-center justify-center px-4">
+<div class="flex-center flex h-svh px-4">
 	{#key data.photo.fileId}
 		<div
 			class="distort h-full max-h-[80vh]"
