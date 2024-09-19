@@ -3,7 +3,7 @@
 
 	const { data } = $props();
 
-	const entries = $derived(data.categories[data.entry.category]);
+	const entries = $derived(data.categories[data.entry.category]!);
 	const current = $derived(entries.findIndex(({ slug }) => slug === data.entry.slug) ?? -1);
 
 	const prev = $derived(entries[current - 1]);

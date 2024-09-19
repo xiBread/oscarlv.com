@@ -31,7 +31,7 @@
 					</h2>
 
 					<ul class="focus grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4">
-						{#each entries as entry (entry.path)}
+						{#each entries! as entry (entry.path)}
 							<li>
 								<a
 									class="-m-4 flex flex-col p-4"
