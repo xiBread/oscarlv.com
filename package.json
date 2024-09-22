@@ -27,7 +27,6 @@
 		"gsap": "^3.12.5",
 		"imagekit": "^5.2.0",
 		"lenis": "^1.1.13",
-		"marked": "^14.1.2",
 		"split-type": "^0.3.4",
 		"three": "^0.168.0",
 		"vaul-svelte": "^0.3.2"
