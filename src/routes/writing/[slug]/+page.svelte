@@ -52,30 +52,3 @@
 		</div>
 	{/if}
 {/snippet}
-
-<style>
-	:global {
-		[data-category]:not([data-category="short-story"]) {
-			@apply space-y-6;
-		}
-
-		[data-category="dialogue"] p {
-			max-width: 65ch;
-		}
-
-		[data-category="dialogue"][data-start="right"] p:nth-child(odd),
-		[data-category="dialogue"][data-start="left"] p:nth-child(even) {
-			margin-left: auto;
-			text-align: right;
-			color: theme("textColor.muted.foreground");
-		}
-
-		[data-category="short-story"] {
-			@apply space-y-2;
-
-			p {
-				text-indent: 4ch;
-			}
-		}
-	}
-</style>
