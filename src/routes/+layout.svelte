@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "../app.css";
+	import "../styles/main.css";
 	import "@fontsource-variable/jetbrains-mono";
 	import "@fontsource-variable/noto-serif-display";
 
