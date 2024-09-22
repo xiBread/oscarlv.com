@@ -15,7 +15,7 @@
 </svelte:head>
 
 <article class="mx-auto max-w-4xl px-4 pb-20 pt-32 md:px-10">
-	<h1 class="font-semibold fluid-text-5xl">
+	<h1 class="text-fluid-5xl font-semibold">
 		{data.entry.title}
 	</h1>
 
@@ -27,7 +27,7 @@
 		{@html data.entry.content}
 	</div>
 
-	<div class="my-10 h-px w-full bg-primary/50" role="separator"></div>
+	<div class="bg-primary/50 my-10 h-px w-full" role="separator"></div>
 
 	<footer class="flex items-center justify-between">
 		{@render navigation("Previous", prev)}
@@ -44,8 +44,8 @@
 				&lbrace; {type} &rbrace;
 			</span>
 
-			<a class="mt-2 font-light fluid-text-2xl/none" href="/writing/{item.slug}">
-				<span class="transition-colors duration-300 group-hover:text-vintage-peach">
+			<a class="text-fluid-2xl/none mt-2 font-light" href="/writing/{item.slug}">
+				<span class="group-hover:text-vintage-peach transition-colors duration-300">
 					{item.title}
 				</span>
 			</a>

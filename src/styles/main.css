@@ -1,25 +1,68 @@
+@import "tailwindcss";
 @import "./content.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+	--color-background: #ffffff;
+	--color-foreground: #09090b;
+	--color-primary: #18181b;
+	--color-primary-foreground: #ffffff;
+	--color-muted: #f4f4f5;
+	--color-muted-foreground: #71717a;
+	--color-vintage-aloe: #8daa5a;
+	--color-vintage-denim: #5c86b2;
+	--color-vintage-peach: #e49367;
+	--color-vintage-plum: #9b4672;
+	--color-vintage-wine: #9e3340;
+
+	--font-family-sans: InterVariable, ui-sans-serif, sans-serif;
+	--font-family-serif: "Noto Serif Display Variable", ui-serif, serif;
+	--font-family-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+	--font-size-fluid-xs: clamp(0.89rem, -0.03cqi + 0.89rem, 0.87rem);
+	--font-size-fluid-sm: clamp(1rem, 0.05cqi + 0.99rem, 1.04rem);
+	--font-size-fluid-base: clamp(1.13rem, 0.16cqi + 1.09rem, 1.25rem);
+	--font-size-fluid-lg: clamp(1.27rem, 0.31cqi + 1.2rem, 1.5rem);
+	--font-size-fluid-xl: clamp(1.42rem, 0.49cqi + 1.32rem, 1.8rem);
+	--font-size-fluid-2xl: clamp(1.6rem, 0.73cqi + 1.45rem, 2.16rem);
+	--font-size-fluid-3xl: clamp(1.8rem, 1.04cqi + 1.59rem, 2.59rem);
+	--font-size-fluid-4xl: clamp(2.03rem, 1.43cqi + 1.74rem, 3.11rem);
+	--font-size-fluid-5xl: clamp(2.28rem, 1.91cqi + 1.9rem, 3.73rem);
+	--font-size-fluid-6xl: clamp(2.57rem, 2.52cqi + 2.06rem, 4.48rem);
+	--font-size-fluid-7xl: clamp(2.89rem, 3.27cqi + 2.23rem, 5.37rem);
+}
+
+/* https://stackoverflow.com/questions/45883243/ */
+@utility blended {
+	background: white;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@utility absolute-center {
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@utility flex-center {
+	align-items: center;
+	justify-content: center;
+}
+
+@utility grid-full {
+	grid-template-columns: repeat(36, minmax(0, 1fr));
+}
 
 @layer base {
-	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
-
-		--primary: 240 5.9% 10%;
-		--primary-foreground: 0 0% 98%;
-
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
-
-		--border: 240 10% 4%;
-	}
-
 	* {
 		scrollbar-width: none;
+		/* prettier-ignore */
+		font-feature-settings:
+			"calt", /* Contextual alternates */
+			"cv05", /* Lower-case L with tail */
+			"cv11", /* Single-story a */
+			"ss01", /* Open digits */
+			"ss07"; /* Square punctuation */
 	}
 
 	*::-webkit-scrollbar {
@@ -27,18 +70,20 @@
 	}
 
 	h1 {
-		@apply fluid-text-3xl;
+		font-size: var(--font-size-fluid-3xl);
+		line-height: 1.2;
 	}
 
 	h2 {
-		@apply fluid-text-2xl;
+		font-size: var(--font-size-fluid-2xl);
+		line-height: 1.2;
 	}
 
 	blockquote {
 		font-style: italic;
 		padding-inline-start: 0.75rem;
 		border-inline-start-width: 0.2rem;
-		border-inline-start-color: theme("colors.muted.DEFAULT");
+		border-inline-start-color: var(--color-muted);
 
 		p:first-of-type::before,
 		p:first-of-type::after {
@@ -47,31 +92,7 @@
 	}
 
 	strong {
-		font-weight: theme("fontWeight.medium");
-	}
-}
-
-@layer utilities {
-	/* https://stackoverflow.com/questions/45883243/ */
-	.blended {
-		background: white;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.absolute-center {
-		top: 50%;
-		left: 50%;
-		translate: -50% -50%;
-	}
-
-	.flex-center {
-		align-items: center;
-		justify-content: center;
-	}
-
-	.grid-full {
-		grid-template-columns: repeat(36, minmax(0, 1fr));
+		font-weight: var(--font-weight-medium);
 	}
 }
 
@@ -86,8 +107,8 @@
 
 	.period::after {
 		content: ".";
-		font-family: theme("fontFamily.sans");
+		font-family: var(--font-family-sans);
 		font-style: normal;
-		color: theme("colors.vintage.peach");
+		color: var(--color-vintage-peach);
 	}
 }

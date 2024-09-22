@@ -42,14 +42,14 @@
 
 		<footer class="flex gap-x-2">
 			<a class="font-medium hover:underline" href="https://github.com/xiBread">GitHub</a>
-			<span class="font-mono text-muted-foreground">/</span>
+			<span class="text-muted-foreground font-mono">/</span>
 			<a class="font-medium hover:underline" href="https://twitter.com/oliver_mxrose">
 				Twitter
 			</a>
 		</footer>
 	</article>
 
-	<div class="my-8 flex items-center justify-center">
+	<div class="flex-center my-8 flex">
 		<Rose class="max-h-[45vh] rotate-12 lg:max-h-[60vh]" />
 	</div>
 </section>

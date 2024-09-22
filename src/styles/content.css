@@ -10,7 +10,7 @@
 [data-category="dialogue"][data-start="left"] p:nth-child(even) {
 	margin-left: auto;
 	text-align: right;
-	color: theme("textColor.muted.foreground");
+	color: var(--color-muted-foreground);
 }
 
 [data-category="short-story"] {

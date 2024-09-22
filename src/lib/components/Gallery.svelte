@@ -58,7 +58,7 @@
 <div id="gallery" class="px-2 pb-20" bind:this={gallery}>
 	<!-- svelte-ignore a11y_missing_content -->
 	<h2
-		class="flex w-full items-center justify-center pb-32 font-mono text-base font-medium uppercase"
+		class="flex-center flex w-full pb-32 font-mono text-base font-medium uppercase"
 		aria-label="Featured artwork"
 		bind:this={galleryTitle}
 	></h2>
