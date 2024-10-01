@@ -45,6 +45,9 @@ const writingSchema = s
 
 export default defineConfig({
 	root: "src/content",
+	output: {
+		assets: "static",
+	},
 	collections: {
 		// art: {
 		// 	name: "ArtEntry",
