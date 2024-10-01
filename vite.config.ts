@@ -9,6 +9,5 @@ export default defineConfig({
 			allow: ["./.velite"],
 		},
 	},
-	// @ts-expect-error - type mismatch
 	plugins: [glsl(), tailwindcss(), sveltekit()],
 });
