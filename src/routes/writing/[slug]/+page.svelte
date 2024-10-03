@@ -8,6 +8,13 @@
 
 	const prev = $derived(entries[current - 1]);
 	const next = $derived(entries[current + 1]);
+
+	function formatDate(value: string) {
+		return new Date(value).toLocaleDateString("en-US", {
+			dateStyle: "long",
+			timeZone: "America/New_York",
+		});
+	}
 </script>
 
 <svelte:head>
@@ -15,6 +22,10 @@
 </svelte:head>
 
 <article class="mx-auto max-w-4xl px-4 pb-20 pt-32 md:px-10">
+	<time class="text-muted-foreground text-sm" datetime={data.entry.publishedAt}>
+		{formatDate(data.entry.publishedAt)}
+	</time>
+
 	<h1 class="text-fluid-5xl font-semibold">
 		{data.entry.title}
 	</h1>
@@ -27,11 +38,19 @@
 		{@html data.entry.content}
 	</div>
 
-	<div class="bg-primary/50 my-10 h-px w-full" role="separator"></div>
+	<footer class="mt-12 flex flex-col">
+		{#if data.entry.modifiedAt}
+			<time class="text-muted-foreground mb-2 text-sm" datetime={data.entry.modifiedAt}>
+				Last updated {formatDate(data.entry.modifiedAt)}
+			</time>
+		{/if}
 
-	<footer class="flex items-center justify-between">
-		{@render navigation("Previous", prev)}
-		{@render navigation("Next", next)}
+		<div class="bg-primary/50 mb-10 h-px w-full" role="separator"></div>
+
+		<div class="flex items-center justify-between">
+			{@render navigation("Previous", prev)}
+			{@render navigation("Next", next)}
+		</div>
 	</footer>
 </article>
 
