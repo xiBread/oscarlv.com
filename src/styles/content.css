@@ -16,7 +16,16 @@
 [data-category="short-story"] {
 	@apply space-y-2;
 
-	p {
+	p:not(:has(.dinkus)) {
 		text-indent: 4ch;
+	}
+}
+
+@layer components {
+	.dinkus::after {
+		content: "* * *";
+		display: inline-block;
+		width: 100%;
+		text-align: center;
 	}
 }
