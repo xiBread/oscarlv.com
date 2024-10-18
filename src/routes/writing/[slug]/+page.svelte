@@ -21,7 +21,7 @@
 	<title>{data.entry.title} | oliver rose.</title>
 </svelte:head>
 
-<article class="mx-auto max-w-4xl px-4 pb-20 pt-32 md:px-10">
+<article class="mx-auto max-w-4xl pt-32 px-4 pb-20 md:px-10">
 	<time class="text-muted-foreground text-sm" datetime={data.entry.publishedAt}>
 		{formatDate(data.entry.publishedAt)}
 	</time>

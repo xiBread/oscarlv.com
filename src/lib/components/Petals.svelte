@@ -45,7 +45,7 @@
 	});
 </script>
 
-<div class="fixed left-0 top-0">
+<div class="fixed top-0 left-0">
 	{#each { length: 20 } as _, i}
 		{@const lCross = rand(12, 12 + Math.floor(Math.random() * 10))}
 		{@const rCross = rand(1, Math.floor((12 - Math.floor(rand(0, 12) / 3)) / 4))}

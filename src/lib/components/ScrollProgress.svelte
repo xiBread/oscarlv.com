@@ -21,12 +21,12 @@
 </script>
 
 <div class="scroll-progress fixed inset-x-0 bottom-0 z-20 flex h-2 items-center">
-	<div class="relative h-full w-1/5 bg-vintage-aloe"></div>
+	<div class="bg-vintage-aloe relative h-full w-1/5"></div>
 
 	<div class="relative h-full flex-auto">
-		<div class="absolute inset-0 bg-background"></div>
-		<div class="left size-full origin-left bg-vintage-aloe"></div>
+		<div class="bg-background absolute inset-0"></div>
+		<div class="left bg-vintage-aloe size-full origin-left"></div>
 	</div>
 
-	<div class="right absolute right-0 h-full w-1/5 origin-right bg-vintage-plum"></div>
+	<div class="right bg-vintage-plum absolute right-0 h-full w-1/5 origin-right"></div>
 </div>

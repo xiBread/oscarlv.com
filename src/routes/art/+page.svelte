@@ -107,7 +107,7 @@
 
 		<div class="relative h-full max-h-[80%]">
 			{#if !$breakpoints.lg}
-				<h1 class="absolute left-4 top-4 z-10 h-full text-white mix-blend-difference">
+				<h1 class="absolute top-4 left-4 z-10 h-full text-white mix-blend-difference">
 					<div class="overflow-hidden">
 						<span class="title-1 block">Independent</span>
 					</div>

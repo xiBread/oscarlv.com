@@ -67,10 +67,10 @@
 		</h1>
 	</div>
 
-	<div class="absolute bottom-8 right-6">
+	<div class="absolute right-6 bottom-8">
 		<div class="flex items-center gap-x-2" bind:this={indicator}>
 			<span class="text-sm">Scroll</span>
-			<Icon name="corner" class="mt-0.5 size-3 text-vintage-peach" />
+			<Icon name="corner" class="text-vintage-peach mt-0.5 size-3" />
 		</div>
 	</div>
 </section>

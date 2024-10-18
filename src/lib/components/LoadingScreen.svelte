@@ -31,11 +31,11 @@
 	<div id="loading-screen" class="invisible">
 		<div class="grid h-svh grid-cols-5 overflow-hidden">
 			{#each { length: 5 } as _}
-				<div class="column h-full bg-vintage-aloe"></div>
+				<div class="column bg-vintage-aloe h-full"></div>
 			{/each}
 		</div>
 
-		<div class="absolute bottom-8 right-8 overflow-hidden">
+		<div class="absolute right-8 bottom-8 overflow-hidden">
 			<p class="flavor-text text-right">
 				Where silence gathers dust
 				<br />
