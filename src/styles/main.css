@@ -2,17 +2,17 @@
 @import "./content.css";
 
 @theme {
-	--color-background: #ffffff;
-	--color-foreground: #09090b;
-	--color-primary: #18181b;
-	--color-primary-foreground: #ffffff;
-	--color-muted: #f4f4f5;
-	--color-muted-foreground: #71717a;
-	--color-vintage-aloe: #8daa5a;
-	--color-vintage-denim: #5c86b2;
-	--color-vintage-peach: #e49367;
-	--color-vintage-plum: #9b4672;
-	--color-vintage-wine: #9e3340;
+	--color-background: var(--color-white);
+	--color-foreground: var(--color-zinc-950);
+	--color-primary: var(--color-zinc-900);
+	--color-primary-foreground: var(--color-white);
+	--color-muted: var(--color-zinc-100);
+	--color-muted-foreground: var(--color-zinc-500);
+	--color-vintage-aloe: oklch(69.76% 0.1118 125.54);
+	--color-vintage-denim: oklch(60.73% 0.0819 250.41);
+	--color-vintage-peach: oklch(73.62% 0.1146 48.83);
+	--color-vintage-plum: oklch(51.71% 0.1244 350.05);
+	--color-vintage-wine: oklch(48.18% 0.1413 17.24);
 
 	--font-family-sans: InterVariable, ui-sans-serif, sans-serif;
 	--font-family-serif: "Noto Serif Display Variable", ui-serif, serif;
