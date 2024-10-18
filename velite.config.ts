@@ -17,7 +17,7 @@ function timestamp() {
 				.split("\n")
 				.slice(0, -1);
 
-			return new Date(dates.at(-1)!).toISOString();
+			return new Date(dates.at(-1) ?? 0).toISOString();
 		});
 }
 
