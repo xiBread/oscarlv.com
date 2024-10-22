@@ -6,6 +6,23 @@
 
 	const petals: HTMLElement[] = [];
 
+	const month = new Date().getMonth() + 1;
+
+	// Winter
+	let seasonGradient = "from-sky-100 to-sky-300";
+
+	// Based on meteorological seasons
+	if (month === 3 || month === 4 || month === 5) {
+		// Spring
+		seasonGradient = "from-red-300 to-pink-500";
+	} else if (month === 6 || month === 7 || month === 8) {
+		// Summer
+		seasonGradient = "from-green-300 to-yellow-300";
+	} else if (month === 9 || month === 10 || month === 11) {
+		// Autumn
+		seasonGradient = "from-orange-400 from-60% to-amber-900";
+	}
+
 	onMount(() => {
 		for (const petal of petals) {
 			gsap.set(petal, {
@@ -47,12 +64,12 @@
 
 <div class="fixed top-0 left-0">
 	{#each { length: 20 } as _, i}
-		{@const lCross = rand(12, 12 + Math.floor(Math.random() * 10))}
-		{@const rCross = rand(1, Math.floor((12 - Math.floor(rand(0, 12) / 3)) / 4))}
+		{@const main = rand(12, 12 + Math.floor(Math.random() * 10))}
+		{@const anti = rand(1, Math.floor((12 - Math.floor(rand(0, 12) / 3)) / 4))}
 
 		<div
-			class="absolute size-3 bg-gradient-to-br from-red-300 to-red-500"
-			style:border-radius="{lCross}px {rCross}px"
+			class="petal absolute size-3 bg-gradient-to-br {seasonGradient}"
+			style:border-radius="{main}px {anti}px"
 			bind:this={petals[i]}
 		></div>
 	{/each}
