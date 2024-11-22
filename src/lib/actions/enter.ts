@@ -7,7 +7,6 @@ export const enter: Action<HTMLElement, gsap.TweenVars | undefined> = (node, var
 		autoAlpha: 0,
 		duration: 1,
 		stagger: 0.15,
-		// @ts-expect-error - bug
 		...vars,
 	});
 };
