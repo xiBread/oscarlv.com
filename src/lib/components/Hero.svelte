@@ -57,7 +57,7 @@
 <section id="hero" class="invisible relative h-svh">
 	<div class="flex-center flex h-full flex-col">
 		<h1
-			class="grid-full grid w-full overflow-hidden text-[max(12vw,4rem)]/[0.85] tracking-tighter"
+			class="grid w-full grid-cols-36 overflow-hidden text-[max(12vw,4rem)]/[0.85] tracking-tighter"
 		>
 			{#each words as word}
 				<div class="-col-end-1 overflow-hidden {word.class}" bind:this={word.ref}>

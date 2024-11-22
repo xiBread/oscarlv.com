@@ -13,7 +13,7 @@
 <div class="flex-center flex h-svh px-4">
 	{#key data.photo.fileId}
 		<div
-			class="distort h-full max-h-[80vh]"
+			class="distort h-full max-h-[80vh] max-w-[95vw]"
 			style:aspect-ratio="{data.photo.width} / {data.photo.height}"
 		>
 			<Canvas>

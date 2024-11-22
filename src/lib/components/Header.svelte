@@ -16,7 +16,7 @@
 
 <header
 	id="site-header"
-	class="fixed top-0 left-0 z-[100] w-full pt-6 px-6 text-white mix-blend-difference md:px-10"
+	class="fixed top-0 left-0 z-100 w-full px-6 pt-6 text-white mix-blend-difference md:px-10"
 >
 	<nav class="flex w-full items-center justify-between">
 		<div class="flex">
