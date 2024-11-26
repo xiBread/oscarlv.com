@@ -12,7 +12,7 @@
 <div class="flex-center flex h-svh px-4">
 	{#key data.photo.fileId}
 		<div class="h-full max-h-[80vh] max-w-[90vw]">
-			<Image class="size-full" src={data.photo.filePath} />
+			<Image class="size-full object-contain" src={data.photo.filePath} />
 		</div>
 	{/key}
 </div>
