@@ -25,8 +25,7 @@
 		"gsap": "^3.12.5",
 		"imagekit": "^5.2.0",
 		"lenis": "^1.1.16",
-		"split-type": "^0.3.4",
-		"vaul-svelte": "^0.3.2"
+		"split-type": "^0.3.4"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^3.9.2",

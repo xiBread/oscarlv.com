@@ -7,7 +7,6 @@
 	import eye from "./icons/eye.svelte";
 	import github from "./icons/github.svelte";
 	import logo from "./icons/logo.svelte";
-	import menu from "./icons/menu.svelte";
 	import x from "./icons/x.svelte";
 
 	interface Props {
@@ -27,7 +26,6 @@
 		eye,
 		github,
 		logo,
-		menu,
 		x,
 	};
 
