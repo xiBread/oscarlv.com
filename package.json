@@ -25,6 +25,7 @@
 		"gsap": "^3.12.5",
 		"imagekit": "^5.2.0",
 		"lenis": "^1.1.16",
+		"mode-watcher": "^0.5.0",
 		"split-type": "^0.3.4"
 	},
 	"devDependencies": {
@@ -37,7 +38,6 @@
 		"@tailwindcss/vite": "4.0.0-beta.1",
 		"@types/eslint": "^9.6.1",
 		"@types/node": "^22.9.1",
-		"@types/three": "^0.170.0",
 		"concurrently": "^9.1.0",
 		"eslint": "^9.15.0",
 		"eslint-config-prettier": "^9.1.0",
