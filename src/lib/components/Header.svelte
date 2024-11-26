@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { gsap } from "gsap";
+	import { toggleMode } from "mode-watcher";
 	import { onMount } from "svelte";
 	import Menu from "./Menu.svelte";
 

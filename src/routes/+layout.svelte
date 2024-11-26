@@ -9,6 +9,7 @@
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 	import { TextPlugin } from "gsap/dist/TextPlugin";
 	import Lenis from "lenis";
+	import { ModeWatcher } from "mode-watcher";
 	import { onMount, setContext } from "svelte";
 
 	import { dev } from "$app/environment";
@@ -53,6 +54,8 @@
 <svelte:head>
 	<title>oliver rose.</title>
 </svelte:head>
+
+<ModeWatcher />
 
 <LoadingScreen>
 	<Header />
