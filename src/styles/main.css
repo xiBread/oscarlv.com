@@ -54,8 +54,8 @@
 		scrollbar-width: none;
 		/* prettier-ignore */
 		font-feature-settings:
-			"calt", /* Contextual alternates */
-			"cv05", /* Lower-case L with tail */
+			"cv05", /* Lowercase L with tail */
+			"cv10", /* Capital G with spur */
 			"cv11", /* Single-story a */
 			"ss01", /* Open digits */
 			"ss07"; /* Square punctuation */
