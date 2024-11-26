@@ -3,9 +3,6 @@
 	"compilerOptions": {
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
-		"types": [
-			"vite-plugin-glsl/ext"
-		],
 		"allowJs": true,
 		"checkJs": true,
 		"strict": true,

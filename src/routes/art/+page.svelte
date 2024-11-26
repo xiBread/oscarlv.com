@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Canvas } from "@threlte/core";
 	import { gsap } from "gsap";
 	import SplitType from "split-type";
 	import { onDestroy, onMount } from "svelte";
-	import Distortion from "$lib/components/Distortion.svelte";
 	import Gallery from "$lib/components/Gallery.svelte";
+	import Image from "$lib/components/Image.svelte";
 	import { useBreakpoints } from "$lib/composables";
 
 	type Timeline = gsap.core.Timeline | undefined;
@@ -40,7 +39,7 @@
 					ease: "expo.inOut",
 				},
 			})
-			.to(".distorted", { "--clip-y": "50%" })
+			.to("#clip-img", { "--clip-y": "50%" })
 			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
 			.to(".title-2", { y: 100 }, "<");
 
@@ -57,7 +56,7 @@
 					ease: "expo.inOut",
 				},
 			})
-			.to(".distorted", { "--clip-x": "0%" })
+			.to("#clip-img", { "--clip-x": "0%" })
 			.from(".title-1", $breakpoints.lg ? { xPercent: 100 } : { y: 50 }, "<0.65")
 			.from(".title-2", $breakpoints.lg ? { xPercent: -100 } : { y: 50 }, "<");
 
@@ -91,7 +90,7 @@
 	<div class="flex-center bg-background sticky top-0 flex h-svh">
 		{#if $breakpoints.lg}
 			<h1
-				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 uppercase text-white mix-blend-difference"
+				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 text-white uppercase mix-blend-difference"
 			>
 				<div class="relative right-[60%] max-w-min overflow-hidden">
 					<span class="title-1 block opacity-0">Independent</span>
@@ -105,7 +104,7 @@
 			</h1>
 		{/if}
 
-		<div class="relative h-full max-h-[80%]">
+		<div class="relative h-full max-h-[80vh] max-w-[95vw]">
 			{#if !$breakpoints.lg}
 				<h1 class="absolute top-4 left-4 z-10 h-full text-white mix-blend-difference">
 					<div class="overflow-hidden">
@@ -118,14 +117,12 @@
 				</h1>
 			{/if}
 
-			<div class="distorted aspect-[3/4] h-full overflow-hidden rounded-[0_2rem]">
-				<Canvas>
-					<Distortion
-						src="https://ik.imagekit.io/olv/under-pressure.jpg"
-						initial={false}
-						{onload}
-					/>
-				</Canvas>
+			<div id="clip-img" class="size-full">
+				<Image
+					class="size-full rounded-[0_2rem] object-cover"
+					src="under-pressure.jpg"
+					{onload}
+				/>
 			</div>
 		</div>
 	</div>
@@ -147,7 +144,7 @@
 <Gallery photos={data.photos} />
 
 <style>
-	.distorted {
+	#clip-img {
 		--clip-x: 50%;
 		--clip-y: 0%;
 		clip-path: inset(var(--clip-y) var(--clip-x));
