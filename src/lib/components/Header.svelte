@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { gsap } from "gsap";
+	import { toggleMode } from "mode-watcher";
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
 
@@ -22,12 +23,20 @@
 			<a class="blended" href="/">oliver rose.</a>
 		</div>
 
-		<div class="flex items-center">
-			<ul class="focus flex items-center gap-x-4">
-				{@render link("art")}
-				{@render link("writing")}
-			</ul>
-		</div>
+		<ul class="flex items-center">
+			<li>
+				<ul class="focus flex items-center gap-x-4">
+					{@render link("art")}
+					{@render link("writing")}
+				</ul>
+			</li>
+
+			<div class="bg-background mx-4 h-4 w-px"></div>
+
+			<li>
+				<button class="blended text-foreground" onclick={toggleMode}>theme</button>
+			</li>
+		</ul>
 	</nav>
 </header>
 
