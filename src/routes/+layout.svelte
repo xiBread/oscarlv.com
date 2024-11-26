@@ -3,6 +3,7 @@
 	import "@fontsource-variable/jetbrains-mono";
 	import "@fontsource-variable/noto-serif-display";
 
+	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 	import { TextPlugin } from "gsap/dist/TextPlugin";
@@ -16,6 +17,7 @@
 	import Screen from "$lib/components/Screen.svelte";
 	import ScrollProgress from "$lib/components/ScrollProgress.svelte";
 
+	injectSpeedInsights();
 	gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 	const { children } = $props();
