@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Canvas } from "@threlte/core";
 	import { gsap } from "gsap";
 	import SplitType from "split-type";
 	import { onDestroy, onMount } from "svelte";
-	import Distortion from "$lib/components/Distortion.svelte";
 	import Gallery from "$lib/components/Gallery.svelte";
+	import Image from "$lib/components/Image.svelte";
 	import { useBreakpoints } from "$lib/composables";
 
 	type Timeline = gsap.core.Timeline | undefined;
@@ -91,7 +90,7 @@
 	<div class="flex-center bg-background sticky top-0 flex h-svh">
 		{#if $breakpoints.lg}
 			<h1
-				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 uppercase text-white mix-blend-difference"
+				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 text-white uppercase mix-blend-difference"
 			>
 				<div class="relative right-[60%] max-w-min overflow-hidden">
 					<span class="title-1 block opacity-0">Independent</span>
@@ -119,13 +118,7 @@
 			{/if}
 
 			<div class="distorted aspect-[3/4] h-full overflow-hidden rounded-[0_2rem]">
-				<Canvas>
-					<Distortion
-						src="https://ik.imagekit.io/olv/under-pressure.jpg"
-						initial={false}
-						{onload}
-					/>
-				</Canvas>
+				<Image src="under-pressure.jpg" {onload} />
 			</div>
 		</div>
 	</div>

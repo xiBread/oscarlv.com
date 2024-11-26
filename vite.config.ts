@@ -1,7 +1,6 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import glsl from "vite-plugin-glsl";
 
 export default defineConfig({
 	server: {
@@ -9,5 +8,5 @@ export default defineConfig({
 			allow: ["./.velite"],
 		},
 	},
-	plugins: [glsl(), tailwindcss(), sveltekit()],
+	plugins: [tailwindcss(), sveltekit()],
 });

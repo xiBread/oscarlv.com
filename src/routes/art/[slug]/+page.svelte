@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Canvas } from "@threlte/core";
-	import Distortion from "$lib/components/Distortion.svelte";
+	import Image from "$lib/components/Image.svelte";
 
 	const { data } = $props();
 
@@ -12,13 +11,8 @@
 
 <div class="flex-center flex h-svh px-4">
 	{#key data.photo.fileId}
-		<div
-			class="distort h-full max-h-[80vh] max-w-[95vw]"
-			style:aspect-ratio="{data.photo.width} / {data.photo.height}"
-		>
-			<Canvas>
-				<Distortion src="https://ik.imagekit.io/olv{data.photo.filePath}" />
-			</Canvas>
+		<div class="h-full max-h-[80vh] max-w-[90vw]">
+			<Image class="size-full" src={data.photo.filePath} />
 		</div>
 	{/key}
 </div>
