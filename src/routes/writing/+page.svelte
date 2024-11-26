@@ -3,10 +3,19 @@
 	import Icon from "$lib/components/Icon.svelte";
 
 	const { data } = $props();
+
+	const description = "To write is to discover the essence of what remains untold.";
 </script>
 
 <svelte:head>
 	<title>writing | oliver rose.</title>
+
+	<meta name="description" content={description} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="writing | oliver rose." />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content="https://oscarlv.com/writing" />
 </svelte:head>
 
 <section class="mx-auto max-w-7xl px-4 py-28 md:px-8">

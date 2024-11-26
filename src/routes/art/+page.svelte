@@ -11,6 +11,9 @@
 	const { data } = $props();
 	const breakpoints = useBreakpoints();
 
+	const description =
+		"I specialize in fine-art photography with an emphasis on highlighting hidden sentiments.";
+
 	let introTl: Timeline;
 
 	let mission: HTMLElement;
@@ -84,6 +87,13 @@
 
 <svelte:head>
 	<title>art | oliver rose.</title>
+
+	<meta name="description" content={description} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="art | oliver rose." />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content="https://oscarlv.com/art" />
 </svelte:head>
 
 <div id="art-hero" class="relative h-[300svh] px-4">
