@@ -39,7 +39,7 @@
 					ease: "expo.inOut",
 				},
 			})
-			.to(".distorted", { "--clip-y": "50%" })
+			.to("#clip-img", { "--clip-y": "50%" })
 			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
 			.to(".title-2", { y: 100 }, "<");
 
@@ -56,7 +56,7 @@
 					ease: "expo.inOut",
 				},
 			})
-			.to(".distorted", { "--clip-x": "0%" })
+			.to("#clip-img", { "--clip-x": "0%" })
 			.from(".title-1", $breakpoints.lg ? { xPercent: 100 } : { y: 50 }, "<0.65")
 			.from(".title-2", $breakpoints.lg ? { xPercent: -100 } : { y: 50 }, "<");
 
@@ -104,7 +104,7 @@
 			</h1>
 		{/if}
 
-		<div class="relative h-full max-h-[80%]">
+		<div class="relative h-full max-h-[80vh] max-w-[95vw]">
 			{#if !$breakpoints.lg}
 				<h1 class="absolute top-4 left-4 z-10 h-full text-white mix-blend-difference">
 					<div class="overflow-hidden">
@@ -117,8 +117,12 @@
 				</h1>
 			{/if}
 
-			<div class="distorted aspect-[3/4] h-full overflow-hidden rounded-[0_2rem]">
-				<Image src="under-pressure.jpg" {onload} />
+			<div id="clip-img" class="size-full">
+				<Image
+					class="size-full rounded-[0_2rem] object-cover"
+					src="under-pressure.jpg"
+					{onload}
+				/>
 			</div>
 		</div>
 	</div>
@@ -140,7 +144,7 @@
 <Gallery photos={data.photos} />
 
 <style>
-	.distorted {
+	#clip-img {
 		--clip-x: 50%;
 		--clip-y: 0%;
 		clip-path: inset(var(--clip-y) var(--clip-x));
