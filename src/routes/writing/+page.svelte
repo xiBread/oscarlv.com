@@ -9,7 +9,7 @@
 	<title>writing | oliver rose.</title>
 </svelte:head>
 
-<section class="mx-auto max-w-7xl py-28 px-4 md:px-8">
+<section class="mx-auto max-w-7xl px-4 py-28 md:px-8">
 	<article class="max-w-prose" use:enter={{ y: -30, stagger: 0.3 }}>
 		<h1>
 			To write is to discover the essence of what remains

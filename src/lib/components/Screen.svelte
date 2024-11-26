@@ -12,7 +12,7 @@
 />
 
 <div
-	class="fixed bottom-5 left-5 z-50 flex items-center space-x-2 rounded-full bg-black py-1 px-2.5 font-mono text-xs font-medium text-white dark:bg-white dark:text-black"
+	class="fixed bottom-5 left-5 z-50 flex items-center space-x-2 rounded-full bg-black px-2.5 py-1 font-mono text-xs font-medium text-white dark:bg-white dark:text-black"
 >
 	<span>
 		{size.width} &times; {size.height}
