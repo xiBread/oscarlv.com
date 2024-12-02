@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { gsap } from "gsap";
 	import { onMount } from "svelte";
-	import { page } from "$app/stores";
+	import Menu from "./Menu.svelte";
 
-	const topRoute = $derived($page.url.pathname.split("/")[1] || null);
+	let open = $state(false);
 
 	onMount(() => {
 		gsap.from("#site-header", {
@@ -22,17 +22,18 @@
 			<a class="blended" href="/">oliver rose.</a>
 		</div>
 
-		<div class="flex items-center">
-			<ul class="focus flex items-center gap-x-4">
-				{@render link("art")}
-				{@render link("writing")}
-			</ul>
-		</div>
+		<button
+			id="menu-btn"
+			class="hover:cursor-pointer"
+			type="button"
+			onclick={() => (open = !open)}
+		>
+			<div class="flex h-6 flex-col items-end justify-start overflow-hidden">
+				<span class="blended label">menu.</span>
+				<span class="blended label">close.</span>
+			</div>
+		</button>
 	</nav>
 </header>
 
-{#snippet link(route: string)}
-	<li aria-current={topRoute === route && "page"}>
-		<a class="blended" href="/{route}">{route}.</a>
-	</li>
-{/snippet}
+<Menu bind:open />
