@@ -5,6 +5,7 @@
 
 	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import { gsap } from "gsap";
+	import { CustomEase } from "gsap/dist/CustomEase";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 	import { TextPlugin } from "gsap/dist/TextPlugin";
 	import Lenis from "lenis";
@@ -18,7 +19,7 @@
 	import ScrollProgress from "$lib/components/ScrollProgress.svelte";
 
 	injectSpeedInsights();
-	gsap.registerPlugin(ScrollTrigger, TextPlugin);
+	gsap.registerPlugin(CustomEase, ScrollTrigger, TextPlugin);
 
 	const { children } = $props();
 
