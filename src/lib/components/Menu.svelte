@@ -40,10 +40,7 @@
 	});
 
 	beforeNavigate(() => {
-		if (open) {
-			open = false;
-			hide();
-		}
+		if (open) hide();
 	});
 
 	function show() {
@@ -55,7 +52,6 @@
 			.set("#menu", { display: "block" })
 			.set("#menu-nav", { xPercent: 0 }, "<")
 			.fromTo("#menu-btn .label", { yPercent: 0 }, { yPercent: -100, stagger: 0.2 })
-			//
 			.fromTo("#menu-overlay", { autoAlpha: 0 }, { autoAlpha: 1 }, "<")
 			.fromTo(
 				".panel",
@@ -65,19 +61,20 @@
 			)
 			.fromTo(
 				"#menu-links a",
-				{ yPercent: 140, rotate: 10 },
+				{ yPercent: 160, rotate: 15 },
 				{ yPercent: 0, rotate: 0, stagger: 0.05 },
 				"<+=0.35",
 			)
 			.fromTo(
-				"[data-fade]",
+				"#menu-socials [data-fade]",
 				{ autoAlpha: 0, yPercent: 50 },
-				{ autoAlpha: 1, yPercent: 0, stagger: 0.04 },
+				{ autoAlpha: 1, yPercent: 0, stagger: 0.05 },
 				"<+=0.2",
 			);
 	}
 
 	function hide() {
+		open = false;
 		document.body.style.overflow = "auto";
 		lenis.start();
 
@@ -86,7 +83,6 @@
 			.to("#menu-overlay", { autoAlpha: 0 })
 			.to("#menu-nav", { xPercent: 120 }, "<")
 			.to("#menu-btn .label", { yPercent: 0 }, "<")
-			//
 			.set("#menu", { display: "none" });
 	}
 </script>
@@ -94,7 +90,6 @@
 <svelte:document
 	onkeydown={(event) => {
 		if (event.key === "Escape" && open) {
-			open = false;
 			hide();
 		}
 	}}
@@ -103,7 +98,7 @@
 <div id="menu" class="fixed inset-0 z-90 mx-auto hidden h-screen w-full">
 	<div id="menu-overlay" class="absolute inset-0 z-0 size-full bg-black/70"></div>
 
-	<nav id="menu-nav" class="relative ml-auto h-full w-[32rem] overflow-auto pt-24 pb-8">
+	<nav id="menu-nav" class="relative ml-auto h-full w-full overflow-auto pt-24 pb-8 md:w-[32rem]">
 		<div id="menu-panels" class="absolute inset-0 *:absolute *:inset-0 md:*:rounded-l-3xl">
 			<div class="panel bg-vintage-aloe"></div>
 			<div class="panel bg-vintage-denim"></div>
@@ -118,17 +113,15 @@
 				{#each links as link, i}
 					<li class="relative overflow-hidden">
 						<a class="group flex w-full gap-3 py-3 pl-8" href={link.href}>
-							<p
-								class="z-1 text-7xl/[0.75] font-black uppercase [text-shadow:0_1.05em_0_var(--color-neutral-200)]"
-							>
+							<p class="z-1 text-7xl/[0.75] font-black uppercase">
 								{link.label}
 							</p>
 							<p class="relative z-1 font-mono leading-none">
-								{`${i}`.padStart(2, "0")}
+								{`${i + 1}`.padStart(2, "0")}
 							</p>
 
 							<div
-								class="bg-vintage-peach absolute inset-0 z-0 origin-[50%_100%] scale-x-[1] scale-y-0 scale-z-[1] scale-3d transition-transform duration-500 ease-[cubic-bezier(0.65,0.05,0,1)] transform-3d group-hover:scale-x-[1] group-hover:scale-y-[1]"
+								class="bg-vintage-peach absolute inset-0 z-0 origin-bottom scale-y-0 transition-transform duration-500 ease-[cubic-bezier(0.65,0.05,0,1)] group-hover:scale-y-100"
 							></div>
 						</a>
 					</li>
