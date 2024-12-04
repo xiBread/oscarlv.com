@@ -25,7 +25,7 @@
 
 		<button
 			id="menu-btn"
-			class="hover:cursor-pointer"
+			class="border-0 bg-transparent hover:cursor-pointer"
 			type="button"
 			onclick={() => (open = !open)}
 		>

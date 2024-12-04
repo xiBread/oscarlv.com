@@ -2,6 +2,7 @@
 	import { gsap } from "gsap";
 	import { CustomEase } from "gsap/dist/CustomEase";
 	import Lenis from "lenis";
+	import { mode, toggleMode } from "mode-watcher";
 	import { getContext, onMount } from "svelte";
 	import { beforeNavigate } from "$app/navigation";
 
@@ -39,6 +40,14 @@
 		open ? show() : hide();
 	});
 
+	$effect(() => {
+		if ($mode === "light") {
+			gsap.to("#theme-btn span", { yPercent: 0 });
+		} else {
+			gsap.to("#theme-btn span", { yPercent: -100 });
+		}
+	});
+
 	beforeNavigate(() => {
 		if (open) hide();
 	});
@@ -61,7 +70,7 @@
 				"<+=0.35",
 			)
 			.fromTo(
-				"#menu-socials [data-fade]",
+				"[data-fade]",
 				{ autoAlpha: 0, yPercent: 50 },
 				{ autoAlpha: 1, yPercent: 0, stagger: 0.1 },
 				"<+=0.2",
@@ -131,16 +140,36 @@
 				{/each}
 			</ul>
 
-			<div id="menu-socials" class="flex flex-col items-start justify-start gap-2 pl-8">
-				<span data-fade class="font-mono text-xs uppercase">Socials</span>
+			<div class="flex w-full justify-between px-8">
+				<div id="menu-socials" class="flex flex-col items-start justify-start gap-2">
+					<span class="font-mono text-xs uppercase" data-fade>Socials</span>
 
-				<ul class="flex flex-row gap-4">
-					{#each socials as social}
-						<li data-fade>
-							<a href={social.href} target="_blank">{social.label}</a>
-						</li>
-					{/each}
-				</ul>
+					<ul class="flex flex-row gap-4">
+						{#each socials as social}
+							<li data-fade>
+								<a href={social.href} target="_blank">{social.label}</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
+
+				<div class="flex flex-col gap-2">
+					<span class="font-mono text-xs uppercase" data-fade>Theme</span>
+
+					<button
+						id="theme-btn"
+						class="border-0 bg-transparent hover:cursor-pointer"
+						data-fade
+						onclick={toggleMode}
+					>
+						<div
+							class="text-foreground flex h-6 flex-col items-end justify-start overflow-hidden"
+						>
+							<span>light.</span>
+							<span>dark.</span>
+						</div>
+					</button>
+				</div>
 			</div>
 		</div>
 	</nav>

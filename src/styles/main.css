@@ -31,6 +31,16 @@
 	--text-fluid-7xl: clamp(2.89rem, 3.27cqi + 2.23rem, 5.37rem);
 }
 
+.dark {
+	--color-background: var(--color-zinc-900);
+	--color-foreground: var(--color-zinc-50);
+	--color-primary: var(--color-zinc-100);
+	--color-primary-foreground: var(--color-zinc-950);
+	--color-muted: var(--color-zinc-800);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
 /* https://stackoverflow.com/questions/45883243/ */
 @utility blended {
 	background: white;
