@@ -1,3 +1,8 @@
+[data-category] a {
+	text-decoration: underline dashed var(--color-muted-foreground) 1px;
+	text-underline-offset: 2px;
+}
+
 [data-category]:not([data-category="short-story"]) {
 	@apply space-y-6;
 }

@@ -11,7 +11,7 @@ Edinburgh is where you went with her. Your new girl. The one who I still think o
 
 You posted photos of your trip on social media before you were blocked. She wasn't in any of them, but there's a couple that she took of you. You don't seem to be having as much fun as you did with me, and I'm not just saying that. I have so many photos of you still on my phone where you're doing goofy things, making me laugh. You're not doing anything goofy with her, though. They all look so serious.
 
-There's a lyric in a Noah Kahan song, "I'm no longer funny because I miss the way you laugh," and I wonder if that's why you seem to have lost some of your silliness. Maybe you were only silly to make me smile, and now that I'm not around, you've lost your motivation and that trait. Or maybe I'm reading too far into it, trying to make myself the leading lady of your story instead of just a footnote.
+There's a lyric in a Noah Kahan song, "[I am no longer funny 'cause I miss the way you laugh](https://www.youtube.com/watch?v=JKrDdsgXuso)," and I wonder if that's why you seem to have lost some of your silliness. Maybe you were only silly to make me smile, and now that I'm not around, you've lost your motivation and that trait. Or maybe I'm reading too far into it, trying to make myself the leading lady of your story instead of just a footnote.
 
 I don't want to go to Edinburgh, but he seems enthusiastic, and I don't want to burst his bubble by saying, "Well, actually, the love of my life took the girl he chose instead of me there, and so I'd rather avoid it." So, we go to Edinburgh.
 
