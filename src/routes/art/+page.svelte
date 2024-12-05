@@ -40,7 +40,7 @@
 				},
 			})
 			.to("#clip-img", { "--clip-y": "50%" })
-			.to(".title-1", { y: $breakpoints.lg ? -100 : 100 })
+			.to(".title-1", { y: breakpoints.lg.current ? -100 : 100 })
 			.to(".title-2", { y: 100 }, "<");
 
 		return () => exitTl.kill();
@@ -57,8 +57,8 @@
 				},
 			})
 			.to("#clip-img", { "--clip-x": "0%" })
-			.from(".title-1", $breakpoints.lg ? { xPercent: 100 } : { y: 50 }, "<0.65")
-			.from(".title-2", $breakpoints.lg ? { xPercent: -100 } : { y: 50 }, "<");
+			.from(".title-1", breakpoints.lg.current ? { xPercent: 100 } : { y: 50 }, "<0.65")
+			.from(".title-2", breakpoints.lg.current ? { xPercent: -100 } : { y: 50 }, "<");
 
 		missionTl = gsap
 			.timeline({
@@ -88,7 +88,7 @@
 
 <div id="art-hero" class="relative h-[300svh] px-4">
 	<div class="flex-center bg-background sticky top-0 flex h-svh">
-		{#if $breakpoints.lg}
+		{#if breakpoints.lg.current}
 			<h1
 				class="absolute-center text-fluid-5xl pointer-events-none absolute z-10 text-white uppercase mix-blend-difference"
 			>
@@ -105,7 +105,7 @@
 		{/if}
 
 		<div class="relative h-full max-h-[80vh] max-w-[95vw]">
-			{#if !$breakpoints.lg}
+			{#if !breakpoints.lg.current}
 				<h1 class="absolute top-4 left-4 z-10 h-full text-white mix-blend-difference">
 					<div class="overflow-hidden">
 						<span class="title-1 block">Independent</span>

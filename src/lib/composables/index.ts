@@ -1,2 +1,1 @@
-export * from "./useBreakpoints.svelte";
-export * from "./useMediaQuery";
+export * from "./useBreakpoints";

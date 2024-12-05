@@ -14,7 +14,7 @@
 
 	const progress = $state({ value: 0 });
 
-	const length = $derived($breakpoints.lg ? 5 : $breakpoints.md ? 3 : 2);
+	const length = $derived(breakpoints.lg.current ? 5 : breakpoints.md.current ? 3 : 2);
 	const grid = $derived.by(() => {
 		const sorted = photos.toSorted((a, b) => b.height - a.height);
 		const columns = Array.from({ length }, () => ({ photos: [] as Photo[], height: 0 }));
