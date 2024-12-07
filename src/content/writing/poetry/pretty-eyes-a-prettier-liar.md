@@ -1,5 +1,6 @@
 ---
 title: Pretty Eyes, A Prettier Liar
+excerpt: The echo of a love I can't quite let go.
 ---
 
 Pretty eyes, a prettier liar.
