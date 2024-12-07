@@ -37,6 +37,7 @@
 	--color-primary: var(--color-zinc-100);
 	--color-primary-foreground: var(--color-zinc-950);
 	--color-muted: var(--color-zinc-800);
+	--color-muted-foreground: var(--color-zinc-400);
 }
 
 @variant dark (&:where(.dark, .dark *));
