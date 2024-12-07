@@ -6,10 +6,20 @@
 	import Rose from "$lib/components/Rose.svelte";
 
 	let about: HTMLElement;
+
+	const description =
+		"I'm a self-taught programmer who enjoys expressing creativity through pictures and words, bridging the gap between logic and imagination.";
 </script>
 
 <svelte:head>
 	<title>home | oliver rose.</title>
+
+	<meta name="description" content={description} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="home | oliver rose." />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content="https://oscarlv.com" />
 </svelte:head>
 
 <Petals />
@@ -33,11 +43,7 @@
 
 		<Quote />
 
-		<p>
-			I'm a self-taught programmer who enjoys expressing creativity through pictures and
-			words, bridging the gap between logic and imagination.
-		</p>
-
+		<p>{description}</p>
 		<p>Always looking for new ways to satiate my endeavor to create.</p>
 
 		<footer class="flex gap-x-2">

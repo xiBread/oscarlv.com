@@ -19,6 +19,13 @@
 
 <svelte:head>
 	<title>{data.entry.title} | oliver rose.</title>
+
+	<meta name="description" content={data.entry.excerpt} />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={data.entry.title} />
+	<meta property="og:description" content={data.entry.excerpt} />
+	<meta property="og:url" content="https://oscarlv.com/writing/${data.entry.slug}" />
 </svelte:head>
 
 <article class="mx-auto max-w-4xl px-4 pt-32 pb-20 md:px-10">

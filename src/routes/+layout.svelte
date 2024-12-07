@@ -50,10 +50,6 @@
 	afterNavigate(() => scrollTo(0, 0));
 </script>
 
-<svelte:head>
-	<title>oliver rose.</title>
-</svelte:head>
-
 <LoadingScreen>
 	<Header />
 
