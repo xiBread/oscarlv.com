@@ -32,7 +32,7 @@
 }
 
 .dark {
-	--color-background: var(--color-zinc-900);
+	--color-background: var(--color-zinc-950);
 	--color-foreground: var(--color-zinc-50);
 	--color-primary: var(--color-zinc-100);
 	--color-primary-foreground: var(--color-zinc-950);

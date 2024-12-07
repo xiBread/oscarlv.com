@@ -114,7 +114,7 @@
 		<div id="menu-panels" class="absolute inset-0 *:absolute *:inset-0 md:*:rounded-l-3xl">
 			<div class="panel bg-vintage-aloe"></div>
 			<div class="panel bg-vintage-denim"></div>
-			<div class="panel bg-background"></div>
+			<div class="panel bg-muted"></div>
 		</div>
 
 		<div
