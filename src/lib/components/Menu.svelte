@@ -159,6 +159,7 @@
 					<button
 						id="theme-btn"
 						class="border-0 bg-transparent hover:cursor-pointer"
+						type="button"
 						data-fade
 						onclick={toggleMode}
 					>
