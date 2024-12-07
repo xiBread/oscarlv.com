@@ -26,6 +26,7 @@
 		"gsap": "^3.12.5",
 		"imagekit": "^5.2.0",
 		"lenis": "^1.1.18",
+		"mode-watcher": "^0.5.0",
 		"split-type": "^0.3.4"
 	},
 	"devDependencies": {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { gsap } from "gsap";
+	import { toggleMode } from "mode-watcher";
 	import { onMount } from "svelte";
 	import Menu from "./Menu.svelte";
 
@@ -24,7 +25,7 @@
 
 		<button
 			id="menu-btn"
-			class="hover:cursor-pointer"
+			class="border-0 bg-transparent hover:cursor-pointer"
 			type="button"
 			onclick={() => (open = !open)}
 		>
