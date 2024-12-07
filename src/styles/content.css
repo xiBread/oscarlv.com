@@ -29,6 +29,7 @@
 @layer components {
 	.dinkus::after {
 		content: "* * *";
+		color: var(--color-vintage-plum);
 		display: inline-block;
 		width: 100%;
 		text-align: center;
