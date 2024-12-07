@@ -22,7 +22,7 @@ importers:
         version: 1.1.18
       mode-watcher:
         specifier: ^0.5.0
-        version: 0.5.0(svelte@5.2.7)
+        version: 0.5.0(svelte@5.7.0)
       split-type:
         specifier: ^0.3.4
         version: 0.3.4
@@ -5345,9 +5345,9 @@ snapshots:
       pkg-types: 1.2.1
       ufo: 1.5.4
 
-  mode-watcher@0.5.0(svelte@5.2.7):
+  mode-watcher@0.5.0(svelte@5.7.0):
     dependencies:
-      svelte: 5.2.7
+      svelte: 5.7.0
 
   mri@1.2.0: {}
 
