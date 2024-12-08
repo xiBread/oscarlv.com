@@ -5,7 +5,6 @@
 	const rand = (n: number, m: number) => n + Math.random() * (m - n);
 
 	const petals: HTMLElement[] = [];
-
 	const month = new Date().getMonth() + 1;
 
 	// Winter
@@ -68,7 +67,7 @@
 		{@const anti = rand(1, Math.floor((12 - Math.floor(rand(0, 12) / 3)) / 4))}
 
 		<div
-			class="petal absolute size-3 bg-gradient-to-br {seasonGradient}"
+			class="petal absolute size-3 bg-linear-to-br/oklch {seasonGradient}"
 			style:border-radius="{main}px {anti}px"
 			bind:this={petals[i]}
 		></div>

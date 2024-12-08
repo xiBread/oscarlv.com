@@ -6,7 +6,7 @@
 	import { getContext, onMount } from "svelte";
 	import { beforeNavigate } from "$app/navigation";
 
-	let { open = $bindable() }: { open: boolean } = $props();
+	let { open = $bindable<boolean>() } = $props();
 
 	const lenis = getContext<Lenis>("lenis");
 
