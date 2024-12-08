@@ -55,7 +55,7 @@
 	<title>oliver rose.</title>
 </svelte:head>
 
-<ModeWatcher />
+<ModeWatcher defaultMode="light" />
 
 <LoadingScreen>
 	<Header />
