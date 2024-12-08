@@ -21,12 +21,12 @@
 	<title>{data.entry.title} | oliver rose.</title>
 </svelte:head>
 
-<article class="mx-auto max-w-4xl px-4 pt-32 pb-20 md:px-10">
+<article class="prose prose-zinc mx-auto max-w-4xl px-6 pt-32 pb-20">
 	<time class="text-muted-foreground text-sm" datetime={data.entry.publishedAt}>
 		{formatDate(data.entry.publishedAt)}
 	</time>
 
-	<h1 class="text-fluid-5xl font-semibold">
+	<h1 class="text-fluid-5xl mt-2 mb-10 font-semibold">
 		{data.entry.title}
 	</h1>
 
@@ -63,7 +63,7 @@
 				&lbrace; {type} &rbrace;
 			</span>
 
-			<a class="text-fluid-2xl/none mt-2 font-light" href="/writing/{item.slug}">
+			<a class="text-fluid-2xl/none not-prose mt-2 font-light" href="/writing/{item.slug}">
 				<span class="group-hover:text-vintage-peach transition-colors duration-300">
 					{item.title}
 				</span>

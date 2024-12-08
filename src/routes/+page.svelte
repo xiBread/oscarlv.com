@@ -21,7 +21,7 @@
 	bind:this={about}
 >
 	<article
-		class="mx-auto flex max-w-xl flex-col gap-y-4"
+		class="mx-auto flex max-w-xl flex-col gap-y-6"
 		use:enter={{
 			scrollTrigger: {
 				trigger: about,

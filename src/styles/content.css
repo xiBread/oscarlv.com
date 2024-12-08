@@ -3,10 +3,6 @@
 	text-underline-offset: 2px;
 }
 
-[data-category]:not([data-category="short-story"]) {
-	@apply space-y-6;
-}
-
 [data-category="dialogue"] p {
 	max-width: 65ch;
 }
@@ -19,7 +15,7 @@
 }
 
 [data-category="short-story"] {
-	@apply space-y-2;
+	@apply prose-p:my-2;
 
 	p:not(:has(.dinkus)) {
 		text-indent: 4ch;
