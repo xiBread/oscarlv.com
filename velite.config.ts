@@ -18,7 +18,12 @@ const writingSchema = s
 	.object({
 		date: s
 			.isodate()
-			.transform((iso) => iso.replace("00", "04"))
+			.transform((iso) => {
+				const date = new Date(iso);
+				const dateTz = new Date(date.getTime() + date.getTimezoneOffset() * 60_000);
+
+				return dateTz.toISOString();
+			})
 			.optional(),
 		title: s.string(),
 		excerpt: s.string().optional(),
