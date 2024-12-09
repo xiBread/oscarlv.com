@@ -1,6 +1,10 @@
 import { defineConfig, s } from "velite";
 
-const slugify = (str: string) => str.toLowerCase().replace(/ /g, "-");
+const slugify = (str: string) =>
+	str
+		.toLowerCase()
+		.replace(/ /g, "-")
+		.replace(/[^\w-]/g, "");
 
 const artSchema = s
 	.object({
