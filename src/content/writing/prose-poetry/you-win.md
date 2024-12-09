@@ -1,4 +1,5 @@
 ---
+date: 2022-11-28
 title: You Win
 excerpt: Your love was a losing game.
 explicit: true

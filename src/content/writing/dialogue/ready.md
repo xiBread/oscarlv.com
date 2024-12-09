@@ -1,4 +1,5 @@
 ---
+date: 2023-01-17
 title: Ready
 excerpt: You had no reason to entertain me just because you felt like it.
 explicit: true

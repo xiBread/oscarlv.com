@@ -1,4 +1,5 @@
 ---
+date: 2024-09-13
 title: Supernova
 excerpt: I wonder if the universe will feel lonely before it dies.
 ---

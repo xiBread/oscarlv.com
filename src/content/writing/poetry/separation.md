@@ -1,4 +1,5 @@
 ---
+date: 2023-08-29
 title: Separation
 excerpt: Separate the art from the artist.
 ---

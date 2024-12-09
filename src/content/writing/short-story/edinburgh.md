@@ -1,4 +1,5 @@
 ---
+date: 2024-04-26
 title: Edinburgh
 excerpt: Edinburgh is where you went with her.
 ---

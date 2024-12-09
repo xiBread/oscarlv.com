@@ -1,7 +1,7 @@
 ---
+date: 2024-10-04
 title: Dandelions
 excerpt: Oh, and pick up any dandelions you find.
-modifiedAt: 2024-10-04
 ---
 
 Spring is in full bloom, and the scent of wildflowers lingered, mingling with the promise of new beginnings. The air had a crisp yet subtle breeze. It was on days like these where she felt that the world was in harmony again. It was only appropriate to drive her dad's '67 Mustang. He was always reluctant to let her drive it because of its value and his personal attachment to it, but he also wanted to share the experience of driving something with history instead of a lifeless metal box.

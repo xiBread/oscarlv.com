@@ -1,4 +1,5 @@
 ---
+date: 2023-08-22
 title: Repetition
 excerpt: My mother taught me this trick.
 ---

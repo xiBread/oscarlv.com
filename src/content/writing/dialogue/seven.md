@@ -1,4 +1,5 @@
 ---
+date: 2023-01-01
 title: Seven
 start: right
 ---
