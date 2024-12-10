@@ -1,4 +1,5 @@
 ---
+date: 2024-12-06
 title: Pretty Eyes, A Prettier Liar
 excerpt: The echo of a love I can't quite let go.
 ---

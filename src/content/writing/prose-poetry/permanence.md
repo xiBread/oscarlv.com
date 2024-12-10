@@ -1,4 +1,5 @@
 ---
+date: 2023-08-29
 title: Permanence
 excerpt: Who am I but someone who is defined by the people that I've lost?
 ---

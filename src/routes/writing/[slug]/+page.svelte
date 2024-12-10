@@ -22,9 +22,11 @@
 </svelte:head>
 
 <article class="prose prose-zinc mx-auto max-w-4xl px-6 pt-32 pb-20 md:px-10">
-	<time class="text-muted-foreground text-sm" datetime={data.entry.publishedAt}>
-		{formatDate(data.entry.publishedAt)}
-	</time>
+	{#if data.entry.date}
+		<time class="text-muted-foreground text-sm" datetime={data.entry.date}>
+			{formatDate(data.entry.date)}
+		</time>
+	{/if}
 
 	<h1 class="text-fluid-5xl mt-2 mb-10 font-semibold">
 		{data.entry.title}
@@ -39,12 +41,6 @@
 	</div>
 
 	<footer class="mt-12 flex flex-col">
-		{#if data.entry.modifiedAt}
-			<time class="text-muted-foreground mb-2 text-sm" datetime={data.entry.modifiedAt}>
-				Last updated {formatDate(data.entry.modifiedAt)}
-			</time>
-		{/if}
-
 		<div class="bg-primary/50 mb-10 h-px w-full" role="separator"></div>
 
 		<div class="flex items-center justify-between">

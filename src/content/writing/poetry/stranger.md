@@ -1,4 +1,5 @@
 ---
+date: 2022-10-18
 title: Stranger
 ---
 

@@ -1,4 +1,5 @@
 ---
+date: 2024-09-10
 title: At Long Last
 excerpt: "\"At last,\" he sighs as the fabric of reality thins, the veil parts."
 ---

@@ -1,4 +1,5 @@
 ---
+date: 2024-09-17
 title: Maid of Honor
 excerpt: This is weird, and you would hate this.
 ---

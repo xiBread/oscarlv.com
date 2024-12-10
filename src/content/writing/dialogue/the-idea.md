@@ -1,4 +1,5 @@
 ---
+date: 2022-12-01
 title: The Idea
 excerpt: Why are you trying to fix something that wasn’t broken in the first place?
 explicit: true

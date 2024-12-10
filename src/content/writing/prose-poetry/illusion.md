@@ -1,4 +1,5 @@
 ---
+date: 2024-09-13
 title: Illusion
 excerpt: How am I supposed to see my suffering as a means to an end?
 ---

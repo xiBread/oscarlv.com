@@ -1,25 +1,10 @@
-import cp from "node:child_process";
 import { defineConfig, s } from "velite";
 
-const slugify = (str: string) => str.toLowerCase().replace(/ /g, "-");
-
-function timestamp() {
-	return s
-		.custom<string | undefined>((value) => value === undefined || typeof value === "string")
-		.transform((value, { meta }) => {
-			if (value) {
-				return new Date(value).toISOString().replace("00", "04");
-			}
-
-			const dates = cp
-				.execSync(`git log --diff-filter=A --format=%cd -- "${meta.path}"`)
-				.toString()
-				.split("\n")
-				.slice(0, -1);
-
-			return new Date(dates.at(-1) ?? 0).toISOString();
-		});
-}
+const slugify = (str: string) =>
+	str
+		.toLowerCase()
+		.replace(/ /g, "-")
+		.replace(/[^\w-]/g, "");
 
 const artSchema = s
 	.object({
@@ -35,16 +20,20 @@ const artSchema = s
 
 const writingSchema = s
 	.object({
+		date: s
+			.isodate()
+			.transform((iso) => {
+				const date = new Date(iso);
+				const dateTz = new Date(date.getTime() + date.getTimezoneOffset() * 60_000);
+
+				return dateTz.toISOString();
+			})
+			.optional(),
 		title: s.string(),
 		excerpt: s.string().optional(),
 		start: s.enum(["left", "right"]).default("left"),
 		explicit: s.boolean().default(false),
 		image: s.string().optional(),
-		publishedAt: timestamp(),
-		modifiedAt: s
-			.isodate()
-			.transform((iso) => iso.replace("00", "04"))
-			.optional(),
 		content: s.markdown(),
 		path: s.path(),
 	})

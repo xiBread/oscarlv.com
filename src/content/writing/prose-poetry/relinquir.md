@@ -1,4 +1,5 @@
 ---
+date: 2024-10-11
 title: Relinquir
 excerpt: I let myself be vulnerable too easily.
 ---
