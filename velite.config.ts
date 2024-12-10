@@ -43,6 +43,7 @@ const writingSchema = s
 		if (!excerpt) {
 			const firstLine = /<p>([^<]*)(?:<\/p>)?/
 				.exec(schema.content.split("\n")[0])?.[1]
+				.trim()
 				.replace(/((?<=\w)|,)$/, ".");
 
 			excerpt = firstLine ?? "";
