@@ -1,6 +1,7 @@
 ---
 date: 2022-11-28
 title: Eternity
+excerpt: What's the point in loving anyone else?
 ---
 
 The thought that there is someone out there

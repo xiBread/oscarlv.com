@@ -1,6 +1,7 @@
 ---
 date: 2022-11-21
 title: Something
+excerpt: it was forehead kisses and holding hands.
 ---
 
 it wasn't love,

@@ -1,6 +1,7 @@
 ---
 date: 2022-12-22
 title: Addicted
+excerpt: What made you so damn special?
 ---
 
 I always wondered,
