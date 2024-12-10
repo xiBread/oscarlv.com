@@ -11,6 +11,10 @@
 [data-category="dialogue"][data-start="left"] p:nth-child(even) {
 	margin-left: auto;
 	text-align: right;
+}
+
+[data-category="dialogue"][data-start="right"] p:nth-child(even),
+[data-category="dialogue"][data-start="left"] p:nth-child(odd) {
 	color: var(--color-muted-foreground);
 }
 

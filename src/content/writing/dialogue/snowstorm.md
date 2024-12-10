@@ -1,6 +1,7 @@
 ---
 date: 2022-12-23
 title: Snowstorm
+start: right
 ---
 
 Have you been in a snowstorm before?

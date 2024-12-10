@@ -1,7 +1,6 @@
 ---
 date: 2022-12-21
 title: Deserve
-start: right
 ---
 
 Do you think people are deserving of love?

@@ -1,6 +1,7 @@
 ---
 date: 2024-09-13
 title: Ambition
+start: right
 ---
 
 I'm not everything I want to be.
