@@ -1,12 +1,7 @@
 {
-	"Art frontmatter": {
-		"scope": "markdown",
-		"prefix": "---",
-		"body": ["---", "title: $1", "cover: $2.${3:jpg}", "---\n", "$0"],
-	},
 	"Writing frontmatter": {
 		"scope": "markdown",
 		"prefix": "---",
-		"body": ["---", "title: $1", "---\n", "$0"],
+		"body": ["---", "date: $1", "title: $2", "---\n", "$0"],
 	},
 }
