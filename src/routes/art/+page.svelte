@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gsap } from "gsap";
 	import SplitType from "split-type";
-	import { onDestroy, onMount } from "svelte";
+	import { onMount } from "svelte";
 	import Gallery from "$lib/components/Gallery.svelte";
 	import Image from "$lib/components/Image.svelte";
 	import ScrollIndicator from "$lib/components/ScrollIndicator.svelte";
@@ -18,11 +18,11 @@
 
 	onMount(() => {
 		SplitType.create(mission, { types: "words" });
-	});
 
-	onDestroy(() => {
-		introTl?.kill();
-		missionTl?.kill();
+		return () => {
+			introTl?.kill();
+			missionTl?.kill();
+		};
 	});
 
 	$effect(() => {
