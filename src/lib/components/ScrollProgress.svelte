@@ -3,6 +3,7 @@
 	import { page } from "$app/stores";
 
 	$effect(() => {
+		if (CSS.supports("animation-timeline: scroll()")) return;
 		void $page.url;
 
 		const scrollTimeline = gsap
@@ -30,3 +31,50 @@
 
 	<div class="right bg-vintage-plum absolute right-0 h-full w-1/5 origin-right"></div>
 </div>
+
+<style>
+	@supports (animation-timeline: scroll()) {
+		:global(html) {
+			animation: detect-scroll linear;
+			animation-timeline: scroll(self);
+		}
+
+		.left {
+			opacity: calc(1 * var(--has-scroll, 0));
+			animation: grow forwards;
+			animation-timeline: scroll(root y);
+		}
+
+		.right {
+			animation: shrink cubic-bezier(0.42, 0, 0.58, 1) forwards;
+			animation-timeline: scroll(root y);
+		}
+
+		@keyframes detect-scroll {
+			from,
+			to {
+				--has-scroll: 1;
+			}
+		}
+
+		@keyframes grow {
+			from {
+				transform: scaleX(0);
+			}
+
+			to {
+				transform: scaleX(1);
+			}
+		}
+
+		@keyframes shrink {
+			from {
+				transform: scaleX(1);
+			}
+
+			to {
+				transform: scaleX(0);
+			}
+		}
+	}
+</style>
