@@ -10,9 +10,9 @@
 	}
 
 	const words: Word[] = [
-		{ text: "Oliver", class: "font-medium col-start-5" },
+		{ text: "Oliver", class: "font-semibold col-start-5" },
 		{ text: "Mortimer", class: "font-light col-start-11" },
-		{ text: "Rose", class: "font-extralight col-start-8" },
+		{ text: "Rose", class: "font-thin col-start-8" },
 	];
 
 	let indicator: HTMLElement;
