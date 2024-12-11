@@ -4,6 +4,7 @@
 	import { onDestroy, onMount } from "svelte";
 	import Gallery from "$lib/components/Gallery.svelte";
 	import Image from "$lib/components/Image.svelte";
+	import ScrollIndicator from "$lib/components/ScrollIndicator.svelte";
 	import { useBreakpoints } from "$lib/composables";
 
 	type Timeline = gsap.core.Timeline | undefined;
@@ -12,7 +13,6 @@
 	const breakpoints = useBreakpoints();
 
 	let introTl: Timeline;
-
 	let mission: HTMLElement;
 	let missionTl: Timeline;
 
@@ -41,7 +41,8 @@
 			})
 			.to("#clip-img", { "--clip-y": "50%" })
 			.to(".title-1", { y: breakpoints.lg.current ? -100 : 100 })
-			.to(".title-2", { y: 100 }, "<");
+			.to(".title-2", { y: 100 }, "<")
+			.to(".indicator", { autoAlpha: 0 }, "<");
 
 		return () => exitTl.kill();
 	});
@@ -58,7 +59,8 @@
 			})
 			.to("#clip-img", { "--clip-x": "0%" })
 			.from(".title-1", breakpoints.lg.current ? { xPercent: 100 } : { y: 50 }, "<0.65")
-			.from(".title-2", breakpoints.lg.current ? { xPercent: -100 } : { y: 50 }, "<");
+			.from(".title-2", breakpoints.lg.current ? { xPercent: -100 } : { y: 50 }, "<")
+			.from(".indicator", { autoAlpha: 0, y: 15 }, "<0.25");
 
 		missionTl = gsap
 			.timeline({
@@ -125,6 +127,8 @@
 				/>
 			</div>
 		</div>
+
+		<ScrollIndicator class="text-vintage-denim" />
 	</div>
 </div>
 

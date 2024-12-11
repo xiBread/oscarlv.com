@@ -2,7 +2,6 @@
 	import arrow from "./icons/arrow.svelte";
 	import audio from "./icons/audio.svelte";
 	import close from "./icons/close.svelte";
-	import corner from "./icons/corner.svelte";
 	import explicit from "./icons/explicit.svelte";
 	import eye from "./icons/eye.svelte";
 	import github from "./icons/github.svelte";
@@ -21,7 +20,6 @@
 		arrow,
 		audio,
 		close,
-		corner,
 		explicit,
 		eye,
 		github,

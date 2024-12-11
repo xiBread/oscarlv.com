@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gsap } from "gsap";
 	import { onMount } from "svelte";
-	import Icon from "$lib/components/Icon.svelte";
+	import ScrollIndicator from "./ScrollIndicator.svelte";
 
 	interface Word {
 		text: string;
@@ -14,8 +14,6 @@
 		{ text: "Mortimer", class: "font-light col-start-11" },
 		{ text: "Rose", class: "font-thin col-start-8" },
 	];
-
-	let indicator: HTMLElement;
 
 	onMount(() => {
 		gsap.set("#hero", { visibility: "visible" });
@@ -30,7 +28,7 @@
 			})
 			.from(".scroll-progress", {})
 			.from("#hero .word", { yPercent: 100, stagger: 0.15 }, "<")
-			.from(indicator, { y: 15 }, "<0.5");
+			.from(".indicator", { y: 15 }, "<0.5");
 
 		const scrollTimeline = gsap
 			.timeline({
@@ -41,7 +39,7 @@
 					end: "bottom top",
 				},
 			})
-			.to(indicator, { autoAlpha: 0 }, "<");
+			.to(".indicator", { autoAlpha: 0 }, "<");
 
 		for (let i = 0; i < words.length; i++) {
 			scrollTimeline.to(words[i].ref!, { xPercent: i % 2 ? 5 : -5 * (i + 1) }, "<");
@@ -67,10 +65,5 @@
 		</h1>
 	</div>
 
-	<div class="absolute right-6 bottom-8">
-		<div class="flex items-center gap-x-2" bind:this={indicator}>
-			<span class="text-sm">Scroll</span>
-			<Icon name="corner" class="text-vintage-peach mt-0.5 size-3" />
-		</div>
-	</div>
+	<ScrollIndicator class="text-vintage-peach" />
 </section>
