@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { gsap } from "gsap";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 
 	$effect(() => {
 		if (CSS.supports("animation-timeline: scroll()")) return;
-		void $page.url;
+		void page.url;
 
 		const scrollTimeline = gsap
 			.timeline({

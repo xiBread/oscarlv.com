@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 </script>
 
-{#if $page.error}
+{#if page.error}
 	<div class="flex-center flex h-svh flex-col px-4">
 		<h1>
-			<span class="text-vintage-peach font-mono">{$page.status}</span> | {$page.error.message}
+			<span class="text-vintage-peach font-mono">{page.status}</span> | {page.error.message}
 		</h1>
 
 		<button
