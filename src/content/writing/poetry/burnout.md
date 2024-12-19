@@ -13,7 +13,7 @@ about the children before you.
 You decide you will never be like them.
 
 Until, before your eyes they rise from ashes of capability,
-who is left bot you to scold?
+who is left but you to scold?
 Your very own potential has slipped through your fingers.
 Gifts left far from behind.
 
